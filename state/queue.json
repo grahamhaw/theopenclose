@@ -1,5 +1,5 @@
 {
-  "_comment": "Long-form awaiting treatment. Entries carry the URL, who surfaced it, why, and when it was queued. Expiry is defined in CLAUDE.md under `## State files` and not here: a surfaced entry is dropped after 3 days, a podcast or video episode from state/feeds.json is not dropped for age.",
+  "_comment": "Long-form awaiting treatment after the daily ~5am ET judgment sweep. Entries must clear the value bar (not every RSS item). Stay until processed or explicitly dropped as not worth it. Do not auto-append entire podcast feeds from capture/sweep.",
   "queue": [
     {
       "url": "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-agentic-inference",
@@ -24,7 +24,7 @@
     },
     {
       "url": "https://a16z.simplecast.com/episodes/greg-brockman-on-why-openai-says-were-enter",
-      "title": "a16z: Greg Brockman on Why OpenAI Says We're Entering the AGI Era",
+      "title": "a16z: Greg Brockman on Why OpenAI Says We’re Entering the AGI Era",
       "surfaced_by": "rss:a16z-show",
       "why": "Same principal, alternate cut; prefer YouTube if available at treatment time.",
       "queued_at": "2026-09-15T07:35:00-04:00"
@@ -33,12 +33,12 @@
       "url": "https://tedseides.libsyn.com/ai-in-the-investment-office-abby-barlow-laura-hill-",
       "title": "Capital Allocators: AI in the Investment Office",
       "surfaced_by": "rss:capital-allocators",
-      "why": "Direct AI-in-investing workflow \u2014 Graham priority theme.",
+      "why": "Direct AI-in-investing workflow — Graham priority theme.",
       "queued_at": "2026-09-15T07:35:00-04:00"
     },
     {
       "url": "https://pscrb.fm/rss/p/traffic.megaphone.fm/CPUAI7737498941.mp3",
-      "title": "Training Data: Box's Aaron Levie \u2014 reinventing in the AI age / enterprise diffusion",
+      "title": "Training Data: Box's Aaron Levie — reinventing in the AI age / enterprise diffusion",
       "surfaced_by": "rss:training-data",
       "why": "Enterprise agent/diffusion principal; bears on enterprise-agent-stall theme.",
       "queued_at": "2026-09-15T07:35:00-04:00"
