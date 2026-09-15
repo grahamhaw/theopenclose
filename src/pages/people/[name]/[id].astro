@@ -1,0 +1,35 @@
+---
+import Shell from '../../../layouts/Shell.astro';
+import Document from '../../../components/Document.astro';
+import { loadArchive, peopleIndex } from '../../../lib/archive';
+
+export async function getStaticPaths() {
+  const all = await loadArchive();
+  const paths = [];
+  for (const [slug, { name, docs }] of peopleIndex(all)) {
+    const items = [...docs].sort((a, b) => b.effective.getTime() - a.effective.getTime());
+    for (const doc of docs) {
+      paths.push({
+        params: { name: slug, id: doc.id },
+        props: { slug, name, doc, items },
+      });
+    }
+  }
+  return paths;
+}
+
+const { slug, name, doc, items } = Astro.props;
+---
+<Shell
+  title={`${doc.title} — The Open/Close`}
+  description={doc.summary}
+  view={`person:${slug}`}
+  listTitle={name}
+  items={items}
+  currentId={doc.id}
+  mobile="reader"
+  crumbs={['People', name, doc.kind]}
+  groupDays={false}
+>
+  <Document doc={doc} />
+</Shell>

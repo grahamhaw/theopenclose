@@ -1,0 +1,30 @@
+---
+import Shell from '../../layouts/Shell.astro';
+import Document from '../../components/Document.astro';
+import { loadArchive, recent } from '../../lib/archive';
+
+export async function getStaticPaths() {
+  const all = await loadArchive();
+  const feed = recent(all);
+  // Also allow opening backfill from Archive via /latest/id — include all non-company docs
+  const openable = all.filter((d) => d.collection !== 'companies');
+  return openable.map((doc) => ({
+    params: { id: doc.id },
+    props: { doc, items: feed },
+  }));
+}
+
+const { doc, items } = Astro.props;
+---
+<Shell
+  title={`${doc.title} — The Open/Close`}
+  description={doc.summary}
+  view="latest"
+  listTitle="Latest"
+  items={items}
+  currentId={doc.id}
+  mobile="reader"
+  crumbs={['Latest', doc.kind]}
+>
+  <Document doc={doc} />
+</Shell>

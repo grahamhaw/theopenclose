@@ -2,7 +2,7 @@
 import '../styles/app.css';
 import Row from '../components/Row.astro';
 import {
-  loadArchive, recent, byCollection, groupByDay, peopleIndex, type Doc,
+  loadArchive, recent, byCollection, groupByDay, peopleIndex, hrefInList, type Doc,
 } from '../lib/archive';
 import { slugify } from '../lib/slug';
 
@@ -69,7 +69,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 
 // Below 760px the list pane is hidden on a document route, so the reader needs a
 // way back to it. One segment up is that listing for every route on the site.
-const upHref = Astro.url.pathname.replace(/\/[^/]*\/?$/, '') || '/';
+let upHref = Astro.url.pathname.replace(/\/[^/]*\/?$/, '') || '/';
+if (upHref === '/latest') upHref = '/';
+
 
 // A listing named after its own document type would otherwise render
 // "Long-form / Long-form".
@@ -168,10 +170,10 @@ const trail = crumbs.filter((c, i) => i === 0 || c !== crumbs[i - 1]);
         ? days.map((day) => (
             <div>
               <div class="day-head">{day.label}</div>
-              {day.items.map((doc) => <Row doc={doc} current={doc.id === currentId} />)}
+              {day.items.map((doc) => <Row doc={doc} current={doc.id === currentId} href={hrefInList(doc, view)} />)}
             </div>
           ))
-        : items.map((doc) => <Row doc={doc} current={doc.id === currentId} showDate />)}
+        : items.map((doc) => <Row doc={doc} current={doc.id === currentId} showDate href={hrefInList(doc, view)} />)}
       {items.length === 0 && <div class="empty">{emptyNote}</div>}
     </div>
   </div>

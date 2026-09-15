@@ -2,8 +2,9 @@
 import Fidelity from './Fidelity.astro';
 import { timeLabel, type Doc } from '../lib/archive';
 
-interface Props { doc: Doc; current?: boolean; showDate?: boolean; }
-const { doc, current = false, showDate = false } = Astro.props;
+interface Props { doc: Doc; current?: boolean; showDate?: boolean; href?: string; }
+const { doc, current = false, showDate = false, href } = Astro.props;
+const to = href ?? doc.href;
 
 const meta: string[] = [];
 if (doc.data.venue) meta.push(doc.data.venue);
@@ -13,7 +14,7 @@ if (doc.entities.length) meta.push(doc.entities.slice(0, 3).join(' · '));
 ---
 <a
   class="row"
-  href={doc.href}
+  href={to}
   aria-current={current ? 'page' : undefined}
   data-pagefind-ignore
 >

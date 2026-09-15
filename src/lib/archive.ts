@@ -216,3 +216,15 @@ export function entityIndex(docs: Doc[]): Map<string, { name: string; docs: Doc[
   }
   return map;
 }
+
+/** Where a list-row should navigate, preserving the current list context. */
+export function hrefInList(doc: Doc, view?: string): string {
+  if (!view || view === 'latest' || view === 'archive' || view === 'people') {
+    return `/latest/${doc.id}`;
+  }
+  if (view.startsWith('person:')) {
+    return `/people/${view.slice('person:'.length)}/${doc.id}`;
+  }
+  // Type views (briefs, longform, …): stay on the type-scoped document URL.
+  return doc.href;
+}
