@@ -116,6 +116,12 @@ One file per thing that passes. `content/{type}/YYYY-MM-DD-slug.md`, lowercase, 
 
 Read the matching spec in `formats/` before writing. Read it fresh each time rather than working from memory of it.
 
+**A filename starting with `_` is not a document.** Working notes — fidelity
+checks, source hunting, anything without frontmatter — belong in
+`content/{type}/_NOTE_slug.md`. They stay in the repo and in git, and the site
+skips them. Anything else under `content/` is parsed as a document and fails the
+build if its frontmatter does not match the schema.
+
 ### 5. Commit
 
 One commit per run, message naming the job and what was written: `sweep: 2 discussions, 1 news, 3 queued`. Push. The push triggers the site build.

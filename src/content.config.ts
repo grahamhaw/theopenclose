@@ -4,8 +4,16 @@
 //
 // When you change the schema in CLAUDE.md, change it here in the same commit.
 
-import { defineCollection, z, reference } from 'astro:content';
+import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+
+// A file whose name starts with `_` is not a document. The agent keeps working
+// notes next to the documents it writes — fidelity notes, source-hunting
+// scratch — and those have no frontmatter, so without this the build fails on
+// them. Underscore is the usual convention for exactly this, and it keeps the
+// notes in git rather than forcing them out of the repo.
+const docs = (dir: string) =>
+  glob({ pattern: ['**/*.md', '!**/_*.md'], base: `./content/${dir}` });
 
 // Shared by every document type.
 const base = {
@@ -21,7 +29,7 @@ const base = {
 };
 
 const longform = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './content/longform' }),
+  loader: docs('longform'),
   schema: z.object({
     ...base,
     type: z.literal('longform'),
@@ -37,7 +45,7 @@ const longform = defineCollection({
 });
 
 const discussions = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './content/discussions' }),
+  loader: docs('discussions'),
   schema: z.object({
     ...base,
     type: z.literal('discussion'),
@@ -58,7 +66,7 @@ const discussions = defineCollection({
 });
 
 const news = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './content/news' }),
+  loader: docs('news'),
   schema: z.object({
     ...base,
     type: z.literal('news'),
@@ -70,7 +78,7 @@ const news = defineCollection({
 });
 
 const briefs = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './content/briefs' }),
+  loader: docs('briefs'),
   schema: z.object({
     ...base,
     type: z.literal('brief'),
@@ -82,7 +90,7 @@ const briefs = defineCollection({
 });
 
 const companies = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './content/companies' }),
+  loader: docs('companies'),
   schema: z.object({
     ...base,
     type: z.literal('company'),
@@ -95,7 +103,7 @@ const companies = defineCollection({
 });
 
 const reviews = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './content/reviews' }),
+  loader: docs('reviews'),
   schema: z.object({
     ...base,
     type: z.literal('review'),

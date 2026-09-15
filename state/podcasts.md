@@ -424,3 +424,44 @@ All-In (politics filter), Excess Returns, The Business Brew, The Synopsis, Never
 - With working RSS: **40+** unique feeds documented above
 - Core recommended: **~18–20**
 - Marked skip: Chamath solo, TWIII (broken RSS), generic AI title spam, Complex Systems-as-feed
+
+---
+
+## Screenshot-roster pass (2026-09-15) — judgment filter
+
+Graham asked to reconcile a screenshot list against this roster. **Quality over completeness.** Core stays tight for buy-side AI/semis/TMT/macro. Secondary unless clearly core. **Excluded:** The Investor's Podcast / We Study Billionaires.
+
+### Added — secondary (RSS verified)
+
+| Show | Hosts | RSS | Why / priority |
+|------|-------|-----|----------------|
+| **Animal Spirits** | Ben Carlson, Michael Batnick | https://feeds.megaphone.fm/TCP6464651487 | Markets roundtable (Compound). **secondary** |
+| **Capital Allocators** | Ted Seides | https://tedseides.libsyn.com/rss | Institutional allocator process. **secondary** |
+| **Founders** | David Senra | https://feeds.megaphone.fm/DSLLC6297708582 | Founder biographies; selective. **secondary** |
+| **Forward Guidance** | Felix Jauvin (Blockworks) | https://feeds.megaphone.fm/forwardguidance | Macro / rates-adjacent. **secondary** |
+| **Unhedged** | FT | https://feeds.acast.com/public/shows/unhedged | Markets commentary. **secondary** |
+| **The Meb Faber Show** | Meb Faber | https://mebfaber.libsyn.com/rss | Asset allocation / markets. **secondary** |
+| **Machine Learning Street Talk** | Tim Scarfe et al. | https://anchor.fm/s/f15e40b0/podcast/rss | Technical AI research; skim. **secondary selective** |
+
+### Noted — RSS TBD (do not block monitoring)
+
+| Show | Priority | Note |
+|------|----------|------|
+| **Flirting with Models** | secondary | Corey Hoffstein / quant. Apple-listed; clean public RSS not verified this pass — **RSS TBD** |
+| **The Cognitive Revolution** | secondary selective | Nathan Labenz / Turpentine AI. Site + Apple live; Megaphone/Substack RSS not verified — **RSS TBD** |
+
+### Already on roster (no change)
+
+Acquired, All-In, BG2Pod, Dwarkesh, Goldman Sachs Exchanges, Invest Like the Best, Latent Space, Masters in Business, No Priors, Odd Lots, Practical AI, SemiAnalysis Weekly, a16z Show / AI+a16z.
+
+### Skipped (judgment — low desk fit)
+
+- **Lex Fridman** — too general / long; skip (not even selective monitoring)
+- **This Week in Startups** — founder/startup marketing cadence; skip
+- **Lenny's Podcast** — product/growth, not investing; skip
+- **The Twenty Minute VC** — VC pitch/fundraising; skip
+- **The Full Ratchet** — VC mechanics; skip
+- **Sources with Alex Heath** — consumer tech news; skip
+- **The AI Daily Brief** — high volume / thin; skip
+- **The Next Big Thing** — unclear fit / no clean RSS; skip
+- **We Study Billionaires / The Investor's Podcast** — **excluded by request**
