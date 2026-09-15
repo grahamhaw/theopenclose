@@ -1,0 +1,60 @@
+---
+import Shell from '../../layouts/Shell.astro';
+import Placeholder from '../../components/Placeholder.astro';
+import { loadArchive, peopleIndex, recent, stamp } from '../../lib/archive';
+
+const all = await loadArchive();
+
+// By document count, then alphabetically. Who recurs is the useful ordering
+// here; who was named once is still reachable, just further down.
+const people = [...peopleIndex(all)]
+  .map(([slug, { name, docs }]) => ({ slug, name, docs }))
+  .sort((a, b) => b.docs.length - a.docs.length || a.name.localeCompare(b.name));
+---
+<Shell
+  title="People — The Open/Close"
+  description="Everyone named in the archive."
+  view="people"
+  listTitle="Latest"
+  items={recent(all)}
+  mobile="reader"
+  crumbs={['People']}
+>
+  {people.length === 0
+    ? <Placeholder
+        head="Nobody named yet"
+        note="People are collected from the `people` field of each document as the archive fills."
+      />
+    : (
+      <div class="reader-cols">
+        <article class="reader-body" data-pagefind-ignore>
+          <div class="stamp">Index</div>
+          <h1 class="doc-title">People</h1>
+          <p class="standfirst">
+            Everyone named in a document, by how often they appear. Tiering lives
+            in <code>state/people.json</code>; this is only who the archive
+            actually carries.
+          </p>
+
+          <section class="sec">
+            <div class="sec-rule"></div>
+            <div class="sec-head">
+              <span class="h">Named in the archive</span>
+              <span class="n">{`${people.length} ${people.length === 1 ? 'person' : 'people'}`}</span>
+            </div>
+            {people.map((p) => (
+              <div class="delta">
+                <span class="delta-chip delta-neutral">{`${p.docs.length} ${p.docs.length === 1 ? 'doc' : 'docs'}`}</span>
+                <div style="min-width:0">
+                  <div class="delta-name"><a href={`/people/${p.slug}`}>{p.name}</a></div>
+                  <div class="cite-meta" style="margin-top:4px">
+                    <span>Last seen {stamp(p.docs[0].effective)}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </section>
+        </article>
+      </div>
+    )}
+</Shell>

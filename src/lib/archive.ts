@@ -1,5 +1,4 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { parsePositioning, type Routing } from './positioning';
 import { normalizeEntity, slugify } from './slug';
 
 export type CollectionName =
@@ -28,8 +27,6 @@ export interface Doc {
   fidelity?: string;
   resolved: boolean;
   verdict?: string;
-  routings: Routing[];
-  unrouted: string[];
   data: any;
   entry: AnyEntry;
 }
@@ -57,24 +54,10 @@ const COLLECTIONS: CollectionName[] = [
   'briefs', 'longform', 'discussions', 'news', 'companies', 'reviews',
 ];
 
-/**
- * Only these three formats write a positioning read in the directional
- * `theme-id — STRENGTHENS. why` form. A brief organises by theme in prose and a
- * review carries no positioning read at all, so parsing them would flag correct
- * documents as malformed.
- */
-const ROUTES_POSITIONING: ReadonlySet<CollectionName> = new Set([
-  'longform', 'news', 'companies',
-]);
-
 function toDoc(collection: CollectionName, entry: AnyEntry): Doc {
   const d = entry.data as any;
   const date = d.date as Date;
   const updated = d.updated as Date | undefined;
-  const body = entry.body ?? '';
-  const { routings, unrouted } = ROUTES_POSITIONING.has(collection)
-    ? parsePositioning(body)
-    : { routings: [], unrouted: [] };
 
   // CLAUDE.md: `id` matches the filename. When it does not, briefs linking by
   // `sources` and discussions linking by `prior` silently point at nothing, so
@@ -104,8 +87,6 @@ function toDoc(collection: CollectionName, entry: AnyEntry): Doc {
     fidelity: d.fidelity,
     resolved: d.resolved ?? false,
     verdict: d.verdict,
-    routings,
-    unrouted,
     data: d,
     entry,
   };
@@ -220,18 +201,6 @@ export function docsForCompany(docs: Doc[], dossier: Doc): Doc[] {
       d.collection !== 'companies' &&
       d.entities.some((e) => keys.has(normalizeEntity(e)))
   );
-}
-
-/** Documents whose positioning read routes to a theme, oldest first. */
-export function docsForTheme(docs: Doc[], themeId: string): { doc: Doc; routing: Routing }[] {
-  const out: { doc: Doc; routing: Routing }[] = [];
-  for (const doc of docs) {
-    for (const routing of doc.routings) {
-      if (routing.themeId === themeId) out.push({ doc, routing });
-    }
-  }
-  out.sort((a, b) => a.doc.effective.getTime() - b.doc.effective.getTime());
-  return out;
 }
 
 export function entityIndex(docs: Doc[]): Map<string, { name: string; docs: Doc[] }> {

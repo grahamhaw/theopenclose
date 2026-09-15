@@ -60,10 +60,6 @@ One paragraph, and only when it is not obvious. What this changes — a constrai
 
 If the significance is fully contained in "what happened," omit this section. Most items do not need it.
 
-### Positioning read
-
-Route to `state/themes.json`, same form as long-form. Usually one theme, often none. Omit when the item bears on nothing in the file.
-
 ### Connects to
 
 Only when it does. Documents already in the archive that this bears on, by id, with one line each. A TSMC capacity number connects to whatever discussion argued about supply constraint. This is what makes the archive compound rather than accumulate.

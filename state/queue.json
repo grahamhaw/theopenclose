@@ -1,4 +1,4 @@
 {
-  "_comment": "Long-form awaiting treatment. New podcast/YouTube episodes land here when published and stay until processed — do not drop for age while still unpublished as a document. The old 3-day expiry does not apply to podcasts Graham wants processed on publish.",
+  "_comment": "Long-form awaiting treatment. Entries carry the URL, who surfaced it, why, and when it was queued. Expiry is defined in CLAUDE.md under `## State files` and not here: a surfaced entry is dropped after 3 days, a podcast or video episode from state/feeds.json is not dropped for age.",
   "queue": []
 }

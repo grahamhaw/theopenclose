@@ -18,6 +18,10 @@ npm run build      # fails on any schema violation
 npm run preview    # serves dist/ on :4321
 ```
 
+Astro 5 caches parsed content in `node_modules/.astro`, so a document you
+deleted or renamed can survive into a local build. `rm -rf node_modules/.astro`
+clears it. CI never hits this — `npm ci` starts from an empty `node_modules`.
+
 ## Auto-deploy: pick one path
 
 Both paths do the same thing — rebuild and deploy on every push to `main`. Set
@@ -86,6 +90,9 @@ caused it rather than as a red deploy minutes later.
 Pagefind runs after `astro build` and writes `dist/pagefind/`. It is the only
 JavaScript the site ships, and it only loads on `/search`. Every other page is
 HTML and CSS, so the archive reads with scripts disabled.
+
+Retrieval otherwise runs on `people` and `entities` — `/people/[name]` and
+`/companies/[id]`. There is no tag or theme vocabulary to keep in sync.
 
 ## Indexing
 

@@ -15,6 +15,10 @@ Read every document in `content/` whose `entities` includes this company. Long-f
 ```yaml
 id: nvda
 type: company
+title: NVIDIA Corporation
+summary: >
+  Accelerator and networking supplier to the hyperscalers. Twenty-eight
+  quarters of coverage; the claim ledger runs from the FY20 supply comments.
 name: NVIDIA Corporation
 ticker: NVDA
 date: 2026-02-14T00:00:00-05:00
@@ -25,13 +29,19 @@ coverage_end: 2026-08-27
 sources: [2019-05-16-nvda-q1-fy20, 2019-08-15-nvda-q2-fy20]
 ```
 
+`title` and `summary` come from the shared schema in `CLAUDE.md` and are
+required here as they are everywhere else. `title` is the company name;
+`summary` is what the dossier currently says, rewritten whenever it is rebuilt.
+`name` is separate because the dossier renders it as the company's legal name
+while `title` is what appears in a listing row.
+
 `ticker` is supplied by him in the ingest request, or already present in the file. Never infer it. The hard rule against ticker inference holds here — this field exists because he named the company, not because you recognized it.
 
 ## Sections
 
 ### Standing
 
-One paragraph, 80–140 words. What the company does, stated as its function rather than its marketing. The shape of the business as management currently describes it, and how many quarters of coverage this dossier rests on. No thesis, no view — the view lives in the positioning read.
+One paragraph, 80–140 words. What the company does, stated as its function rather than its marketing. The shape of the business as management currently describes it, and how many quarters of coverage this dossier rests on. No thesis, no view — the claim ledger carries the evidence and the reader draws the view.
 
 ### Claim ledger
 
@@ -51,7 +61,7 @@ Status is one of:
 - **OPEN** — not yet knowable. Name when it becomes knowable.
 - **DROPPED** — management stopped making the claim without ever addressing it. State the quarter it last appeared. This is the most interesting status and the easiest to miss.
 
-Ordered by materiality, not chronology. Only claims with a date, a number, or a defined outcome — "we feel great about the opportunity" is not a claim. Cap at twenty; if there are more, keep the twenty that most bear on `state/themes.json`.
+Ordered by materiality, not chronology. Only claims with a date, a number, or a defined outcome — "we feel great about the opportunity" is not a claim. Cap at twenty; if there are more, keep the twenty whose status is most load-bearing — a BROKE or a DROPPED before an OPEN, a quantified claim before a directional one.
 
 ### Trajectory
 
@@ -70,12 +80,6 @@ Admissible only when the question recurs across three or more calls. A single de
 Only when the evidence is strong. A phrase that appeared in three or more consecutive calls and then stopped, or entered and persisted. Each: the phrase verbatim, the quarters it spans, and one sentence on what the change coincided with.
 
 This section is prone to false positives. When in doubt, omit it. A phrase disappearing once is noise.
-
-### Positioning read
-
-Route to `state/themes.json`. For each theme the corpus bears on: strengthens, weakens, or neutral, and one line on why, citing a document id.
-
-Silence is the default. Themes the corpus does not bear on are not listed.
 
 ## Rules
 

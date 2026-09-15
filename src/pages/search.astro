@@ -1,17 +1,18 @@
 ---
 import Shell from '../layouts/Shell.astro';
+import { loadArchive, recent } from '../lib/archive';
 
 // Pagefind writes /pagefind/* after `astro build`, so these assets exist in the
 // deployed site but not in `astro dev`. That is the only JavaScript the archive
 // ships.
+const items = recent(await loadArchive());
 ---
 <Shell
   title="Search — The Open/Close"
-  listTitle="Search"
-  items={[]}
+  listTitle="Latest"
+  items={items}
   mobile="reader"
   crumbs={['Search']}
-  emptyNote="Results appear in the reader pane."
 >
   <div class="reader-cols">
     <article class="reader-body" data-pagefind-ignore>
@@ -19,13 +20,13 @@ import Shell from '../layouts/Shell.astro';
       <h1 class="doc-title">Search</h1>
       <p class="standfirst">
         Every document in the archive, backfill included. Retrieval also runs on
-        people, entities and themes from the navigation.
+        people and companies, from the navigation.
       </p>
       <div id="search" style="margin-top:18px"></div>
       <noscript>
         <p class="delta-note" style="margin-top:12px">
           Search needs JavaScript. Everything else on this site does not — browse
-          by type, theme or person from the navigation instead.
+          by type, company or person from the navigation instead.
         </p>
       </noscript>
 

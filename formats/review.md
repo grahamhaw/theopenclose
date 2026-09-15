@@ -50,10 +50,6 @@ The broken reads, each in two or three sentences: what was claimed, what happene
 
 This section is the reason the document exists. Write it first.
 
-### Theme check
-
-For each theme in `state/themes.json`, what the month's resolved documents did to it, and whether its `breaks_if` condition is closer or further away.
-
 ### People check
 
 Any tier 1 or tier 2 person whose positions have not held across three or more resolved documents. Name them, cite the documents, and propose a demotion in `state/people.json` with the reason in the entry.
@@ -66,4 +62,4 @@ This is the only evidence-based input to tiering. Everything else is inference f
 - Rhetorical caveats in the original do not convert a broken read into a held one.
 - Never edit the original read. The verdict is appended; the record stands.
 - Where an observable turned out to be the wrong test, say so — that is a finding about the archive's method, and it belongs in "Where the desk was wrong."
-- Reviews carry no positioning read and never enter briefs.
+- Reviews never enter briefs.

@@ -7,16 +7,17 @@ export async function getStaticPaths() {
   const all = await loadArchive();
   return [...peopleIndex(all)].map(([slug, { name, docs }]) => ({
     params: { name: slug },
-    props: { name, docs },
+    props: { slug, name, docs },
   }));
 }
 
-const { name, docs } = Astro.props;
+const { slug, name, docs } = Astro.props;
 const items = [...docs].sort((a, b) => b.effective.getTime() - a.effective.getTime());
 ---
 <Shell
   title={`${name} — The Open/Close`}
   description={`Every document naming ${name}.`}
+  view={`person:${slug}`}
   listTitle={name}
   items={items}
   mobile="reader"

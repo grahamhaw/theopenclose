@@ -1,7 +1,6 @@
 ---
 import { render } from 'astro:content';
 import Fidelity from './Fidelity.astro';
-import Positioning from './Positioning.astro';
 import { slugify } from '../lib/slug';
 import { stamp, type Doc } from '../lib/archive';
 
@@ -57,19 +56,6 @@ if (doc.data.review_after) {
       <div class="chips" data-pagefind-ignore>
         {facts.map((f) => <span class="chip">{f.k}: {f.v}</span>)}
       </div>
-    )}
-
-    <Positioning routings={doc.routings} />
-
-    {doc.unrouted.length > 0 && (
-      <section class="sec" data-pagefind-ignore>
-        <div class="sec-rule"></div>
-        <div class="sec-head">
-          <span class="h">Unrouted positioning lines</span>
-          <span class="n">not in state/themes.json</span>
-        </div>
-        {doc.unrouted.map((u) => <p class="delta-note">{u}</p>)}
-      </section>
     )}
 
     <div class="prose"><Content /></div>

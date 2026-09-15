@@ -2,16 +2,19 @@
 
 A buy-side research archive written by an agent and published as a static site.
 
-`CLAUDE.md` is the agent's operating manual. `formats/` holds one spec per document type. `state/` holds the three files that steer it. Everything else is generated.
+`CLAUDE.md` is the agent's operating manual. `formats/` holds one spec per document type. `state/` holds the files that steer it. Everything else is generated.
 
 ## Before anything runs
 
-Three decisions only you can make. The agent cannot infer any of them and will produce nothing useful until they exist.
+Decisions only you can make. The agent cannot infer them and will produce nothing useful until they exist.
 
-1. **`state/themes.json`** — your bets. Five to ten. The `breaks_if` field is what the agent checks material against, so write it as something observable, not as a mood.
-2. **`state/people.json`** — tiers, plus the URLs of the X Lists to scroll. Tier 1 and tier 2 go in the Lists. Tier 3 does not: they are context-only and surface when quoted inside someone else's thread, so scrolling them is time spent for nothing.
-3. **`state/feeds.json`** — RSS URLs for the outlets you follow. Every feed you add is a site the agent does not have to browse.
-4. **Which companies get dossiers** — needed only when you run `ingest`.
+1. **`state/people.json`** — tiers, plus the URLs of the X Lists to scroll. Tier 1 and tier 2 go in the Lists. Tier 3 does not: they are context-only and surface when quoted inside someone else's thread, so scrolling them is time spent for nothing.
+2. **`state/feeds.json`** — RSS URLs for the outlets you follow. Every feed you add is a site the agent does not have to browse.
+3. **Which companies get dossiers** — needed only when you run `ingest`.
+
+`state/themes.json` is parked. Nothing reads it and no format routes to it. The
+file is kept, with its four bets intact, so the work is there when you want it
+back — see `_to_restore` in the file itself.
 
 ## Access the agent needs
 
@@ -77,20 +80,20 @@ These are about the runtime, not the content, which is why they are here and not
 - Re-read `CLAUDE.md` and the relevant `formats/` spec at the start of every run. Never work from memory of them.
 - On a source failure — X unreachable, a feed down — write what was collected, note the gap in the commit message, and exit cleanly. Never skip the commit, and never substitute recalled context for a source that did not load.
 - On a failed build, fix the document and push again in the same run. A red build means the archive is not rendering.
-- Never modify `formats/`, `CLAUDE.md`, or `state/themes.json`. Those are the contract.
+- Never modify `formats/` or `CLAUDE.md`. Those are the contract.
 - Never modify a `state/people.json` entry with `"locked": true`.
 
 ## Order of work
 
 The format specs have never been run. Prove them before building anything around them.
 
-1. **Fill in `state/themes.json`.** Nothing works without it.
-2. **Run one `ingest`** against transcripts you already have. It is the only job with no external dependency — no X credits, no feeds, no market data, no site. It is the cheapest end-to-end test of whether the documents are worth reading.
-3. **Read what comes out. Edit the specs. Run it again.** Two or three passes. This is the whole game, and it is where the quality is decided.
-4. **Then wire capture and the schedule.** Run it manually for a week before putting it on a timer.
-5. **Then build the site**, once there is enough in the archive that browsing it is better than scrolling a folder.
+1. **Run one `ingest`** against transcripts you already have. It is the only job with no external dependency — no X credits, no feeds, no market data, no site. It is the cheapest end-to-end test of whether the documents are worth reading.
+2. **Read what comes out. Edit the specs. Run it again.** Two or three passes. This is the whole game, and it is where the quality is decided.
+3. **Then wire capture and the schedule.** Run it manually for a week before putting it on a timer.
 
-Building the site first feels productive and proves nothing. If step 3 produces documents you would not read, everything downstream was wasted.
+The site is built and deploys on push, so it is no longer a step. That does not
+change the order: if step 2 produces documents you would not read, a site over
+them was wasted effort.
 
 ## The site
 
@@ -104,13 +107,15 @@ is required of the agent.
 rendering wrong. So `npm run build` is the schema check, and it is worth running
 at the end of a job before the push.
 
-The layout is a three-pane reader: views and themes on the left, the documents
+The layout is a three-pane reader: views and people on the left, the documents
 in the window in the middle, the open document on the right. Fidelity is on
 every listing row and every document, in three visual weights, so a
-`secondhand` document and a `transcript` never look alike at a glance.
-`/themes/[id]` is the page the folder cannot give you — each bet, its
-`breaks_if`, and every document that routed to it in date order with
-strengthens / weakens / neutral.
+`secondhand` document and a `transcript` never look alike at a glance. The most
+recent brief is already open on `/`.
+
+`/companies/[id]` and `/people/[name]` are the pages the folder cannot give
+you — a dossier next to every document naming that company, and every
+appearance by one person in date order.
 
 ```
 npm ci
@@ -122,4 +127,4 @@ npm run preview    # serves dist/ on :4321
 
 The agent writes plain markdown files into a GitHub repo. **GitHub displays markdown.** From the first commit you can read every document in your browser, on your phone, in the GitHub app, or in any markdown editor pointed at a local clone.
 
-The site adds three things the raw folder cannot: theme pages that collect every document bearing on one of your bets in date order, full-text search, and a readable index. All three matter more at 200 documents than at 12 — so the archive being thin is not a reason to think the site is not working.
+The site adds three things the raw folder cannot: the company and people views that collect every document touching one subject in date order, full-text search, and a readable index with fidelity on every row. All three matter more at 200 documents than at 12 — so the archive being thin is not a reason to think the site is not working.

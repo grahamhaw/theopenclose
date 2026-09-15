@@ -1,16 +1,15 @@
 ---
 import '../styles/app.css';
 import Row from '../components/Row.astro';
-import { THEMES } from '../lib/themes';
 import {
-  loadArchive, recent, byCollection, groupByDay, docsForTheme,
-  dayLabel, type Doc,
+  loadArchive, recent, byCollection, groupByDay, peopleIndex, type Doc,
 } from '../lib/archive';
+import { slugify } from '../lib/slug';
 
 interface Props {
   title: string;
   description?: string;
-  /** Which nav entry is current: a view key, or `theme:<id>`. */
+  /** Which nav entry is current: a view key, or `person:<slug>`. */
   view?: string;
   listTitle: string;
   items: Doc[];
@@ -48,16 +47,20 @@ const views = [
   { key: 'archive',     label: 'Archive',     href: '/archive',     count: all.length },
 ];
 
-// The design's nav carries a "Tags" tree. There is no tag field in the schema —
-// themes are the only curated vocabulary, they live in state/themes.json, and
-// the theme pages are the one view that cannot be got from a feed. So the tree
-// is themes.
-const themeNav = THEMES.map((t) => ({
-  key: `theme:${t.id}`,
-  label: t.id,
-  href: `/themes/${t.id}`,
-  count: docsForTheme(all, t.id).length,
-}));
+// The design's nav carries a "Tags" tree. There is no tag field in the schema,
+// so the tree is people — one of the three axes retrieval actually runs on, and
+// populated as a byproduct of writing a document rather than curated. Capped:
+// the nav is for the names that recur, and /people has the rest.
+const NAV_PEOPLE = 12;
+const peopleNav = [...peopleIndex(all)]
+  .map(([slug, { name, docs }]) => ({
+    key: `person:${slug}`,
+    label: name,
+    href: `/people/${slug}`,
+    count: docs.length,
+  }))
+  .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))
+  .slice(0, NAV_PEOPLE);
 
 const days = groupDays ? groupByDay(items) : [];
 const listMeta = `${items.length} ${items.length === 1 ? 'item' : 'items'}`;
@@ -118,15 +121,20 @@ const trail = crumbs.filter((c, i) => i === 0 || c !== crumbs[i - 1]);
 
       <div class="nav-rule"></div>
 
-      <div class="nav-head">Themes</div>
+      <div class="nav-head">People</div>
       <div class="nav-sub">
-        {themeNav.map((t) => (
+        {peopleNav.map((t) => (
           <a class="nav-item" href={t.href} aria-current={view === t.key ? 'page' : undefined}>
             <span>{t.label}</span>
             <span class="count">{t.count}</span>
           </a>
         ))}
-        {themeNav.length === 0 && <div class="empty">No themes in state/themes.json.</div>}
+        {peopleNav.length === 0 && <div class="empty">No people named yet.</div>}
+        {peopleNav.length === NAV_PEOPLE && (
+          <a class="nav-item" href="/people" aria-current={view === 'people' ? 'page' : undefined}>
+            <span>All people →</span>
+          </a>
+        )}
       </div>
     </div>
 
@@ -150,9 +158,7 @@ const trail = crumbs.filter((c, i) => i === 0 || c !== crumbs[i - 1]);
         ))}
       </div>
       <div class="compact-row">
-        {themeNav.map((t) => (
-          <a class="compact-chip" href={t.href} aria-current={view === t.key ? 'page' : undefined}>{t.label}</a>
-        ))}
+        <a class="compact-chip" href="/people" aria-current={view === 'people' ? 'page' : undefined}>People</a>
         <a class="compact-chip" href="/search">Search</a>
       </div>
     </div>

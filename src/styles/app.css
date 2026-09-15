@@ -247,7 +247,7 @@ a:hover { color: var(--accent); }
 .prose th, .prose td { text-align: left; padding: 5px 9px 5px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
 .prose th { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); }
 
-/* Section head used outside prose (positioning read, connected documents). */
+/* Section head used outside prose (related documents, index listings). */
 .sec { padding-top: 22px; }
 .sec-rule { height: 2px; background: var(--ink); }
 .sec-head {
@@ -260,16 +260,16 @@ a:hover { color: var(--accent); }
 }
 .sec-head .n { font-size: 10px; line-height: 1.25; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); }
 
-/* Positioning read rows. STRENGTHENS / WEAKENS / NEUTRAL are the design's
-   ▲ / ▼ / ▸ delta chips, one to one. */
+/* Labelled rows: the design's delta treatment, a fixed-width chip against a
+   title and a note. Used by the people index and the archive type breakdown. */
 .delta { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid var(--rule-soft); }
 .delta-chip {
   flex: 0 0 108px; width: 108px;
   font-size: 10px; line-height: 1.2; letter-spacing: 0.06em; text-transform: uppercase;
   font-weight: 800; padding: 4px 7px; text-align: left; white-space: nowrap;
 }
-.delta-strengthens { background: var(--ink); color: var(--pane-read); }
-.delta-weakens { background: var(--accent); color: #fff; }
+.delta-strong { background: var(--ink); color: var(--pane-read); }
+.delta-accent { background: var(--accent); color: #fff; }
 .delta-neutral { background: transparent; color: var(--ink-2); border: 1px solid var(--rule-strong); }
 .delta-name { font-size: 13px; line-height: 1.25; font-weight: 800; letter-spacing: 0.01em; }
 .delta-name a { color: inherit; text-decoration: none; }

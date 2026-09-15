@@ -26,7 +26,6 @@ sources/                      captures and raw transcripts. Gitignored. Never pu
 state/
   people.json                 who matters, tiered, plus the X Lists to scroll
   feeds.json                  RSS feeds — checked before any browsing
-  themes.json                 the bets — he owns, you read and never write
   queue.json                  long-form awaiting treatment — you maintain
 ```
 
@@ -79,7 +78,7 @@ A partial capture is a normal, reportable outcome. Write the manifest and exit c
 
 Before collecting anything:
 
-- Read `state/people.json` and `state/themes.json`.
+- Read `state/people.json`.
 - Read the frontmatter of every document in `content/` from the last 7 days.
 - Read `state/queue.json`.
 
@@ -127,7 +126,7 @@ If the build fails on a schema error, fix the document and push again in the sam
 
 Run when he hands you a corpus: a folder of earnings call transcripts, fireside chats, or analyst day sessions for one company. Unlike a sweep, **there is no triage.** He already chose these. Process all of them.
 
-1. **Read `state/themes.json`** and the existing dossier at `content/companies/<slug>.md` if there is one.
+1. **Read the existing dossier** at `content/companies/<slug>.md` if there is one.
 2. **One long-form document per transcript**, oldest first, into `content/longform/`. `backfill: true`. `published` is the date of the call, not today. Follow `formats/longform.md` exactly — an earnings call is a long-form document and does not get its own format.
 3. **Rebuild the dossier** at `content/companies/<slug>.md` per `formats/company.md`.
 4. **Commit once**: `ingest: nvda, 24 calls 2019-2026, dossier rebuilt`.
@@ -142,7 +141,7 @@ Every document carries these. Formats add their own fields on top; none of them 
 
 ```yaml
 id: 2026-09-14-baker-evaluators      # matches the filename
-type: discussion                      # discussion | longform | news | brief | review
+type: discussion                      # discussion | longform | news | brief | company | review
 date: 2026-09-14T09:20:00-04:00       # ET with offset. First written. Never changes.
 updated: 2026-09-15T11:05:00-04:00    # ET with offset. Last extended. Omit if never.
 title: Are embedded evaluators real oversight or liability theater?
@@ -155,7 +154,7 @@ source: https://...                        # canonical URL. Omit for briefs, rev
 backfill: false                            # true only for ingest output. Briefs skip these.
 ```
 
-There is no tag field. Retrieval runs on `people`, `entities`, and full-text search. Themes are the only curated vocabulary and they live in `state/themes.json`.
+There is no tag field and no curated vocabulary. Retrieval runs on `people`, `entities`, and full-text search — three axes that are populated as a byproduct of writing the document, so none of them can drift out of date.
 
 ### On `backfill`
 
@@ -198,13 +197,11 @@ Propose promotions and demotions by editing the file, and put the reason in the 
 
 **Never modify an entry with `"locked": true`.** That is his judgment, not yours. Any entry you create or change carries `"locked": false`.
 
-**`state/themes.json`** — his file. Read it, never write it.
-
-Each theme carries a `statement` — the bet — and a `breaks_if` — what would falsify it. The positioning read in every format routes against this list and only this list. Never invent a theme. If material bears on nothing in the file, the positioning read emits nothing, and that is a normal outcome.
-
 **`state/feeds.json`** — RSS feeds, checked by `capture` before any browsing. Each entry carries a name, a URL, and a type: `news` or `podcast`. A feed that fails twice in a row is reported in the manifest, never silently dropped.
 
-**`state/queue.json`** — long-form awaiting treatment. Entries carry the URL, who surfaced it, why, and when it was queued. Drop anything older than 3 days: if nobody is still talking about it, it was not important.
+**`state/queue.json`** — long-form awaiting treatment. Entries carry the URL, who surfaced it, why, and when it was queued.
+
+Drop a **surfaced** entry older than 3 days: if nobody is still talking about it, it was not important. A **podcast or video episode** from `state/feeds.json` is not dropped for age — it stays queued until a document exists for it or it is removed by hand. An episode published on Friday is still worth treating on Wednesday; a thread nobody has mentioned since Friday is not.
 
 ## Hard rules
 
@@ -213,7 +210,7 @@ These bind in every document, in body prose as much as in structured sections.
 - Never introduce a fact, figure, name, or causal link absent from the source. If the source is ambiguous, say what was said and leave it ambiguous.
 - Never compute a derived figure the speaker did not state.
 - Ambient knowledge is the recurring failure. A number you know but the source did not say does not go in the document, not even in a framing sentence.
-- Never infer a ticker. A company named as a customer is not a position. Cashtags present in a source are quoted verbatim and never promoted into a positioning read.
+- Never infer a ticker. A company named as a customer is not a position. Cashtags present in a source are quoted verbatim and never promoted into an `entities` entry or a claim about exposure.
 - Distinguish claim from fact. Where a claim is self-serving — a founder on his own moat, a vendor on his own category, an investor on his own book — make the source visible at the point of the claim.
 - Never recommend a trade. Surface what something bears on; the reader decides. No baskets, no sizing, no entries.
 - Every document states its fidelity, and the format never lets a weaker marker read like a stronger one.

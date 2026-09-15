@@ -1,4 +1,6 @@
 {
+  "_status": "PARKED — not read by any job. Nothing in CLAUDE.md or formats/ references this file, and the site has no theme routes. The content below is kept so the work is not lost.",
+  "_to_restore": "Re-add a `Positioning read` section to formats/longform.md, formats/news.md and formats/company.md in the form `theme-id — STRENGTHENS|WEAKENS|NEUTRAL. why`, restore the `state/themes.json` entry under `## State files` in CLAUDE.md, and rebuild the /themes routes. The site layer that parsed and rendered these is in git history at the commit that added src/lib/positioning.ts.",
   "_comment": "Your file. The agent reads it and never writes it. Each theme is a bet you are carrying. `statement` is the bet. `breaks_if` is what would make you wrong — it is the field that does the work, because it is what the agent checks material against. Keep this list short. Five to ten live themes is a working desk; thirty is a tagging system with extra steps.",
   "themes": [
     {

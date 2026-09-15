@@ -65,13 +65,13 @@ Include only what is decision-relevant: index futures, the long end, the policy-
 
 The comparison against the prior brief is the point. A level with no prior is a number; a level with a prior is information.
 
-### Positioning read
+### What changed
 
-Organized by theme from `state/themes.json`, not by ad-hoc heading. For each theme the window touched: a short paragraph on what the window's documents do to it, naming them.
+Only where the window actually moved something. A short paragraph on what the window's documents establish that the last brief did not have, naming them.
 
-Where the documents in this window disagree with each other, say so and name both. Where a theme's `breaks_if` condition came closer to being met, say that explicitly — it is the most useful sentence in the brief.
+Where the documents in this window disagree with each other, say so and name both. Where something happened that a document in the archive had named as the thing that would settle it, say so explicitly — it is the most useful sentence in the brief.
 
-Directional only. Never a trade, never a ticker list, never sizing. Themes the window did not touch are not listed.
+Directional only. Never a trade, never a ticker list, never sizing. A window that changed nothing emits no section.
 
 ### Top stories
 
