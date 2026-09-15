@@ -22,7 +22,6 @@
       "url": "https://feeds.bloomberg.com/technology/news.rss",
       "note": "Replaces reuters-tech (no public Reuters tech RSS). FT tech also works: https://www.ft.com/technology?format=rss"
     },
-
     {
       "name": "bg2-pod",
       "type": "podcast",
@@ -151,7 +150,6 @@
       "url": "https://feeds.megaphone.fm/trainingdata",
       "note": "Sequoia Capital (not a16z)"
     },
-
     {
       "name": "all-in",
       "type": "podcast",
@@ -266,6 +264,48 @@
       "type": "podcast",
       "url": "https://atanyrate.podbean.com/feed.xml",
       "note": "J.P. Morgan Global Research — rates/macro"
+    },
+    {
+      "name": "animal-spirits",
+      "type": "podcast",
+      "url": "https://feeds.megaphone.fm/TCP6464651487",
+      "note": "Batnick & Carlson / Compound — secondary markets roundtable"
+    },
+    {
+      "name": "capital-allocators",
+      "type": "podcast",
+      "url": "https://tedseides.libsyn.com/rss",
+      "note": "Ted Seides — institutional allocator interviews; secondary"
+    },
+    {
+      "name": "founders",
+      "type": "podcast",
+      "url": "https://feeds.megaphone.fm/DSLLC6297708582",
+      "note": "David Senra — founder biographies; secondary selective"
+    },
+    {
+      "name": "forward-guidance",
+      "type": "podcast",
+      "url": "https://feeds.megaphone.fm/forwardguidance",
+      "note": "Blockworks / Felix Jauvin — macro; secondary"
+    },
+    {
+      "name": "unhedged",
+      "type": "podcast",
+      "url": "https://feeds.acast.com/public/shows/unhedged",
+      "note": "FT Unhedged — markets; secondary"
+    },
+    {
+      "name": "meb-faber-show",
+      "type": "podcast",
+      "url": "https://mebfaber.libsyn.com/rss",
+      "note": "Meb Faber — asset allocation / markets; secondary"
+    },
+    {
+      "name": "ml-street-talk",
+      "type": "podcast",
+      "url": "https://anchor.fm/s/f15e40b0/podcast/rss",
+      "note": "Machine Learning Street Talk — technical AI; secondary selective"
     }
   ]
 }
