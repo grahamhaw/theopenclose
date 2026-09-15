@@ -7,9 +7,11 @@
 - X: use the connected X API (not brittle browser scraping) for monitoring.
 - Politics: skip unless it moves markets or is market-relevant.
 
+- Longform and news follow the same skim grammar as briefs/discussions: bold lead-ins, short title/summary, keyword hyperlinks, human theme labels, no trade language.
+
 ## Longform media
 - When a podcast/interview is on YouTube, set frontmatter `source` to the YouTube watch URL so the site can render the episode thumbnail at the top of the summary.
-- If an official show page must also be cited, keep YouTube as `source` and name the show page in the abstract, or add optional `youtube:` only after content.config.ts allows it.
+- If an official show page must also be cited, keep YouTube as `source` and name the show page in the Opening, or add optional `youtube:` only after content.config.ts allows it.
 
 ## Briefs
 - Assemble only from `content/` in-window (skip `backfill`); wires/levels OK with outlet attribution. Section order: Lead (S&P tape line + skim bullets; no Delta) → Positioning (bold human labels, no theme-id jargon/backtick ids) → Top stories → Conversation (title links to `/discussions/<id>`) → In Their Words (≥3 quotes or omit) → Podcasts & interviews (title → `/longform/<id>`; stance + fidelity; optional YouTube if `source` is youtube; metadata-only = one line) → What to watch. Title ≤~70 chars; summary ≤~160 chars. Wire keywords hyperlinked to real URLs only (never invent). Premarket ~9:00 / postmarket ~4:30 / weekend Sat ~8:30 ET; ship on time; omit empties.

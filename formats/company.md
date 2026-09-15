@@ -1,5 +1,7 @@
 # Company dossier
 
+**Parked** — Graham not covering company dossiers for now; do not write new dossiers. Spec below kept intact for future.
+
 One living document per covered company, at `content/companies/<slug>.md`. Rebuilt whenever new material for that company enters the archive.
 
 This format exists because the value of forty earnings calls is not forty summaries. It is the trajectory: what management claimed, whether it held, what quietly changed, and what they keep declining to answer. That is the thing a reader cannot do himself, because it requires holding the whole corpus at once.

@@ -2,6 +2,8 @@
 
 Wire stories, filings, press releases, regulatory actions, data prints. Short documents. Most news does not need one.
 
+Buy-side skim first. Same skim grammar as briefs and discussions: short title/summary, **bold lead-in — essence**, keyword hyperlinks to real URLs / site paths, human theme labels, no trade language.
+
 ## Threshold
 
 A news item earns a document only when it carries information the reader could act on and would not otherwise see:
@@ -46,30 +48,42 @@ published: 2026-09-14T06:12:00-04:00
 
 ## Sections
 
-### What happened
+Order is fixed. Do not revive "What happened" as a section label.
 
-Two to four sentences. The facts, with figures, attributed. No interpretation.
+### Opening
+
+```
+**Bold fact — essence.**
+2–3 sentences of attributed facts (merges the old What happened).
+```
+
+No interpretation in the Opening — figures and attribution only.
 
 ### The numbers
 
-Only when there are figures worth isolating. Same two-line form as long-form key math:
+Optional. Bold lead-in form, same spirit as long-form Key math:
 
 ```
-$4.2bn of the $6bn raise allocated to a single Arizona site
-Concentration — one site now carries most of the announced build.
+**Figure — interpretation.**
 ```
 
 Omit the section entirely when there is nothing to put in it.
 
 ### Why it matters
 
-One paragraph, and only when it is not obvious. What this changes — a constraint tightening, a capacity assumption breaking, a timeline moving.
+Optional. One Positioning-style paragraph — what this changes (a constraint tightening, a capacity assumption breaking, a timeline moving). Omit if the significance is fully contained in Opening. Most items do not need it.
 
-If the significance is fully contained in "what happened," omit this section. Most items do not need it.
+### Positioning
+
+Optional. Human theme labels (e.g. **AI capex durability**), never raw theme ids as headers. Bold lead-in + short supporting context, prose like brief Positioning. Omit if none. Never invent a theme.
 
 ### Connects to
 
-Only when it does. Documents already in the archive that this bears on, by id, with one line each. A TSMC capacity number connects to whatever discussion argued about supply constraint. This is what makes the archive compound rather than accumulate.
+Only when it does. Link with keywords to archive paths (`/discussions/...`, `/longform/...`, `/news/...`), not bare backtick ids. One short line each on why the connection matters. This is what makes the archive compound rather than accumulate.
+
+```
+**Pacing as reallocation, not demand destruction** — Baker's mechanism claim that pacing reallocates compute rather than kills spend ([discussion](/discussions/2026-09-14-baker-pacing-compute-margins)).
+```
 
 ## Rules
 

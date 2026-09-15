@@ -4,6 +4,8 @@ Monthly. This is the job that tells him whether any of this is working.
 
 Every discussion document commits to a read and lists dated observables that would settle it. Without this job those commitments are never checked, the archive is a log rather than a track record, and there is no way to find out whether the desk's judgment is any good.
 
+Buy-side skim first. Scoreboard / Where the desk was wrong / Theme check / People check use **bold lead-ins** and short paragraphs — same skim grammar as briefs.
+
 ## What to read
 
 Every document in `content/discussions/` where `resolved: false` and `review_after` has passed.
@@ -17,17 +19,11 @@ Append a `## Verdict` section to the document itself:
 ```
 ## Verdict
 
-Read on 2026-06-14: Baker has the better of this — distillation dependence
-still binds and the open-weight leaderboard traces to three closed teachers.
+**Read on 2026-06-14 — Baker has the better of this.** Distillation dependence still binds and the open-weight leaderboard traces to three closed teachers.
 
-Observable: MLPerf inference v6.0 at the 8-GPU tier, published 2026-12-04.
-What happened: two open-weight entrants placed within 4% of the closed
-frontier at a third of the cost per token.
+**Observable — MLPerf inference v6.0 at the 8-GPU tier**, published 2026-12-04. Two open-weight entrants placed within 4% of the closed frontier at a third of the cost per token.
 
-HELD in part. The performance gap closed faster than the read allowed for,
-but both entrants distilled from closed teachers, which is the claim the
-read actually rested on. The cost argument in the third camp aged better
-than either principal camp.
+**HELD in part.** The performance gap closed faster than the read allowed for, but both entrants distilled from closed teachers, which is the claim the read actually rested on. The cost argument in the third camp aged better than either principal camp.
 ```
 
 Then set frontmatter: `resolved: true` and `verdict: held | broke | unresolved`.
@@ -42,17 +38,21 @@ One file at `content/reviews/YYYY-MM-review.md`.
 
 ### Scoreboard
 
-How many reads came due, how many held, how many broke, how many stayed unresolved. Plain counts, and the running total since the archive began.
+**Bold lead-in with the counts**, then a short paragraph. How many reads came due, how many held, how many broke, how many stayed unresolved — plain counts, and the running total since the archive began.
 
 ### Where the desk was wrong
 
-The broken reads, each in two or three sentences: what was claimed, what happened, and what in the reasoning produced the error. Group them where they share a cause.
+Write this section first — it is the reason the document exists.
 
-This section is the reason the document exists. Write it first.
+Each broken read: **bold claim that broke**, then two or three short sentences on what happened and what in the reasoning produced the error. Group where they share a cause.
+
+### Theme check
+
+Human labels only (e.g. **AI capex durability**), never raw theme ids as headers. For each live theme that moved this month: **bold lead-in — direction**, then a short paragraph on what resolved reads did to the theme's `breaks_if`. Omit untouched themes.
 
 ### People check
 
-Any tier 1 or tier 2 person whose positions have not held across three or more resolved documents. Name them, cite the documents, and propose a demotion in `state/people.json` with the reason in the entry.
+**Bold name — proposed demotion (or hold).** Any tier 1 or tier 2 person whose positions have not held across three or more resolved documents. Cite the documents, and propose a demotion in `state/people.json` with the reason in the entry.
 
 This is the only evidence-based input to tiering. Everything else is inference from who quotes whom.
 
