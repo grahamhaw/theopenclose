@@ -1,0 +1,25 @@
+{
+  "_comment": "Your file. The agent reads it and never writes it. Each theme is a bet you are carrying. `statement` is the bet. `breaks_if` is what would make you wrong — it is the field that does the work, because it is what the agent checks material against. Keep this list short. Five to ten live themes is a working desk; thirty is a tagging system with extra steps.",
+  "themes": [
+    {
+      "id": "ai-capex-durability",
+      "statement": "Hyperscaler AI capex holds above consensus through 2027 because training and inference demand are both compute-bound.",
+      "breaks_if": "A top-four hyperscaler guides capex down sequentially, or inference cost per token falls fast enough that serving demand stops requiring new build."
+    },
+    {
+      "id": "hbm-supply-binds",
+      "statement": "HBM capacity, not logic wafer, is the binding constraint on accelerator shipments through 2027.",
+      "breaks_if": "A third supplier qualifies at volume, or an architecture ships that materially cuts HBM per accelerator."
+    },
+    {
+      "id": "enterprise-agent-stall",
+      "statement": "Agentic deployment in the enterprise stalls at pilot because evaluation and liability are unsolved, not because capability is missing.",
+      "breaks_if": "A Fortune 500 names a production agent deployment with a headcount or dollar figure attached to it."
+    },
+    {
+      "id": "inference-margin-inversion",
+      "statement": "Frontier lab gross margin widens through price cuts because cost per token falls faster than list price.",
+      "breaks_if": "A lab discloses gross margin declining across two consecutive price cuts, or a price war drops list below marginal serving cost."
+    }
+  ]
+}

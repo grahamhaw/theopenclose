@@ -1,0 +1,11 @@
+{
+  "_comment": "Instruments for the brief delta. Primary focus is the S&P 500. Nasdaq, 10y, and inflation print only when they moved or when a window's documents made them decision-relevant. Source: free public quotes (Yahoo/FRED) unless upgraded later.",
+  "primary": "SPX",
+  "instruments": [
+    { "id": "SPX", "label": "S&P 500", "symbol": "^GSPC", "always": true },
+    { "id": "NDX", "label": "Nasdaq 100", "symbol": "^NDX", "always": false },
+    { "id": "US10Y", "label": "10y yield", "symbol": "^TNX", "always": false },
+    { "id": "CPI", "label": "US CPI YoY", "source": "FRED", "series": "CPIAUCSL", "always": false }
+  ],
+  "source": "yahoo+fred"
+}
