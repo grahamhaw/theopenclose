@@ -98,9 +98,12 @@ them was wasted effort.
 ## The site
 
 Built. Astro, rendered to static HTML, deployed to Cloudflare Workers at
-[theopenclose.com](https://theopenclose.com). `DEPLOY.md` has the setup; the
-short version is that a push to `main` rebuilds and publishes, and nothing else
-is required of the agent.
+[theopenclose.com](https://theopenclose.com) via Workers Builds — a push to
+`main` rebuilds and publishes, and nothing else is required of the agent.
+
+`DEPLOY.md` explains the setup. `prompts/cloudflare-setup.md` is the same thing
+as a runbook to hand an agent, including retiring the old Pages project that
+currently holds the domain.
 
 `src/content.config.ts` is the enforcement layer for the frontmatter spec in
 `CLAUDE.md` — a document that does not match fails the build rather than

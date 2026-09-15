@@ -22,48 +22,34 @@ Astro 5 caches parsed content in `node_modules/.astro`, so a document you
 deleted or renamed can survive into a local build. `rm -rf node_modules/.astro`
 clears it. CI never hits this — `npm ci` starts from an empty `node_modules`.
 
-## Auto-deploy: pick one path
+## Auto-deploy
 
-Both paths do the same thing — rebuild and deploy on every push to `main`. Set
-up one. `.github/workflows/deploy.yml` is written so they do not collide: it
-always builds (which validates the schema) and only deploys when
-`CLOUDFLARE_API_TOKEN` is present.
+**Cloudflare Workers Builds.** Cloudflare watches the repo, rebuilds on every
+push to `main`, and deploys. No secrets in GitHub, one place to look when a
+deploy fails.
 
-### Path A — Cloudflare Workers Builds (recommended)
+`prompts/cloudflare-setup.md` is the runbook for standing this up, written to be
+handed to an agent. It covers the API token and its scopes, the cutover off the
+old Pages project, and the dashboard step that connects the repo. The settings
+it configures:
 
-Cloudflare watches the repo itself. No secrets in GitHub, one place to look when
-a deploy fails.
+- **Branch** — `main`
+- **Build command** — `npm run build`
+- **Deploy command** — `npx wrangler deploy`
+- **Root directory** — `/`
+- **Build variable** — `SITE_URL` = `https://theopenclose.com`
 
-1. Cloudflare dashboard → **Compute (Workers)** → **Create** → **Import a
-   repository**. Authorise the GitHub app for `grahamhaw/theopenclose` if asked.
-2. Pick the repo. Set:
-   - **Branch** — `main`
-   - **Build command** — `npm run build`
-   - **Deploy command** — `npx wrangler deploy`
-   - **Root directory** — `/`
-3. Add a build **environment variable**: `SITE_URL` = `https://theopenclose.com`.
-   Only `/feed.xml` and the canonical tags need it, but RSS requires absolute
-   URLs so it has to be right.
-4. Save and deploy.
+`SITE_URL` only feeds `/feed.xml` and the canonical tags, but RSS requires
+absolute URLs so it has to be right.
 
-Leave `CLOUDFLARE_API_TOKEN` unset in GitHub. The Actions workflow then runs as
-a pure validation check on each push and never deploys.
+### The GitHub Actions workflow is not a second deploy path
 
-### Path B — GitHub Actions
+`.github/workflows/deploy.yml` runs `npm run build` on every push, which is the
+schema check — a malformed document fails in GitHub, next to the commit that
+caused it, as well as in Cloudflare. Its deploy step is gated on
+`CLOUDFLARE_API_TOKEN` and stays inert while that secret is unset.
 
-Build logs sit next to the commits the agent is pushing.
-
-1. Cloudflare dashboard → **My Profile** → **API Tokens** → **Create Token** →
-   use the **Edit Cloudflare Workers** template, scoped to the
-   `theopenclose.com` zone. If attaching the custom domain fails, add
-   **Zone → DNS → Edit** to the token.
-2. Copy your **Account ID** from the Workers & Pages overview.
-3. GitHub → repo **Settings** → **Secrets and variables** → **Actions**, add:
-   - `CLOUDFLARE_API_TOKEN`
-   - `CLOUDFLARE_ACCOUNT_ID`
-4. Push. The deploy step activates as soon as the token exists.
-
-Do **not** also connect Workers Builds, or every push deploys twice.
+**Leave it unset.** Adding it would make every push deploy twice.
 
 ## Migrating off the old Pages project
 
@@ -80,7 +66,8 @@ things collide with this deploy:
    unified dashboard, so a Worker named `theopenclose` will be refused while the
    Pages project of that name exists.
 
-Do this in order:
+`prompts/cloudflare-setup.md` walks an agent through all of this with the
+commands and the checks. The shape of it:
 
 1. **Keep anything you want from the old site first.** Pages → `theopenclose` →
    Deployments → the live one → download, or just save the pages you care
@@ -101,6 +88,10 @@ Do this in order:
 If you would rather not touch the old projects yet, give the Worker a different
 `name` in `wrangler.jsonc` and leave `routes` out. It then lives on
 `workers.dev` indefinitely alongside the old site.
+
+Nothing here is reversible by itself: the Pages projects were direct-upload, so
+deleting them destroys the only copy of what they served. Save anything you want
+first.
 
 ## The domain
 
