@@ -29,7 +29,14 @@ resolved: false
 verdict:                        # set by the review job: held | broke | unresolved
 ```
 
-`people` carries the participants. `source` carries the anchor post URL.
+`people` carries the participants. `source` is **required** — the clickable anchor post URL (schema-enforced). Never invent a URL; if the anchor is gone, say so in the body and do not fabricate one.
+
+### Title & summary (sidebar thumbnail)
+
+- `title`: ≤ ~90 characters. A clear question the disagreement answers (not a topic label).
+- `summary`: ≤ ~160 characters. One tight sentence for the list thumbnail — no multi-clause dump.
+
+Briefs link this document as `[title](/discussions/<id>)` — the discussion title is the link text. Keep titles short enough to skim in a conversation card.
 
 `review_after` is the earliest date among the observables. It is what lets the monthly review job find this document without parsing the body. Omit it only when the disagreement is unfalsifiable and the document emits no observables.
 

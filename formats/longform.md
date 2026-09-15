@@ -38,6 +38,15 @@ published: 2026-09-13T16:00:00-04:00
 
 `people` carries the speakers. `entities` carries the companies discussed.
 
+`source`: when a YouTube watch URL exists, put it in `source` (site thumbnail + brief Watch link). Prefer YouTube over a show-page URL. Never invent a URL. Required for `metadata-only` / `secondhand` (schema); strongly preferred for `asr` / `transcript` / `partial` when the media is public.
+
+### Title & summary (sidebar thumbnail)
+
+- `title`: ≤ ~90 characters. Show + guest/hook, skim-friendly (not a multi-clause dump).
+- `summary`: ≤ ~160 characters. One tight sentence for the list thumbnail.
+
+Brief cards link as `[title](/longform/<id>)`, with an optional second `[Watch](youtube)` when `source` is a YouTube URL.
+
 ## Sections
 
 ### Abstract
