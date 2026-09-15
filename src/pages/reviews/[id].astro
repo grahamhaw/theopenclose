@@ -1,0 +1,27 @@
+---
+import Shell from '../../layouts/Shell.astro';
+import Document from '../../components/Document.astro';
+
+import { loadArchive, byCollection } from '../../lib/archive';
+
+export async function getStaticPaths() {
+  const all = await loadArchive();
+  const items = byCollection(all, 'reviews');
+  return items.map((doc) => ({ params: { id: doc.id }, props: { doc, items, all } }));
+}
+
+const { doc, items, all } = Astro.props;
+---
+<Shell
+  title={`${doc.title} — The Open/Close`}
+  description={doc.summary}
+  view="reviews"
+  listTitle="Reviews"
+  items={items}
+  currentId={doc.id}
+  mobile="reader"
+  crumbs={['Reviews', doc.kind]}
+>
+  <Document doc={doc} />
+
+</Shell>

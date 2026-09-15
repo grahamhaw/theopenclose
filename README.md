@@ -92,8 +92,34 @@ The format specs have never been run. Prove them before building anything around
 
 Building the site first feels productive and proves nothing. If step 3 produces documents you would not read, everything downstream was wasted.
 
+## The site
+
+Built. Astro, rendered to static HTML, deployed to Cloudflare Workers at
+[theopenclose.com](https://theopenclose.com). `DEPLOY.md` has the setup; the
+short version is that a push to `main` rebuilds and publishes, and nothing else
+is required of the agent.
+
+`src/content.config.ts` is the enforcement layer for the frontmatter spec in
+`CLAUDE.md` — a document that does not match fails the build rather than
+rendering wrong. So `npm run build` is the schema check, and it is worth running
+at the end of a job before the push.
+
+The layout is a three-pane reader: views and themes on the left, the documents
+in the window in the middle, the open document on the right. Fidelity is on
+every listing row and every document, in three visual weights, so a
+`secondhand` document and a `transcript` never look alike at a glance.
+`/themes/[id]` is the page the folder cannot give you — each bet, its
+`breaks_if`, and every document that routed to it in date order with
+strengthens / weakens / neutral.
+
+```
+npm ci
+npm run build      # renders content/ into dist/, fails on a schema violation
+npm run preview    # serves dist/ on :4321
+```
+
 ## You do not need the site to start
 
 The agent writes plain markdown files into a GitHub repo. **GitHub displays markdown.** From the first commit you can read every document in your browser, on your phone, in the GitHub app, or in any markdown editor pointed at a local clone.
 
-The site in `prompts/build.md` adds three things the raw folder cannot: theme pages that collect every document bearing on one of your bets in date order, full-text search, and a readable index. All three matter more at 200 documents than at 12. Build it in month two.
+The site adds three things the raw folder cannot: theme pages that collect every document bearing on one of your bets in date order, full-text search, and a readable index. All three matter more at 200 documents than at 12 — so the archive being thin is not a reason to think the site is not working.

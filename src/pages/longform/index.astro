@@ -1,0 +1,23 @@
+---
+import Shell from '../../layouts/Shell.astro';
+import Document from '../../components/Document.astro';
+import Placeholder from '../../components/Placeholder.astro';
+import { loadArchive, byCollection } from '../../lib/archive';
+
+const items = byCollection(await loadArchive(), 'longform');
+const lead = items[0];
+---
+<Shell
+  title="Long-form — The Open/Close"
+  view="longform"
+  listTitle="Long-form"
+  items={items}
+  currentId={lead?.id}
+  mobile="list"
+  crumbs={['Long-form', lead ? lead.kind : 'Empty']}
+  emptyNote="No long-form treatments yet. They drain from state/queue.json as the queue fills."
+>
+  {lead
+    ? <Document doc={lead} />
+    : <Placeholder head="No Long-form yet" note="No long-form treatments yet. They drain from state/queue.json as the queue fills." />}
+</Shell>

@@ -1,0 +1,104 @@
+---
+import Shell from '../../layouts/Shell.astro';
+import Fidelity from '../../components/Fidelity.astro';
+import { THEMES } from '../../lib/themes';
+import { loadArchive, docsForTheme, stamp } from '../../lib/archive';
+
+export async function getStaticPaths() {
+  const all = await loadArchive();
+  return THEMES.map((theme) => ({
+    params: { id: theme.id },
+    props: { theme, routed: docsForTheme(all, theme.id) },
+  }));
+}
+
+const { theme, routed } = Astro.props;
+
+// Oldest first: the point of the page is the trajectory, not the latest item.
+const items = routed.map((r) => r.doc);
+
+const CHIP: Record<string, { cls: string; label: string }> = {
+  STRENGTHENS: { cls: 'delta-strengthens', label: '▲ Strengthens' },
+  WEAKENS:     { cls: 'delta-weakens',     label: '▼ Weakens' },
+  NEUTRAL:     { cls: 'delta-neutral',     label: '▸ Neutral' },
+};
+
+const tally = {
+  STRENGTHENS: routed.filter((r) => r.routing.direction === 'STRENGTHENS').length,
+  WEAKENS: routed.filter((r) => r.routing.direction === 'WEAKENS').length,
+  NEUTRAL: routed.filter((r) => r.routing.direction === 'NEUTRAL').length,
+};
+---
+<Shell
+  title={`${theme.id} — The Open/Close`}
+  description={theme.statement}
+  view={`theme:${theme.id}`}
+  listTitle={theme.id}
+  items={items}
+  mobile="reader"
+  crumbs={['Themes', theme.id]}
+  groupDays={false}
+  emptyNote="Nothing in the archive routes to this theme yet."
+>
+  <div class="reader-cols">
+    <article class="reader-body" data-pagefind-body data-pagefind-meta="kind:Theme">
+      <div class="stamp">Theme</div>
+      <h1 class="doc-title">{theme.id}</h1>
+      <p class="standfirst">{theme.statement}</p>
+
+      <section class="sec">
+        <div class="sec-rule"></div>
+        <div class="sec-head">
+          <span class="h">Breaks if</span>
+          <span class="n">the falsifier</span>
+        </div>
+        <p class="delta-note" style="font-size:14px; line-height:1.5">{theme.breaks_if}</p>
+      </section>
+
+      {routed.length > 0 && (
+        <div class="stats" data-pagefind-ignore>
+          <div class="stat"><div class="v">{tally.STRENGTHENS}</div><div class="l">Strengthens</div></div>
+          <div class="stat"><div class="v">{tally.WEAKENS}</div><div class="l">Weakens</div></div>
+          <div class="stat"><div class="v">{tally.NEUTRAL}</div><div class="l">Neutral</div></div>
+          <div class="stat"><div class="v">{routed.length}</div><div class="l">Documents routed</div></div>
+        </div>
+      )}
+
+      <section class="sec">
+        <div class="sec-rule"></div>
+        <div class="sec-head">
+          <span class="h">The record</span>
+          <span class="n">oldest first</span>
+        </div>
+        {routed.length === 0 && (
+          <p class="delta-note" style="padding-top:10px">
+            Nothing in the archive routes here yet. Silence is the default — a
+            document that bears on no theme emits no positioning read.
+          </p>
+        )}
+        {routed.map(({ doc, routing }) => (
+          <div class="delta">
+            <span class={`delta-chip ${CHIP[routing.direction].cls}`}>{CHIP[routing.direction].label}</span>
+            <div style="min-width:0">
+              <div class="delta-name"><a href={doc.href}>{doc.title}</a></div>
+              {routing.note && <div class="delta-note">{routing.note}</div>}
+              <div class="cite-meta" style="margin-top:4px">
+                <span>{stamp(doc.effective)}</span>
+                <span>{doc.kind}</span>
+                <Fidelity value={doc.fidelity} />
+                {doc.backfill && <span class="flag-backfill">Backfill</span>}
+              </div>
+            </div>
+          </div>
+        ))}
+      </section>
+
+      <div class="colophon"></div>
+      <p class="colophon-note">
+        Themes are read from <code>state/themes.json</code> and never written by the
+        site. A document routes here only where its own positioning read names this
+        theme.
+      </p>
+    </article>
+  </div>
+</Shell>

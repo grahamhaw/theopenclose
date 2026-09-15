@@ -1,0 +1,23 @@
+{
+  // Static-assets-only Worker: no `main`, so Cloudflare serves ./dist directly
+  // from its asset store. `astro build` writes dist/, `pagefind` adds
+  // dist/pagefind/ on top of it, and the whole directory ships as-is.
+  //
+  // There is no server, no runtime and no write path — the repo is the database
+  // and the agent is the only author.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "theopenclose",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  // The zone is already in this Cloudflare account, so `custom_domain` creates
+  // and maintains the DNS record itself. Remove this block to deploy to the
+  // workers.dev subdomain instead.
+  "routes": [
+    { "pattern": "theopenclose.com", "custom_domain": true }
+  ],
+  "observability": { "enabled": true }
+}

@@ -1,0 +1,57 @@
+---
+import Shell from '../layouts/Shell.astro';
+
+// Pagefind writes /pagefind/* after `astro build`, so these assets exist in the
+// deployed site but not in `astro dev`. That is the only JavaScript the archive
+// ships.
+---
+<Shell
+  title="Search — The Open/Close"
+  listTitle="Search"
+  items={[]}
+  mobile="reader"
+  crumbs={['Search']}
+  emptyNote="Results appear in the reader pane."
+>
+  <div class="reader-cols">
+    <article class="reader-body" data-pagefind-ignore>
+      <div class="stamp">Full text</div>
+      <h1 class="doc-title">Search</h1>
+      <p class="standfirst">
+        Every document in the archive, backfill included. Retrieval also runs on
+        people, entities and themes from the navigation.
+      </p>
+      <div id="search" style="margin-top:18px"></div>
+      <noscript>
+        <p class="delta-note" style="margin-top:12px">
+          Search needs JavaScript. Everything else on this site does not — browse
+          by type, theme or person from the navigation instead.
+        </p>
+      </noscript>
+
+      <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+      <script is:inline src="/pagefind/pagefind-ui.js"></script>
+      <script is:inline>
+        window.addEventListener('DOMContentLoaded', () => {
+          if (typeof PagefindUI === 'undefined') return;
+          new PagefindUI({ element: '#search', showSubResults: true, showImages: false });
+        });
+      </script>
+      <style is:global>
+        /* Pull Pagefind's default UI onto the archive's tokens. */
+        :root {
+          --pagefind-ui-scale: 0.8;
+          --pagefind-ui-primary: #201e1d;
+          --pagefind-ui-text: #201e1d;
+          --pagefind-ui-background: #f8f4f4;
+          --pagefind-ui-border: #cfcbcb;
+          --pagefind-ui-tag: #efecec;
+          --pagefind-ui-border-width: 1px;
+          --pagefind-ui-border-radius: 0;
+          --pagefind-ui-font: var(--font);
+        }
+        .pagefind-ui__result-title a { color: var(--accent-ink); }
+      </style>
+    </article>
+  </div>
+</Shell>

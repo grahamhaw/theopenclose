@@ -1,0 +1,361 @@
+@import './tokens.css';
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  font-family: var(--font);
+  font-size: 14px;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  -webkit-text-size-adjust: 100%;
+}
+
+a { color: var(--accent-ink); text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+::selection { background: var(--select); }
+
+/* ---------------------------------------------------------------- shell --- */
+
+.shell {
+  display: flex;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 600px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.pane { overflow-y: auto; overscroll-behavior: contain; }
+.pane::-webkit-scrollbar { width: 10px; }
+.pane::-webkit-scrollbar-track { background: transparent; }
+.pane::-webkit-scrollbar-thumb {
+  background: transparent; border: 4px solid transparent; background-clip: padding-box;
+}
+.pane:hover::-webkit-scrollbar-thumb { background: var(--ink-faint); background-clip: padding-box; }
+
+.nav-pane {
+  display: flex; flex-direction: column;
+  flex: 0 0 var(--nav-w); width: var(--nav-w); min-width: var(--nav-w);
+  border-right: 2px solid var(--ink);
+  background: var(--pane-nav);
+}
+.list-pane {
+  display: flex; flex-direction: column;
+  flex: 0 1 var(--list-w); width: var(--list-w); min-width: 236px;
+  border-right: 2px solid var(--ink);
+  background: var(--pane-list);
+}
+.reader-pane {
+  flex: 1 1 auto; min-width: 0;
+  background: var(--pane-read);
+  position: relative;
+}
+
+/* The dark 38px band that caps every pane. */
+.bar {
+  position: sticky; top: 0; z-index: 3;
+  display: flex; align-items: center; gap: 8px;
+  height: var(--bar-h); min-height: var(--bar-h);
+  padding: 0 10px;
+  background: var(--ink);
+  border-bottom: 2px solid var(--ink);
+  font-size: 10px; line-height: 1;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.bar a { color: #fff; text-decoration: none; }
+.bar .mark { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.bar .tick { flex: 0 0 8px; height: 8px; background: var(--accent); }
+.bar .wordmark { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: #fff; }
+.bar .bar-title { font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: #fff; }
+.bar .bar-meta { margin-left: auto; font-weight: 600; letter-spacing: 0.06em; color: var(--ink-faint); }
+.bar .crumb { font-weight: 600; color: var(--ink-faint); }
+.bar .crumb-sep { color: var(--ink-muted); }
+.bar .crumb-now { font-weight: 800; color: #fff; }
+.bar .bar-act {
+  margin-left: auto; font-weight: 800; letter-spacing: 0.08em;
+  color: #fff; border: 1px solid var(--ink-muted); padding: 4px 9px; text-decoration: none;
+}
+.bar .bar-act:hover { border-color: var(--accent); color: var(--accent-lift); }
+
+/* ------------------------------------------------------------------ nav --- */
+
+.nav-body { padding: 8px 6px 0 6px; }
+.nav-head {
+  padding: 4px 8px 5px 8px;
+  font-size: 10px; font-weight: 800; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ink);
+}
+.nav-group { display: flex; flex-direction: column; gap: 1px; }
+.nav-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 4px 8px 5px 8px;
+  font-size: 12px; line-height: 1.25;
+  color: var(--ink-2); text-decoration: none;
+  transition: background-color 0.1s ease;
+}
+.nav-item:hover { background: rgba(128,128,128,0.13); color: var(--ink-2); }
+.nav-item .count { margin-left: auto; font-size: 10px; color: var(--ink-muted); }
+.nav-item[aria-current='page'] {
+  font-weight: 600; color: #fff; background: var(--accent);
+}
+.nav-item[aria-current='page']:hover { background: var(--accent); color: #fff; }
+.nav-item[aria-current='page'] .count { color: rgba(255,255,255,0.85); }
+
+.nav-rule { margin: 9px 8px; border-top: 1px solid var(--rule); }
+.nav-sub {
+  margin-left: 14px; padding-left: 7px;
+  border-left: 1px solid var(--rule);
+  display: flex; flex-direction: column;
+}
+.nav-foot {
+  position: sticky; bottom: 0; margin-top: auto;
+  padding: 7px 10px;
+  background: var(--band); border-top: 1px solid var(--rule);
+  display: flex; align-items: center; gap: 8px;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-muted);
+}
+.nav-foot a { margin-left: auto; text-decoration: none; font-weight: 800; letter-spacing: 0.08em; }
+
+/* Shown only when the nav pane collapses, so the views stay reachable. */
+.compact-nav { display: none; padding: 7px 6px; border-bottom: 1px solid var(--rule); flex-direction: column; gap: 5px; }
+.compact-row { display: flex; flex-wrap: wrap; gap: 4px; }
+.compact-chip {
+  font-size: 11px; font-weight: 600; padding: 4px 8px; text-decoration: none;
+  color: var(--ink-2); background: transparent; border: 1px solid var(--ink-faint);
+}
+.compact-chip[aria-current='page'] { color: #fff; background: var(--accent); border-color: var(--accent); }
+
+/* ----------------------------------------------------------------- list --- */
+
+.list-body { padding: 0 0 32px 0; }
+.day-head {
+  padding: 5px 10px;
+  font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink-muted); background: var(--band); border-bottom: 1px solid var(--rule);
+}
+.row {
+  display: block; padding: 8px 10px 9px 10px;
+  border-bottom: 1px solid var(--rule); text-decoration: none; color: var(--ink);
+  transition: background-color 0.1s ease;
+}
+.row:hover { background: rgba(128,128,128,0.09); color: var(--ink); }
+.row[aria-current='page'] { background: var(--accent); color: #fff; }
+.row[aria-current='page'] .row-kind,
+.row[aria-current='page'] .row-time,
+.row[aria-current='page'] .row-summary,
+.row[aria-current='page'] .row-foot { color: #fff; }
+.row[aria-current='page'] .fid { background: transparent; color: #fff; border-color: rgba(255,255,255,0.6); }
+
+.row-top { display: flex; flex-wrap: wrap; align-items: center; gap: 0 8px; font-size: 10px; line-height: 1.2; font-weight: 600; }
+.row-kind { font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-ink); }
+.row-time { color: var(--ink-muted); letter-spacing: 0.04em; }
+.row-title { font-size: 13px; line-height: 1.28; font-weight: 600; letter-spacing: -0.005em; text-wrap: pretty; margin-top: 2px; }
+.row-summary { font-size: 12px; line-height: 1.38; color: var(--ink-2); margin-top: 3px; text-wrap: pretty; }
+.row-foot {
+  margin-top: 5px; display: flex; flex-wrap: wrap; align-items: center; gap: 5px;
+  font-size: 10px; line-height: 1.3; font-weight: 600; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--ink-muted);
+}
+.empty { padding: 16px 10px; font-size: 12px; line-height: 1.5; color: var(--ink-muted); }
+
+/* --------------------------------------------------------------- reader --- */
+
+.reader-cols { display: flex; align-items: flex-start; gap: 0; }
+.reader-body { flex: 1 1 auto; min-width: 0; max-width: var(--measure); padding: 18px 18px 64px 18px; }
+
+.stamp { font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-ink); }
+.doc-title {
+  margin: 8px 0 0 0;
+  font-size: clamp(22px, 2.6vw, 29px); line-height: 1.12;
+  font-weight: 800; letter-spacing: -0.022em;
+  text-wrap: pretty; overflow-wrap: break-word; hyphens: manual;
+}
+.standfirst { margin: 9px 0 0 0; font-size: 14px; line-height: 1.5; color: var(--ink-2); text-wrap: pretty; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; margin: 11px 0 0 0; }
+.chip {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 3px 7px; color: var(--ink-2); border: 1px solid var(--rule);
+  background: var(--card-muted); text-decoration: none;
+}
+.chip:hover { color: var(--ink); border-color: var(--rule-strong); }
+
+/* Fidelity marker. Three steps, never interchangeable. */
+.fid {
+  font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 2px 6px; border: 1px solid;
+}
+.fid-strong { background: var(--fid-strong-bg); color: var(--fid-strong-fg); border-color: var(--fid-strong-bd); }
+.fid-mid    { background: var(--fid-mid-bg);    color: var(--fid-mid-fg);    border-color: var(--fid-mid-bd); }
+.fid-weak   { background: var(--fid-weak-bg);   color: var(--fid-weak-fg);   border-color: var(--fid-weak-bd); border-style: dashed; }
+
+.verdict { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 6px; border: 1px solid var(--ink); }
+.verdict-held   { background: var(--ink); color: var(--pane-read); }
+.verdict-broke  { background: var(--accent); color: #fff; border-color: var(--accent); }
+.verdict-unresolved { background: transparent; color: var(--ink-2); border-color: var(--rule-strong); }
+.flag-change { color: var(--accent-ink); font-weight: 800; }
+.flag-backfill { color: var(--ink-muted); font-weight: 800; }
+
+/* The rendered markdown body. Section heads get the design's rule-over,
+   rule-under treatment; everything else is set to the same 14/1.55 measure. */
+.prose { margin-top: 22px; }
+.prose > :first-child { margin-top: 0; }
+.prose h2, .prose h3 {
+  margin: 22px 0 0 0;
+  padding: 6px 0 2px 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  font-size: 11px; line-height: 1.25; letter-spacing: 0.1em;
+  text-transform: uppercase; font-weight: 800; color: var(--accent-ink);
+}
+.prose h4 {
+  margin: 16px 0 0 0; font-size: 11px; letter-spacing: 0.08em;
+  text-transform: uppercase; font-weight: 800; color: var(--ink-2);
+}
+.prose p { margin: 10px 0 0 0; font-size: 14px; line-height: 1.55; color: var(--ink-body); text-wrap: pretty; }
+.prose ul, .prose ol { margin: 10px 0 0 0; padding-left: 20px; }
+.prose li { font-size: 14px; line-height: 1.5; color: var(--ink-body); margin-top: 4px; text-wrap: pretty; }
+.prose strong { font-weight: 800; color: var(--ink); }
+.prose hr { margin: 22px 0 0 0; border: 0; border-top: 2px solid var(--ink); }
+.prose a { color: var(--accent-ink); }
+
+/* Verbatim material. The archive quotes a lot and the quotes are byte-faithful,
+   so they are set apart rather than blended into the analysis. */
+.prose blockquote {
+  margin: 12px 0 0 0; padding: 9px 11px;
+  background: var(--card); border: 1px solid var(--ink);
+}
+.prose blockquote p { margin: 0; font-size: 14px; line-height: 1.42; }
+.prose blockquote p + p { margin-top: 8px; }
+
+/* Position blocks, key math and observables arrive as fenced or indented code.
+   Preserve them exactly — they carry speaker markers and figures. */
+.prose pre {
+  margin: 10px 0 0 0; padding: 9px 11px; overflow-x: auto;
+  background: var(--card); border: 1px solid var(--rule-soft);
+  font-size: 12.5px; line-height: 1.45; color: var(--ink-body);
+  font-family: var(--font); white-space: pre-wrap; overflow-wrap: break-word;
+}
+.prose code { font-family: var(--font); font-size: 0.95em; }
+.prose :not(pre) > code { background: var(--card-muted); padding: 1px 4px; border: 1px solid var(--rule-soft); }
+
+.prose table { margin: 12px 0 0 0; border-collapse: collapse; width: 100%; font-size: 13px; }
+.prose th, .prose td { text-align: left; padding: 5px 9px 5px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.prose th { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); }
+
+/* Section head used outside prose (positioning read, connected documents). */
+.sec { padding-top: 22px; }
+.sec-rule { height: 2px; background: var(--ink); }
+.sec-head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  padding: 6px 0 2px 0; border-bottom: 1px solid var(--rule);
+}
+.sec-head .h {
+  font-size: 11px; line-height: 1.25; letter-spacing: 0.1em;
+  text-transform: uppercase; font-weight: 800; color: var(--accent-ink);
+}
+.sec-head .n { font-size: 10px; line-height: 1.25; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); }
+
+/* Positioning read rows. STRENGTHENS / WEAKENS / NEUTRAL are the design's
+   ▲ / ▼ / ▸ delta chips, one to one. */
+.delta { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid var(--rule-soft); }
+.delta-chip {
+  flex: 0 0 108px; width: 108px;
+  font-size: 10px; line-height: 1.2; letter-spacing: 0.06em; text-transform: uppercase;
+  font-weight: 800; padding: 4px 7px; text-align: left; white-space: nowrap;
+}
+.delta-strengthens { background: var(--ink); color: var(--pane-read); }
+.delta-weakens { background: var(--accent); color: #fff; }
+.delta-neutral { background: transparent; color: var(--ink-2); border: 1px solid var(--rule-strong); }
+.delta-name { font-size: 13px; line-height: 1.25; font-weight: 800; letter-spacing: 0.01em; }
+.delta-name a { color: inherit; text-decoration: none; }
+.delta-name a:hover { color: var(--accent); }
+.delta-note { font-size: 13px; line-height: 1.4; color: var(--ink-2); margin-top: 2px; text-wrap: pretty; }
+
+/* Numbered list, the design's "What to watch" treatment. */
+.numbered { display: flex; gap: 10px; align-items: baseline; padding-top: 9px; }
+.numbered .n {
+  flex: 0 0 18px; font-size: 11px; line-height: 1.5; font-weight: 800; letter-spacing: 0.04em;
+  color: #fff; background: var(--ink); text-align: center;
+}
+.numbered .t { min-width: 0; font-size: 13px; line-height: 1.5; color: var(--ink-body); text-wrap: pretty; }
+
+/* Stat grid, the design's "Key Numbers". */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(148px, 1fr)); gap: 12px 14px; padding-top: 12px; }
+.stat { min-width: 0; border-top: 2px solid var(--ink); padding-top: 7px; }
+.stat .v { font-size: clamp(21px, 2.2vw, 26px); line-height: 1; font-weight: 800; letter-spacing: -0.03em; }
+.stat .l { font-size: 12px; line-height: 1.35; margin-top: 5px; text-wrap: pretty; }
+.stat .s { font-size: 10px; line-height: 1.3; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); margin-top: 3px; }
+
+/* Source / linked-document card, the design's cite block. */
+.cite { border: 1px solid var(--ink); background: var(--card); margin-top: 10px; }
+.cite-head { display: flex; align-items: center; gap: 7px; padding: 5px 9px; border-bottom: 1px solid var(--rule-soft); }
+.cite-init {
+  flex: 0 0 19px; height: 19px; display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 800; color: #fff; background: var(--ink);
+}
+.cite-name { font-size: 13px; line-height: 1.2; font-weight: 800; }
+.cite-name a { color: inherit; text-decoration: none; }
+.cite-name a:hover { color: var(--accent); }
+.cite-sub { font-size: 12px; line-height: 1.2; color: var(--ink-muted); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cite-label { margin-left: auto; flex: 0 0 auto; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-ink); }
+.cite-body { padding: 8px 9px 6px 9px; }
+.cite-body p { margin: 0; font-size: 14px; line-height: 1.42; text-wrap: pretty; }
+.cite-meta {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 10px; margin-top: 6px;
+  font-size: 10px; line-height: 1.3; font-weight: 600; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--ink-muted);
+}
+.cite-meta a { font-weight: 800; letter-spacing: 0.06em; color: var(--accent-ink); text-decoration: none; border-bottom: 1px solid var(--accent-ink); }
+.cite-why { padding: 6px 9px; border-top: 1px solid var(--rule-soft); background: var(--card-muted); font-size: 11px; line-height: 1.4; color: var(--ink-2); }
+.cite-why strong { font-weight: 800; color: var(--ink); }
+
+.colophon { height: 2px; background: var(--ink); margin-top: 26px; }
+.colophon-note { margin: 10px 0 0 0; font-size: 11px; line-height: 1.45; color: var(--ink-muted); }
+
+/* TOC rail. Plain anchors — no scroll-spy, because the archive ships no JS
+   beyond Pagefind. */
+.toc-rail { flex: 0 0 var(--rail-w); width: var(--rail-w); position: sticky; top: 40px; padding: 20px 16px 0 6px; }
+.toc-head { font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-2); padding-bottom: 6px; }
+.toc-list { border-left: 1px solid var(--rule-soft); display: flex; flex-direction: column; }
+.toc-list a {
+  display: block; padding: 5px 0 5px 9px;
+  font-size: 11px; line-height: 1.3; font-weight: 600; letter-spacing: 0.02em;
+  text-decoration: none; color: var(--ink-muted);
+  border-left: 2px solid transparent; margin-left: -1px;
+}
+.toc-list a:hover { color: var(--accent); }
+
+/* ------------------------------------------------------------ responsive --- */
+
+.back-ctl { display: none; }
+
+@media (max-width: 1160px) { .toc-rail { display: none; } }
+
+@media (max-width: 1100px) {
+  .nav-pane { display: none; }
+  .compact-nav { display: flex; }
+}
+
+/* Below 760px the three panes cannot coexist. The list becomes the full width
+   on listing routes; a document route drops the list and shows the reader, with
+   a back control returning to the listing. */
+@media (max-width: 760px) {
+  .shell { height: auto; min-height: 0; overflow: visible; }
+  .pane { overflow: visible; }
+  .list-pane { flex: 1 1 auto; width: 100%; min-width: 0; border-right: none; }
+  .back-ctl { display: inline-flex; align-items: center; gap: 6px; }
+  .pane-reader .list-pane { display: none; }
+  .pane-list .reader-pane { display: none; }
+  .reader-body { padding: 14px 14px 56px 14px; }
+}
+
+@media print {
+  .nav-pane, .list-pane, .toc-rail, .bar { display: none; }
+  .shell, .pane { height: auto; overflow: visible; }
+  .reader-body { max-width: none; padding: 0; }
+}

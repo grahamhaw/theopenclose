@@ -1,0 +1,31 @@
+---
+import Shell from '../layouts/Shell.astro';
+import Document from '../components/Document.astro';
+import Placeholder from '../components/Placeholder.astro';
+import { loadArchive, recent, byCollection } from '../lib/archive';
+
+const all = await loadArchive();
+const items = recent(all);
+
+// Briefs are the front door, so the newest one is already open when the page
+// loads — one click from `/` is the requirement and zero is better.
+const lead = byCollection(items, 'briefs')[0] ?? items[0];
+---
+<Shell
+  title="The Open/Close"
+  description="A buy-side research archive."
+  view="latest"
+  listTitle="Latest"
+  items={items}
+  currentId={lead?.id}
+  mobile="list"
+  crumbs={['Latest', lead ? lead.kind : 'Empty']}
+  emptyNote="No documents yet. A sweep that writes nothing is a correct run."
+>
+  {lead
+    ? <Document doc={lead} />
+    : <Placeholder
+        head="The archive is empty"
+        note="Nothing has been written yet. Briefs, discussions, news and long-form treatments appear here as the desk produces them."
+      />}
+</Shell>

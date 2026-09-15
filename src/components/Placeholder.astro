@@ -1,0 +1,20 @@
+---
+/**
+ * The reader pane when there is nothing to open. The archive starts empty and
+ * stays partly empty for weeks, so this is a normal state, not an error page.
+ */
+interface Props { head: string; note: string; }
+const { head, note } = Astro.props;
+---
+<div class="reader-cols">
+  <div class="reader-body">
+    <div class="stamp">The Open/Close</div>
+    <h1 class="doc-title">{head}</h1>
+    <p class="standfirst">{note}</p>
+    <div class="colophon"></div>
+    <p class="colophon-note">
+      The Open/Close &nbsp;·&nbsp; Research commentary, not investment advice.
+      Positions may be held in securities mentioned.
+    </p>
+  </div>
+</div>

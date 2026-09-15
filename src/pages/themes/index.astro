@@ -1,0 +1,66 @@
+---
+import Shell from '../../layouts/Shell.astro';
+import { THEMES } from '../../lib/themes';
+import { loadArchive, docsForTheme } from '../../lib/archive';
+
+const all = await loadArchive();
+const rows = THEMES.map((t) => ({ theme: t, routed: docsForTheme(all, t.id) }));
+
+// Positioning lines that named a theme not in state/themes.json. Never invent a
+// theme — so surface these as errors in the documents rather than new themes.
+const unrouted = all.flatMap((d) => d.unrouted.map((u) => ({ doc: d, line: u })));
+---
+<Shell
+  title="Themes — The Open/Close"
+  view="themes"
+  listTitle="Themes"
+  items={[]}
+  mobile="reader"
+  crumbs={['Themes']}
+  emptyNote="Themes are listed in the reader pane."
+>
+  <div class="reader-cols">
+    <article class="reader-body" data-pagefind-ignore>
+      <div class="stamp">The bets</div>
+      <h1 class="doc-title">Themes</h1>
+      <p class="standfirst">
+        The curated vocabulary of the archive. Every positioning read routes
+        against this list and nothing else.
+      </p>
+
+      {rows.map(({ theme, routed }) => (
+        <section class="sec">
+          <div class="sec-rule"></div>
+          <div class="sec-head">
+            <span class="h"><a href={`/themes/${theme.id}`} style="color:inherit; text-decoration:none">{theme.id}</a></span>
+            <span class="n">{routed.length} routed</span>
+          </div>
+          <p>{theme.statement}</p>
+          <p class="delta-note"><strong style="font-weight:800; color:var(--ink)">Breaks if</strong> &nbsp;{theme.breaks_if}</p>
+        </section>
+      ))}
+
+      {unrouted.length > 0 && (
+        <section class="sec">
+          <div class="sec-rule"></div>
+          <div class="sec-head">
+            <span class="h">Unrouted positioning lines</span>
+            <span class="n">{unrouted.length}</span>
+          </div>
+          <p class="delta-note">
+            These lines sit under a “Positioning read” heading but name no theme in
+            state/themes.json. They are shown here rather than dropped.
+          </p>
+          {unrouted.map(({ doc, line }) => (
+            <div class="delta">
+              <div style="min-width:0">
+                <div class="delta-name"><a href={doc.href}>{doc.title}</a></div>
+                <div class="delta-note">{line}</div>
+              </div>
+            </div>
+          ))}
+        </section>
+      )}
+    </article>
+  </div>
+</Shell>

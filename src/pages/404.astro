@@ -1,0 +1,19 @@
+---
+import Shell from '../layouts/Shell.astro';
+import Placeholder from '../components/Placeholder.astro';
+import { loadArchive, recent } from '../lib/archive';
+
+const items = recent(await loadArchive());
+---
+<Shell
+  title="Not found — The Open/Close"
+  listTitle="Latest"
+  items={items}
+  mobile="reader"
+  crumbs={['404']}
+>
+  <Placeholder
+    head="No document at this address"
+    note="It may have been renamed, or it may never have existed. The latest documents are in the list; everything is on /archive."
+  />
+</Shell>

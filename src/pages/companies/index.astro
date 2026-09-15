@@ -1,0 +1,52 @@
+---
+import Shell from '../../layouts/Shell.astro';
+import Placeholder from '../../components/Placeholder.astro';
+import { loadArchive, byCollection, docsForCompany, stamp } from '../../lib/archive';
+
+const all = await loadArchive();
+const dossiers = byCollection(all, 'companies')
+  .sort((a, b) => (a.data.name ?? '').localeCompare(b.data.name ?? ''));
+const rows = dossiers.map((d) => ({ doc: d, count: docsForCompany(all, d).length }));
+---
+<Shell
+  title="Companies — The Open/Close"
+  view="companies"
+  listTitle="Companies"
+  items={dossiers}
+  mobile="list"
+  crumbs={['Companies']}
+  groupDays={false}
+  emptyNote="No dossiers yet. They are built by the ingest job."
+>
+  {rows.length === 0
+    ? <Placeholder
+        head="No dossiers yet"
+        note="A dossier is built by the ingest job from a corpus you supply, then rebuilt whenever new material for that company enters the archive."
+      />
+    : (
+      <div class="reader-cols">
+        <article class="reader-body" data-pagefind-ignore>
+          <div class="stamp">Coverage</div>
+          <h1 class="doc-title">Companies</h1>
+          <p class="standfirst">
+            One living dossier per covered company: what management claimed,
+            whether it held, and what quietly changed.
+          </p>
+          {rows.map(({ doc, count }) => (
+            <section class="sec">
+              <div class="sec-rule"></div>
+              <div class="sec-head">
+                <span class="h"><a href={doc.href} style="color:inherit; text-decoration:none">{doc.data.name}</a></span>
+                <span class="n">{doc.data.ticker} · {count} documents</span>
+              </div>
+              <p>{doc.summary}</p>
+              <div class="cite-meta" style="margin-top:6px">
+                <span>Coverage {String(doc.data.coverage_start).slice(0, 10)} – {String(doc.data.coverage_end).slice(0, 10)}</span>
+                <span>Updated {stamp(doc.effective)}</span>
+              </div>
+            </section>
+          ))}
+        </article>
+      </div>
+    )}
+</Shell>

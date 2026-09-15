@@ -1,0 +1,44 @@
+---
+import Fidelity from './Fidelity.astro';
+import { stamp, type Doc } from '../lib/archive';
+
+/**
+ * Cross-document links resolved from an id list: a brief's `sources`, a
+ * recurring discussion's `prior`, a dossier's `sources`. Ids that resolve to
+ * nothing are shown as broken rather than dropped — a brief citing a document
+ * that is not in the archive is a real problem and hiding it helps nobody.
+ */
+interface Props { head: string; ids: string[]; all: Doc[]; }
+const { head, ids, all } = Astro.props;
+
+const rows = ids.map((id) => ({ id, doc: all.find((d) => d.id === id) }));
+const initials = (s: string) =>
+  s.split(/[\s-]+/).filter(Boolean).map((w) => w[0]).join('').slice(0, 2).toUpperCase();
+---
+{ids.length > 0 && (
+  <section class="sec" data-pagefind-ignore>
+    <div class="sec-rule"></div>
+    <div class="sec-head">
+      <span class="h">{head}</span>
+      <span class="n">{`${ids.length} ${ids.length === 1 ? 'document' : 'documents'}`}</span>
+    </div>
+    {rows.map(({ id, doc }) => (
+      <div class="cite">
+        <div class="cite-head">
+          <span class="cite-init">{initials(doc ? doc.kind : id)}</span>
+          <span class="cite-name">
+            {doc ? <a href={doc.href}>{doc.title}</a> : id}
+          </span>
+          <span class="cite-sub">{doc ? doc.kind : 'not in the archive'}</span>
+          {doc && <span class="cite-label"><Fidelity value={doc.fidelity} /></span>}
+        </div>
+        {doc && (
+          <div class="cite-body">
+            <p>{doc.summary}</p>
+            <div class="cite-meta"><span>{stamp(doc.effective)}</span></div>
+          </div>
+        )}
+      </div>
+    ))}
+  </section>
+)}

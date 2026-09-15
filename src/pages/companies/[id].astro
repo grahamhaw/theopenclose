@@ -1,0 +1,34 @@
+---
+import Shell from '../../layouts/Shell.astro';
+import Document from '../../components/Document.astro';
+import { loadArchive, byCollection, docsForCompany } from '../../lib/archive';
+
+export async function getStaticPaths() {
+  const all = await loadArchive();
+  return byCollection(all, 'companies').map((doc) => ({
+    params: { id: doc.id },
+    // Oldest first: the dossier's value is the trajectory across the corpus.
+    props: {
+      doc,
+      items: docsForCompany(all, doc).sort(
+        (a, b) => a.effective.getTime() - b.effective.getTime()
+      ),
+    },
+  }));
+}
+
+const { doc, items } = Astro.props;
+---
+<Shell
+  title={`${doc.data.name} — The Open/Close`}
+  description={doc.summary}
+  view="companies"
+  listTitle={doc.data.ticker ?? doc.data.name}
+  items={items}
+  mobile="reader"
+  crumbs={['Companies', doc.data.name]}
+  groupDays={false}
+  emptyNote="No documents name this company yet."
+>
+  <Document doc={doc} />
+</Shell>

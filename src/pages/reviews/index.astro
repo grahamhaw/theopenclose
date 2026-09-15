@@ -1,0 +1,23 @@
+---
+import Shell from '../../layouts/Shell.astro';
+import Document from '../../components/Document.astro';
+import Placeholder from '../../components/Placeholder.astro';
+import { loadArchive, byCollection } from '../../lib/archive';
+
+const items = byCollection(await loadArchive(), 'reviews');
+const lead = items[0];
+---
+<Shell
+  title="Reviews — The Open/Close"
+  view="reviews"
+  listTitle="Reviews"
+  items={items}
+  currentId={lead?.id}
+  mobile="list"
+  crumbs={['Reviews', lead ? lead.kind : 'Empty']}
+  emptyNote="No reviews yet. The review job runs on the first Saturday of the month."
+>
+  {lead
+    ? <Document doc={lead} />
+    : <Placeholder head="No Reviews yet" note="No reviews yet. The review job runs on the first Saturday of the month." />}
+</Shell>

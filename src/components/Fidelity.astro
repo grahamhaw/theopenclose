@@ -1,0 +1,38 @@
+---
+/**
+ * The fidelity marker. CLAUDE.md makes this a content rule, not a decoration:
+ * "a `secondhand` document and a `transcript` must never look alike at a
+ * glance." Three visual weights, mapped once here and used everywhere.
+ */
+interface Props { value?: string; }
+const { value } = Astro.props;
+
+const STRENGTH: Record<string, 'strong' | 'mid' | 'weak'> = {
+  // longform
+  transcript: 'strong', asr: 'mid', partial: 'mid',
+  'metadata-only': 'weak', secondhand: 'weak',
+  // discussion
+  'full-thread': 'strong', 'top-replies': 'mid', 'root-only': 'weak',
+  // news
+  primary: 'strong', reported: 'mid',
+};
+
+// What the weaker markers actually mean, so the reader never has to remember.
+const TITLE: Record<string, string> = {
+  transcript: 'Full verbatim text, published or human-made',
+  asr: 'Machine transcription — not trustworthy at the word',
+  partial: 'Clip, excerpt, or a transcript with gaps',
+  'metadata-only': 'Show notes or published summary only — not heard',
+  secondhand: "Known only through someone else's account of it",
+  'full-thread': 'Thread read including the tail',
+  'top-replies': 'Visible replies only — the tail is unread',
+  'root-only': 'Anchor post only, no replies read',
+  primary: 'Read from the filing, release, or agency document',
+  reported: "Read from an outlet's account of it",
+};
+
+const strength = value ? STRENGTH[value] ?? 'weak' : null;
+---
+{value && (
+  <span class={`fid fid-${strength}`} title={TITLE[value] ?? value}>{value}</span>
+)}

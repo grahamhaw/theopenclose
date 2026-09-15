@@ -1,0 +1,37 @@
+---
+import Fidelity from './Fidelity.astro';
+import { timeLabel, type Doc } from '../lib/archive';
+
+interface Props { doc: Doc; current?: boolean; showDate?: boolean; }
+const { doc, current = false, showDate = false } = Astro.props;
+
+const meta: string[] = [];
+if (doc.data.venue) meta.push(doc.data.venue);
+if (doc.data.outlet) meta.push(doc.data.outlet);
+if (doc.data.edition) meta.push(doc.data.edition);
+if (doc.entities.length) meta.push(doc.entities.slice(0, 3).join(' · '));
+---
+<a
+  class="row"
+  href={doc.href}
+  aria-current={current ? 'page' : undefined}
+  data-pagefind-ignore
+>
+  <div class="row-top">
+    <span class="row-kind">{doc.kind}</span>
+    <span class="row-time">
+      {showDate ? doc.effective.toISOString().slice(0, 10) + ' · ' : ''}{timeLabel(doc.effective)}
+    </span>
+    {doc.isChange && <span class="flag-change">Updated</span>}
+    {doc.backfill && <span class="flag-backfill">Backfill</span>}
+  </div>
+  <div class="row-title">{doc.title}</div>
+  {doc.summary && <div class="row-summary">{doc.summary}</div>}
+  <div class="row-foot">
+    <Fidelity value={doc.fidelity} />
+    {doc.resolved && doc.verdict && (
+      <span class={`verdict verdict-${doc.verdict}`}>{doc.verdict}</span>
+    )}
+    {meta.length > 0 && <span>{meta.join('  ·  ')}</span>}
+  </div>
+</a>

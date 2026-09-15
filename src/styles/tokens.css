@@ -1,0 +1,62 @@
+/*
+ * Design tokens, taken from "Investment Brief Reader v3.dc.html" (Claude Design,
+ * modernist DS). Every value here is lifted from that artboard rather than
+ * re-picked, so the site and the design stay one thing.
+ *
+ * Changing the look of the archive should mean changing this file and nothing
+ * else.
+ */
+
+:root {
+  /* Surfaces, lightest to heaviest. The three panes are deliberately three
+     slightly different papers — that is what separates them without a border. */
+  --paper:        #f3f2f2;  /* app ground */
+  --pane-nav:     #eae7e7;
+  --pane-list:    #f1efee;
+  --pane-read:    #f8f4f4;
+  --band:         #e5e2e2;  /* day headers, pane footers */
+  --card:         #ffffff;
+  --card-muted:   #efecec;  /* "why it matters" footer, chips */
+
+  /* Ink, heaviest to lightest. */
+  --ink:          #201e1d;  /* headings, dark bands, borders */
+  --ink-body:     #2d2b2b;  /* running prose */
+  --ink-2:        #444141;  /* standfirst, secondary prose */
+  --ink-muted:    #605d5d;  /* notes, metadata */
+  --ink-faint:    #bab6b6;  /* metadata on dark bands */
+
+  /* Rules. Two weights only. */
+  --rule:         #cfcbcb;
+  --rule-soft:    #d7d3d3;
+  --rule-strong:  #9b9797;
+
+  /* Accent. `--accent` is the flag; `--accent-ink` is the same red darkened to
+     pass contrast as text on paper; `--accent-lift` is it lightened for text on
+     the dark bands. */
+  --accent:       #ec3013;
+  --accent-ink:   #ae1800;
+  --accent-lift:  #ff8a72;
+  --accent-hover: #dd2b0f;
+  --select:       #ffc4b8;
+
+  /* Type. Archivo carries the whole design; the fallback stack is metrically
+     close enough that a failed font load is a downgrade, not a reflow. */
+  --font: "Archivo", "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+
+  /* Pane geometry. */
+  --nav-w:  208px;
+  --list-w: 318px;
+  --rail-w: 164px;
+  --bar-h:   38px;
+  --measure: 720px;
+}
+
+/* Fidelity is a content rule, not a decoration: CLAUDE.md requires that a
+   `secondhand` document and a `transcript` never look alike at a glance. Three
+   steps of visual weight, strongest to weakest, applied everywhere a marker
+   appears. */
+:root {
+  --fid-strong-bg: #201e1d;  --fid-strong-fg: #f8f4f4;  --fid-strong-bd: #201e1d;
+  --fid-mid-bg:    transparent; --fid-mid-fg: #444141;  --fid-mid-bd:    #9b9797;
+  --fid-weak-bg:   transparent; --fid-weak-fg: #8a8686; --fid-weak-bd:   #d7d3d3;
+}

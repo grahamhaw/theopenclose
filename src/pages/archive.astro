@@ -1,0 +1,72 @@
+---
+import Shell from '../layouts/Shell.astro';
+import { loadArchive, byCollection, KIND, BASE, type CollectionName } from '../lib/archive';
+
+const all = await loadArchive();
+
+const types: CollectionName[] = ['briefs', 'longform', 'discussions', 'news', 'companies', 'reviews'];
+const counts = types.map((t) => {
+  const docs = byCollection(all, t);
+  return {
+    type: t,
+    label: KIND[t],
+    href: BASE[t],
+    total: docs.length,
+    backfill: docs.filter((d) => d.backfill).length,
+  };
+});
+
+const backfill = all.filter((d) => d.backfill).length;
+---
+<Shell
+  title="Archive — The Open/Close"
+  view="archive"
+  listTitle="Archive"
+  items={all}
+  mobile="list"
+  crumbs={['Archive']}
+  emptyNote="The archive is empty."
+>
+  <div class="reader-cols">
+    <article class="reader-body" data-pagefind-ignore>
+      <div class="stamp">Everything</div>
+      <h1 class="doc-title">Archive</h1>
+      <p class="standfirst">
+        Every document, backfill included. The list carries the whole archive in
+        date order; the counts below filter it by type.
+      </p>
+
+      <div class="stats">
+        <div class="stat"><div class="v">{all.length}</div><div class="l">Documents</div></div>
+        <div class="stat"><div class="v">{backfill}</div><div class="l">Backfill</div><div class="s">excluded from briefs and /</div></div>
+        <div class="stat"><div class="v">{all.length - backfill}</div><div class="l">Current</div></div>
+      </div>
+
+      <section class="sec">
+        <div class="sec-rule"></div>
+        <div class="sec-head">
+          <span class="h">By type</span>
+          <span class="n">filter</span>
+        </div>
+        {counts.map((c) => (
+          <div class="delta">
+            <span class="delta-chip delta-neutral">{c.total}</span>
+            <div style="min-width:0">
+              <div class="delta-name"><a href={c.href}>{c.label}</a></div>
+              {c.backfill > 0 && <div class="delta-note">{c.backfill} backfill</div>}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      <section class="sec">
+        <div class="sec-rule"></div>
+        <div class="sec-head">
+          <span class="h">Full text</span>
+          <span class="n">search</span>
+        </div>
+        <p><a href="/search">Search every document</a> — indexed at build, including backfill.</p>
+      </section>
+    </article>
+  </div>
+</Shell>

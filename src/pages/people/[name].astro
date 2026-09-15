@@ -1,0 +1,57 @@
+---
+import Shell from '../../layouts/Shell.astro';
+import Fidelity from '../../components/Fidelity.astro';
+import { loadArchive, peopleIndex, stamp } from '../../lib/archive';
+
+export async function getStaticPaths() {
+  const all = await loadArchive();
+  return [...peopleIndex(all)].map(([slug, { name, docs }]) => ({
+    params: { name: slug },
+    props: { name, docs },
+  }));
+}
+
+const { name, docs } = Astro.props;
+const items = [...docs].sort((a, b) => b.effective.getTime() - a.effective.getTime());
+---
+<Shell
+  title={`${name} — The Open/Close`}
+  description={`Every document naming ${name}.`}
+  listTitle={name}
+  items={items}
+  mobile="reader"
+  crumbs={['People', name]}
+  groupDays={false}
+>
+  <div class="reader-cols">
+    <article class="reader-body" data-pagefind-ignore>
+      <div class="stamp">Person</div>
+      <h1 class="doc-title">{name}</h1>
+      <p class="standfirst">
+        {items.length} {items.length === 1 ? 'document' : 'documents'} in the archive.
+      </p>
+
+      <section class="sec">
+        <div class="sec-rule"></div>
+        <div class="sec-head">
+          <span class="h">Appearances</span>
+          <span class="n">newest first</span>
+        </div>
+        {items.map((doc) => (
+          <div class="delta">
+            <div style="min-width:0">
+              <div class="delta-name"><a href={doc.href}>{doc.title}</a></div>
+              <div class="delta-note">{doc.summary}</div>
+              <div class="cite-meta" style="margin-top:4px">
+                <span>{stamp(doc.effective)}</span>
+                <span>{doc.kind}</span>
+                <Fidelity value={doc.fidelity} />
+                {doc.backfill && <span class="flag-backfill">Backfill</span>}
+              </div>
+            </div>
+          </div>
+        ))}
+      </section>
+    </article>
+  </div>
+</Shell>

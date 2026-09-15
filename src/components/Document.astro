@@ -1,0 +1,92 @@
+---
+import { render } from 'astro:content';
+import Fidelity from './Fidelity.astro';
+import Positioning from './Positioning.astro';
+import { slugify } from '../lib/slug';
+import { stamp, type Doc } from '../lib/archive';
+
+interface Props { doc: Doc; }
+const { doc } = Astro.props;
+
+const { Content, headings } = await render(doc.entry);
+const rail = headings.filter((h) => h.depth === 2 || h.depth === 3);
+
+// Source metadata differs per type; the shared schema deliberately does not
+// restate it, so assemble whatever this document actually carries.
+const facts: { k: string; v: string }[] = [];
+if (doc.data.venue) facts.push({ k: 'Venue', v: doc.data.venue });
+if (doc.data.host) facts.push({ k: 'Host', v: doc.data.host });
+if (doc.data.duration) facts.push({ k: 'Duration', v: doc.data.duration });
+if (doc.data.outlet) facts.push({ k: 'Outlet', v: doc.data.outlet });
+if (doc.data.edition) facts.push({ k: 'Edition', v: doc.data.edition });
+if (doc.data.ticker) facts.push({ k: 'Ticker', v: doc.data.ticker });
+if (doc.data.published) facts.push({ k: 'Published', v: stamp(doc.data.published) });
+if (doc.data.recurrence === 'recurring') facts.push({ k: 'Recurrence', v: 'recurring' });
+if (doc.data.review_after) {
+  facts.push({ k: 'Review after', v: doc.data.review_after.toISOString().slice(0, 10) });
+}
+---
+<div class="reader-cols">
+  <article
+    class="reader-body"
+    data-pagefind-body
+    data-pagefind-meta={`kind:${doc.kind}`}
+  >
+    <div class="stamp">
+      {doc.kind} · {stamp(doc.date)}
+      {doc.isChange && <Fragment> · <span class="flag-change">Updated {stamp(doc.updated!)}</span></Fragment>}
+      {doc.backfill && <Fragment> · <span class="flag-backfill">Backfill</span></Fragment>}
+    </div>
+
+    <h1 class="doc-title">{doc.title}</h1>
+    {doc.summary && <p class="standfirst">{doc.summary}</p>}
+
+    <div class="chips">
+      <Fidelity value={doc.fidelity} />
+      {doc.resolved && doc.verdict && (
+        <span class={`verdict verdict-${doc.verdict}`}>Verdict: {doc.verdict}</span>
+      )}
+      {doc.people.map((p) => <a class="chip" href={`/people/${slugify(p)}`}>{p}</a>)}
+      {doc.entities.map((e) => <span class="chip">{e}</span>)}
+      {doc.source && (
+        <a class="chip" href={doc.source} target="_blank" rel="noopener noreferrer">Source ↗</a>
+      )}
+    </div>
+
+    {facts.length > 0 && (
+      <div class="chips" data-pagefind-ignore>
+        {facts.map((f) => <span class="chip">{f.k}: {f.v}</span>)}
+      </div>
+    )}
+
+    <Positioning routings={doc.routings} />
+
+    {doc.unrouted.length > 0 && (
+      <section class="sec" data-pagefind-ignore>
+        <div class="sec-rule"></div>
+        <div class="sec-head">
+          <span class="h">Unrouted positioning lines</span>
+          <span class="n">not in state/themes.json</span>
+        </div>
+        {doc.unrouted.map((u) => <p class="delta-note">{u}</p>)}
+      </section>
+    )}
+
+    <div class="prose"><Content /></div>
+
+    <div class="colophon"></div>
+    <p class="colophon-note">
+      The Open/Close &nbsp;·&nbsp; Research commentary, not investment advice.
+      Positions may be held in securities mentioned.
+    </p>
+  </article>
+
+  {rail.length > 1 && (
+    <aside class="toc-rail" data-pagefind-ignore>
+      <div class="toc-head">Sections</div>
+      <div class="toc-list">
+        {rail.map((h) => <a href={`#${h.slug}`}>{h.text}</a>)}
+      </div>
+    </aside>
+  )}
+</div>

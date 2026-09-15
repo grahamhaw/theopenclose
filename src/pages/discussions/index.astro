@@ -1,0 +1,23 @@
+---
+import Shell from '../../layouts/Shell.astro';
+import Document from '../../components/Document.astro';
+import Placeholder from '../../components/Placeholder.astro';
+import { loadArchive, byCollection } from '../../lib/archive';
+
+const items = byCollection(await loadArchive(), 'discussions');
+const lead = items[0];
+---
+<Shell
+  title="Discussions — The Open/Close"
+  view="discussions"
+  listTitle="Discussions"
+  items={items}
+  currentId={lead?.id}
+  mobile="list"
+  crumbs={['Discussions', lead ? lead.kind : 'Empty']}
+  emptyNote="No discussions yet. A sweep writes one only when a real disagreement runs between people who know things."
+>
+  {lead
+    ? <Document doc={lead} />
+    : <Placeholder head="No Discussions yet" note="No discussions yet. A sweep writes one only when a real disagreement runs between people who know things." />}
+</Shell>
