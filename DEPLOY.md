@@ -65,6 +65,43 @@ Build logs sit next to the commits the agent is pushing.
 
 Do **not** also connect Workers Builds, or every push deploys twice.
 
+## Migrating off the old Pages project
+
+The account already has a **Pages** project called `theopenclose`
+(`theopenclose.pages.dev` + one other domain, no Git connection) and a
+`theopenclose-staging` alongside it. Both were direct-upload — no repo behind
+them — so the deployed assets are the only copy of whatever they served. Two
+things collide with this deploy:
+
+1. **`theopenclose.com` is attached to the old Pages project.** A hostname can
+   belong to one Pages project or one Worker, never both, so the Worker cannot
+   claim it until Pages lets go.
+2. **The names collide.** Workers and Pages projects share a namespace in the
+   unified dashboard, so a Worker named `theopenclose` will be refused while the
+   Pages project of that name exists.
+
+Do this in order:
+
+1. **Keep anything you want from the old site first.** Pages → `theopenclose` →
+   Deployments → the live one → download, or just save the pages you care
+   about. Nothing in this repo reproduces it.
+2. **Deploy the new Worker to `workers.dev` first.** Comment out the `routes`
+   block in `wrangler.jsonc`, deploy, and check the site on
+   `theopenclose.<your-subdomain>.workers.dev`. Nothing about the live domain
+   changes yet, so there is no window where `theopenclose.com` is down.
+3. **Release the domain.** Pages → `theopenclose` → Custom domains → remove
+   `theopenclose.com`. This deletes the DNS record Pages created.
+4. **Delete both Pages projects** — `theopenclose` and `theopenclose-staging`.
+   That frees the name.
+5. **Restore the `routes` block and redeploy.** The Worker creates the DNS
+   record and takes the domain. Expect a few minutes for the certificate.
+
+`workspace` and `mobile` are separate Workers and are not affected.
+
+If you would rather not touch the old projects yet, give the Worker a different
+`name` in `wrangler.jsonc` and leave `routes` out. It then lives on
+`workers.dev` indefinitely alongside the old site.
+
 ## The domain
 
 `wrangler.jsonc` declares the custom domain:

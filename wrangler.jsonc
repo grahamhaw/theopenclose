@@ -14,8 +14,13 @@
     "not_found_handling": "404-page"
   },
   // The zone is already in this Cloudflare account, so `custom_domain` creates
-  // and maintains the DNS record itself. Remove this block to deploy to the
-  // workers.dev subdomain instead.
+  // and maintains the DNS record itself.
+  //
+  // FIRST DEPLOY: comment this block out until theopenclose.com has been
+  // released by the old Pages project — a hostname belongs to one Pages project
+  // or one Worker, never both, and the deploy fails while Pages still holds it.
+  // See "Migrating off the old Pages project" in DEPLOY.md. Without the block
+  // the site serves from theopenclose.<subdomain>.workers.dev.
   "routes": [
     { "pattern": "theopenclose.com", "custom_domain": true }
   ],
