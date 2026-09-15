@@ -85,16 +85,19 @@ Example:
 
 ### 3. Top stories
 
-Three to six. Each: bold headline, two or three short sentences, outlet with keyword hyperlink when a real URL exists. Drawn from news documents in the window, plus attributed wires that mattered without earning their own document. Ordered by significance, never by time. No backtick doc ids.
+Three to six. **Same item shape as Positioning:** one paragraph each — `**Bold lead-in — essence.** Supporting context with keyword hyperlinks in-sentence.` Drawn from news documents in the window, plus attributed wires that mattered without earning their own document. Ordered by significance, never by time. No backtick doc ids. Plain outlet names if no URL.
+
+Example:
+
+> **10y ~5.02% into Fed — oil still three-digit.** Bloomberg print highest since 2007; Reuters oil on East-West/Houthi risk; FedWatch ~92–93% hike.
 
 ### 4. The conversation
 
-Each discussion in the window. The **title itself** is the markdown link to `/discussions/<id>` (site paths, not `../discussions/`). Short blurb under it — one or two sentences, carried read in plain language. No separate ugly id links.
+Plain `## The conversation` section header only — **never** hyperlinked markdown headers (`### [Title](/discussions/...)`). Each discussion in the window is one Positioning-shaped paragraph: `**Bold lead-in — essence.** Supporting context with keyword hyperlinks in-sentence`, including a keyword link to `/discussions/<id>` (e.g. [discussion](/discussions/...)). Carried read in plain language. No backtick doc ids.
 
-```markdown
-### [Can Anthropic finance the 1/5/10 GW path?](/discussions/2026-09-15-anthropic-broadcom-gw-financeability)
-One or two sentences. Carried read in plain language.
-```
+Example:
+
+> **Anthropic 1/5/10 GW path — financeability still open.** Tanay’s schedule matches Broadcom call language; thin replies challenge cash. Carried read: roadmap load-bearing if supply holds; pay-for-it unresolved ([discussion](/discussions/2026-09-15-anthropic-broadcom-gw-financeability)).
 
 ### 5. In their words
 
@@ -102,12 +105,11 @@ Only if there are **≥3 load-bearing quotes** (a claim, a number, or a tell) fr
 
 ### 6. Podcasts & interviews
 
-One card per longform / interview doc in the window. Title links to `/longform/<id>`. Optional second link to YouTube if frontmatter `source` is a YouTube URL. Include stance + fidelity briefly.
+Plain `## Podcasts & interviews` section header only — **never** hyperlinked markdown headers (`### [Title](/longform/...)`). One Positioning-shaped paragraph per longform / interview doc in the window: `**Bold lead-in — essence / stance.** Supporting takeaway with keyword hyperlinks in-sentence` — e.g. [Recap](/longform/<id>) · [Watch](youtube) when `source` is a YouTube URL. Include stance + fidelity in the lead-in or next clause.
 
-```markdown
-### [All-In — Jensen Huang (Doomer Hoax)](/longform/2026-09-14-allin-jensen-doomer-hoax)
-**BULLISH** · `asr` · One tight takeaway. [Watch](https://www.youtube.com/...) if URL known.
-```
+Example:
+
+> **All-In — Jensen (Doomer Hoax) — BULLISH / asr.** Rejects extinction framing; ~$400bn AI-native VC ~80% open models. [Recap](/longform/2026-09-14-allin-jensen-doomer-hoax) · [Watch](https://www.youtube.com/watch?v=S7CrlFLAmEA)
 
 Stance: `BULLISH` / `BEARISH` / `NEUTRAL` relative to consensus **in the material** — not a trade.
 
@@ -115,7 +117,7 @@ Stance: `BULLISH` / `BEARISH` / `NEUTRAL` relative to consensus **in the materia
 
 ### 7. What to watch
 
-Three to six. Pull observables from discussion docs' "What would settle it" sections. Calendar items (FOMC, earnings, etc.) are fine. Each: the thing, when, why it matters. Hyperlink to discussions/news when useful; no backtick doc ids.
+Three to six. Prefer the same Positioning item shape when natural: `**Bold lead-in — essence.** Supporting when/why with keyword hyperlinks in-sentence` to discussions/news. Pull observables from discussion docs' "What would settle it" sections. Calendar items (FOMC, earnings, etc.) are fine. No backtick doc ids.
 
 ## Rules
 
