@@ -4,21 +4,23 @@ Pre-market, post-market, and weekend are one format. The window is a parameter.
 
 | Edition | Window | Ships |
 |---|---|---|
-| `premarket` | Since the prior close brief | ~7:00am ET |
-| `postmarket` | Since the morning brief | ~5:15pm ET |
+| `premarket` | Since the prior close brief / weekend brief | ~9:00am ET |
+| `postmarket` | Since the morning brief | ~4:30pm ET |
 | `weekend` | Since Friday's close brief | Sat ~8:30am ET |
 
-## The brief does no research and waits for nothing
+## Assembly
 
-Read every document in `content/` whose later of `date` and `updated` falls inside the window, plus market data. Nothing else.
+Read every document in `content/` whose later of `date` and `updated` falls inside the window. Skip every document with `backfill: true`. Never wait for unfinished jobs — a long-form still running at ship time belongs in the next brief.
 
-Do not re-read sources, do not re-analyze threads, do not write new verdicts on material that already has one. A document's `summary` and its own read are what the brief renders. Where a discussion already concluded that Baker has the better of the argument, the brief carries that conclusion — it does not re-derive it and must not contradict it. If a document's read now looks wrong in light of something later in the window, that is worth saying, and it is said as a change, naming both.
+**Judgments** (reads, positioning implications, conversation verdicts) come only from documents in `content/` in the window — discussions, longform, news, interviews. Do not re-derive or contradict a document's read without naming the change.
 
-**Never wait for a job to finish.** If a long-form treatment is still running at ship time, it is not in this brief and it will be in the next one. This is the normal case, not a failure.
+**Wire / market-data exception.** Levels, breadth, futures, yields, commodities, and wire facts may appear in the lead, the delta, and top stories with outlet attribution (WSJ, Reuters, Barron's, AP, MarketWatch, Investopedia, etc.) even when there is no matching `news.md`. Do not invent numbers. Every figure must come from a cited wire or from market data on hand.
 
-**Skip every document with `backfill: true`.** Ingested corpora are archive material, not news.
+Omit empty sections entirely (especially In Their Words). Deep dives link from Conversation / What to Watch; do not paste the dive into the brief.
 
-**Documents entering through `updated`** are rendered as changes — what moved since the reader last saw it — never as new documents.
+Ship on time at 9:00 / 4:30. An incomplete brief that lands on time beats a complete one that slips.
+
+Documents that re-enter the window through `updated` render as changes — what moved since the reader last saw them — never as new documents.
 
 ## Frontmatter
 
@@ -27,81 +29,71 @@ Shared schema from `CLAUDE.md`, plus:
 ```yaml
 edition: premarket
 window_start: 2026-09-13T16:30:00-04:00
-window_end: 2026-09-14T07:00:00-04:00
+window_end: 2026-09-14T09:00:00-04:00
 sources: [2026-09-14-baker-evaluators, 2026-09-14-oddlots-brockman]
 ```
 
 `sources` lists every document id the brief drew on. The site uses it to link, and it is how you check later what a brief was built from.
 
-## Sections
+## Edition-specific leads
 
-### The lead
+- **Premarket** — overnight / weekend wires plus the open question the cash session must answer. Connect to weekend discussions when those are in window.
+- **Postmarket** — what the session actually did (path, breadth, concentration), what resolved versus what remains from the morning question, and the sell-side / tape split if present.
+- **Weekend** — wider ground, not longer by default. A quiet week is a short brief.
 
-Two to four paragraphs of prose. The most important thing that happened in the window, with numbers and attribution, then the second thing, then the context that connects them.
+## Section order (required)
 
-This is the only section written as continuous prose and the only one that synthesizes across documents. Write it last, after the rest is assembled.
+Emit sections in this order. Skip any section that would be empty.
 
-Open with what changed, not with what is true. "Futures are lower on the AI slowdown call" is a lead. "Markets are focused on AI" is not.
+### 1. The lead
 
-End with the question the window leaves open.
+News-first tape, then the conversation implication. Two to four paragraphs of prose. This is the only section written as continuous synthesis across documents and wires. Write it last, after the rest is assembled.
 
-### What to watch
+Open with what changed, not with what is true. End with the open question the window leaves. Close the lead with a one-line levels line (SPX / Nasdaq / 10y / etc.).
 
-Numbered, three to six. What is scheduled, what is unresolved, what would settle something the window left open.
+### 2. The delta
 
-Each: the thing, when, and why it matters. Pull the observables from the "What would settle it" sections of discussion documents in the window — that is what they are for.
+Compact. Versus the prior brief when one exists; otherwise session moves only — say so explicitly. Include only what is decision-relevant: indices, the long end, a commodity where something is happening, names that moved on something in this window's documents or on attributed wires.
 
-### The delta
+### 3. Positioning read
 
-Three to six lines. What moved versus where it stood at the previous brief.
+Short directional **prose paragraphs** routed to `state/themes.json` themes the window touched. Name the documents. Flag `breaks_if` proximity when it came closer. Themes not touched are omitted.
 
-```
-ES futures     5,842      5,901      -1.0%
-10y            4.31%      4.24%      +7bp
-NVDA           $184.20    $191.55    -3.8%   (on the Baker thread)
-```
+**Never** trades, leans, "own/rent," baskets, or sizing. Prefer prose over STRENGTHENS / WEAKENS labels; those may appear inline once, not as a table of jargon.
 
-Include only what is decision-relevant: index futures, the long end, the policy-path probability, a commodity where something is happening, and any single name that moved on something in this window's documents.
+### 4. Top stories
 
-The comparison against the prior brief is the point. A level with no prior is a number; a level with a prior is information.
+Three to six. Each: headline, two or three sentences, outlet. Drawn from news documents in the window, plus attributed wires that mattered without earning their own document. Ordered by significance, never by time.
 
-### Positioning read
+### 5. The conversation
 
-Organized by theme from `state/themes.json`, not by ad-hoc heading. For each theme the window touched: a short paragraph on what the window's documents do to it, naming them.
+Each discussion in the window: the question, two to four sentences of state of play plus the carried read, and a link. No re-embedded posts — verbatim lives in the discussion document.
 
-Where the documents in this window disagree with each other, say so and name both. Where a theme's `breaks_if` condition came closer to being met, say that explicitly — it is the most useful sentence in the brief.
+### 6. In their words
 
-Directional only. Never a trade, never a ticker list, never sizing. Themes the window did not touch are not listed.
+Only if there are **≥3 load-bearing quotes** (a claim, a number, or a tell) from across the window. Each: quote, speaker, venue, timestamp, one line on why it matters. Fewer than three → omit the section entirely.
 
-### Top stories
+### 7. Podcasts & interviews
 
-Three to six items. Each: headline, two or three sentences, the outlet.
+One card per longform / interview doc in the window:
 
-Drawn from news documents in the window, plus anything from the tape that mattered without earning its own document. Ordered by significance to the reader, never by time.
+- Show / episode
+- Stance: `BULLISH` / `BEARISH` / `NEUTRAL` relative to consensus **in the material** — not a trade
+- Fidelity marker
+- Two to four sentence takeaway when fidelity supports it
 
-### The conversation
+`metadata-only` and `secondhand` entries get **one line + marker**. Do not summarize them as though they were heard.
 
-Discussion documents in the window. Each: the question, one or two sentences of the state of play, and the document's own read, carried forward verbatim in substance.
+### 8. What to watch
 
-Link to the document. Never re-embed posts — the verbatim lives in the discussion document and duplicating it here means the same post exists in two places with no canonical home.
-
-### Long-form
-
-Long-form documents in the window. Each: speaker and venue, the fidelity marker, two or three sentences on what it establishes, and the document's own read.
-
-`metadata-only` and `secondhand` entries get one line and their marker. They are listed so the reader knows they exist, not summarized as though they were heard.
-
-### In their words
-
-Three to six verbatim quotes from across the window, each with speaker, venue, timestamp, and one line on why it matters.
-
-**If there are fewer than three quotes that carry a claim, a number, or a tell, emit no section at all.** Not a header with nothing under it. This section exists when the window produced quotable material and does not exist when it did not.
+Three to six. Pull observables from discussion docs' "What would settle it" sections. Calendar items (FOMC, earnings, etc.) are fine. Each: the thing, when, why it matters.
 
 ## Rules
 
-- Never introduce a fact that is not in a source document or in market data. The brief is assembly. If something important is missing, the failure was upstream in triage, and the brief must not paper over it with recalled context.
-- Every claim traces to a document in `sources` or to a cited market datum.
-- A section with nothing to put in it emits nothing. This applies to every section including the lead — a genuinely empty window produces a short brief saying so, not a full-length brief padded with recycled context.
+- No trade recommendations. Directional theme prose only.
+- Never introduce a fact that is not in a source document, an attributed wire, or market data on hand. The brief is assembly.
+- Every claim traces to a document in `sources` or to a cited wire / market datum.
+- A section with nothing to put in it emits nothing — including In Their Words.
 - Never contradict a source document's read without naming the document and saying what changed.
-- The weekend edition covers more ground but is not longer by default. A quiet week is a short brief.
-- Ship on time. An incomplete brief that lands at 7:00am is more useful than a complete one at 8:15.
+- The weekend edition covers more ground but is not longer by default.
+- Ship on time at 9:00am / 4:30pm ET.
