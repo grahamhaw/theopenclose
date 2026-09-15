@@ -1,0 +1,8 @@
+# Raw transcripts and captured source material. Someone else's copyrighted
+# text, and the site is public. Documents quote fragments; the repo never
+# republishes the source.
+sources/
+
+node_modules/
+dist/
+.astro/
