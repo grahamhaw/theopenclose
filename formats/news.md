@@ -37,6 +37,13 @@ published: 2026-09-14T06:12:00-04:00
 
 `entities` carries the companies named — it is what puts this document on their dossiers.
 
+`source` is **required** — the real article / filing / release URL (schema-enforced). Briefs keyword-hyperlink to it. Never invent a URL; if only a secondhand relay exists (e.g. an X post quoting Korean media), use that relay URL and mark fidelity accordingly.
+
+### Title & summary (sidebar thumbnail)
+
+- `title`: short — the fact, not a multi-clause lede (aim ≤ ~90 characters).
+- `summary`: ≤ ~160 characters. One tight sentence for the list thumbnail.
+
 ## Sections
 
 ### What happened
