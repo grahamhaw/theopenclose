@@ -1,0 +1,271 @@
+{
+  "_comment": "Checked by the capture job before any browsing. An RSS feed gives headline, summary and link with no page load, so it never breaks on a layout change and never trips a bot check. Browse only for items that pass the headline check. Most outlets publish feeds; find them at /rss or /feeds on the outlet's site. Podcast entries verified 2026-09-14. Reuters tech had no public RSS — replaced with Bloomberg Technology.",
+  "feeds": [
+    {
+      "name": "cnbc-tech",
+      "type": "news",
+      "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=19854910"
+    },
+    {
+      "name": "cnbc-economy",
+      "type": "news",
+      "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910258"
+    },
+    {
+      "name": "wsj-markets",
+      "type": "news",
+      "url": "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain"
+    },
+    {
+      "name": "bloomberg-tech",
+      "type": "news",
+      "url": "https://feeds.bloomberg.com/technology/news.rss",
+      "note": "Replaces reuters-tech (no public Reuters tech RSS). FT tech also works: https://www.ft.com/technology?format=rss"
+    },
+
+    {
+      "name": "bg2-pod",
+      "type": "podcast",
+      "url": "https://anchor.fm/s/f06c2370/podcast/rss",
+      "youtube": "https://www.youtube.com/@Bg2Pod",
+      "note": "Brad Gerstner & Bill Gurley — core AI capex / markets"
+    },
+    {
+      "name": "invest-like-the-best",
+      "type": "podcast",
+      "url": "https://feeds.megaphone.fm/CLS2859450455",
+      "youtube": "https://www.youtube.com/@ILTB_Podcast",
+      "note": "Patrick O'Shaughnessy / Colossus — prefer YouTube transcripts"
+    },
+    {
+      "name": "odd-lots",
+      "type": "podcast",
+      "url": "https://omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/8A94442E-5A74-4FA2-8B8D-AE27003A8D6B/982F5071-765C-403D-969D-AE27003A8D83/podcast.rss",
+      "youtube": "https://www.youtube.com/@bloomberglp",
+      "note": "Bloomberg — macro when market-moving"
+    },
+    {
+      "name": "dwarkesh",
+      "type": "podcast",
+      "url": "https://api.substack.com/feed/podcast/69345.rss",
+      "youtube": "https://www.youtube.com/@DwarkeshPatel",
+      "note": "Prefer YouTube transcripts for longform AI"
+    },
+    {
+      "name": "semianalysis-weekly",
+      "type": "podcast",
+      "url": "https://anchor.fm/s/10fbee758/podcast/rss",
+      "youtube": "https://www.youtube.com/@SemiAnalysis",
+      "note": "Jordan Nanos & Doug O'Laughlin — HBM/semis/datacenter"
+    },
+    {
+      "name": "no-priors",
+      "type": "podcast",
+      "url": "https://feeds.megaphone.fm/nopriors",
+      "note": "Sarah Guo & Elad Gil — AI / startups / infra"
+    },
+    {
+      "name": "tbpn",
+      "type": "podcast",
+      "url": "https://feeds.transistor.fm/technology-brother",
+      "youtube": "https://www.youtube.com/@TBPNLive",
+      "note": "John Coogan & Jordi Hays — daily tech; YouTube-first"
+    },
+    {
+      "name": "tech-disruptors",
+      "type": "podcast",
+      "url": "https://feeds.megaphone.fm/techdisruptors",
+      "note": "Bloomberg Intelligence"
+    },
+    {
+      "name": "alpha-exchange",
+      "type": "podcast",
+      "url": "https://feeds.simplecast.com/8g9ryFGf",
+      "note": "Dean Curnutt — markets / risk / capital allocation"
+    },
+    {
+      "name": "invest-with-ai",
+      "type": "podcast",
+      "url": "https://feeds.buzzsprout.com/2616033.rss",
+      "youtube": "https://www.youtube.com/@FundamentEdge",
+      "note": "Brett Caughran / Fundamental Edge"
+    },
+    {
+      "name": "other-peoples-money",
+      "type": "podcast",
+      "url": "https://feeds.megaphone.fm/opm",
+      "youtube": "https://www.youtube.com/channel/UCeyqw1Ns_cnhSJh5XvXPWgw",
+      "note": "Max Wiethe"
+    },
+    {
+      "name": "odds-on-open",
+      "type": "podcast",
+      "url": "https://anchor.fm/s/101506278/podcast/rss",
+      "note": "Ethan Kho (@ethanrkho)"
+    },
+    {
+      "name": "real-eisman-playbook",
+      "type": "podcast",
+      "url": "https://feeds.megaphone.fm/GBLL9435201326",
+      "note": "Steve Eisman"
+    },
+    {
+      "name": "a16z-show",
+      "type": "podcast",
+      "url": "https://feeds.simplecast.com/JGE3yC0V",
+      "youtube": "https://www.youtube.com/@a16z"
+    },
+    {
+      "name": "masters-in-business",
+      "type": "podcast",
+      "url": "https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/4e4cd910-40a1-4619-a5f3-ae2b0012ffff/5873a3cb-298f-40bc-b71f-ae2b0013000d/podcast.rss",
+      "note": "Barry Ritholtz / Bloomberg — selective"
+    },
+    {
+      "name": "goldman-exchanges",
+      "type": "podcast",
+      "url": "https://feeds.megaphone.fm/GLD9218176758",
+      "note": "Goldman Sachs Exchanges — best GS feed"
+    },
+    {
+      "name": "acquired",
+      "type": "podcast",
+      "url": "https://feeds.transistor.fm/acquired",
+      "youtube": "https://www.youtube.com/@AcquiredFM"
+    },
+    {
+      "name": "business-breakdowns",
+      "type": "podcast",
+      "url": "https://feeds.megaphone.fm/breakdowns",
+      "note": "Colossus"
+    },
+    {
+      "name": "latent-space",
+      "type": "podcast",
+      "url": "https://api.substack.com/feed/podcast/1084089.rss",
+      "note": "AI Engineer podcast — agents / inference"
+    },
+    {
+      "name": "training-data",
+      "type": "podcast",
+      "url": "https://feeds.megaphone.fm/trainingdata",
+      "note": "Sequoia Capital (not a16z)"
+    },
+
+    {
+      "name": "all-in",
+      "type": "podcast",
+      "url": "https://allinchamathjason.libsyn.com/rss",
+      "youtube": "https://www.youtube.com/@allin",
+      "note": "Secondary — politics filter"
+    },
+    {
+      "name": "excess-returns",
+      "type": "podcast",
+      "url": "https://anchor.fm/s/9a1dfac/podcast/rss",
+      "youtube": "https://www.youtube.com/c/ExcessReturns",
+      "note": "Forehand / Carbonneau / Zeigler"
+    },
+    {
+      "name": "business-brew",
+      "type": "podcast",
+      "url": "https://anchor.fm/s/8d780590/podcast/rss",
+      "note": "Bill Brewster"
+    },
+    {
+      "name": "the-synopsis",
+      "type": "podcast",
+      "url": "https://rss.libsyn.com/shows/481071/destinations/4092573.xml",
+      "note": "Speedwell Research / Drew Cohen"
+    },
+    {
+      "name": "sourcery",
+      "type": "podcast",
+      "url": "https://anchor.fm/s/f192713c/podcast/rss",
+      "note": "Molly O'Shea — Graham said Sorcery"
+    },
+    {
+      "name": "never-sell",
+      "type": "podcast",
+      "url": "https://feeds.buzzsprout.com/2435713.rss",
+      "youtube": "https://www.youtube.com/@AsianometryMBI",
+      "note": "David Kim / MBI"
+    },
+    {
+      "name": "long-term-investing",
+      "type": "podcast",
+      "url": "https://feeds.cohostpodcasting.com/2U9q2Rim",
+      "youtube": "https://www.youtube.com/@LongTermInvestingPodcast",
+      "note": "Barry Schwartz / Baskin Wealth"
+    },
+    {
+      "name": "joys-of-compounding",
+      "type": "podcast",
+      "url": "https://feeds.megaphone.fm/aoi",
+      "note": "Colossus"
+    },
+    {
+      "name": "capital-ideas",
+      "type": "podcast",
+      "url": "https://capitalideas.libsyn.com/rss",
+      "note": "Capital Group"
+    },
+    {
+      "name": "ai-plus-a16z",
+      "type": "podcast",
+      "url": "https://feeds.simplecast.com/Hb_IuXOo",
+      "youtube": "https://www.youtube.com/@a16z",
+      "note": "a16z AI-focused feed"
+    },
+    {
+      "name": "hard-fork",
+      "type": "podcast",
+      "url": "https://feeds.simplecast.com/6HKOhNgS",
+      "note": "NYT — Roose & Newton"
+    },
+    {
+      "name": "sharp-tech",
+      "type": "podcast",
+      "url": "https://sharptech.fm/feed/podcast",
+      "note": "Ben Thompson / Stratechery-adjacent"
+    },
+    {
+      "name": "the-bid",
+      "type": "podcast",
+      "url": "https://rss.art19.com/the-bid",
+      "note": "BlackRock"
+    },
+    {
+      "name": "nvidia-ai-podcast",
+      "type": "podcast",
+      "url": "https://feeds.megaphone.fm/nvidiaaipodcast",
+      "note": "Vendor lens — secondary"
+    },
+    {
+      "name": "practical-ai",
+      "type": "podcast",
+      "url": "https://changelog.com/practicalai/feed",
+      "youtube": "https://www.youtube.com/@practicalai_show",
+      "note": "Changelog"
+    },
+    {
+      "name": "eye-on-ai",
+      "type": "podcast",
+      "url": "https://aneyeonai.libsyn.com/rss",
+      "note": "Craig S. Smith — disambiguation pick for 'Artificial Intelligence'"
+    },
+    {
+      "name": "monetary-matters",
+      "type": "podcast",
+      "url": "https://feeds.megaphone.fm/EWWMN1909747317",
+      "youtube": "https://www.youtube.com/channel/UCeyqw1Ns_cnhSJh5XvXPWgw",
+      "note": "Jack Farley — OPM network"
+    },
+    {
+      "name": "at-any-rate",
+      "type": "podcast",
+      "url": "https://atanyrate.podbean.com/feed.xml",
+      "note": "J.P. Morgan Global Research — rates/macro"
+    }
+  ]
+}
