@@ -39,8 +39,8 @@ Also in window: OpenRouter spend/tokens; All-In + TBPN (`metadata-only`). No sta
 - [ ] Any WSJ / FT / The Information items that pass triage
 - [ ] New tier-1 X since ~07:15 ET — extend, don't duplicate
 - [ ] Strip **DRAFT** markers if shipping
-- [ ] Confirm Github push complete for Taylor/HBM discussions + brief if still pending
+- [x] Github push complete for all five discussions + brief + draft note
 
 ## Push
 
-Github MCP: Broadcom restored; Anthropic + Fed discussions pushed; `_DRAFT_NOTE` + remaining Samsung discussions + brief in flight.
+Github MCP to `grahamhaw/theopenclose` **complete**: Broadcom, Anthropic GW, Fed odds, Taylor, HBM dual-source, DRAFT premarket brief, `_DRAFT_NOTE`.
