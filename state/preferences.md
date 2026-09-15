@@ -12,7 +12,7 @@
 - If an official show page must also be cited, keep YouTube as `source` and name the show page in the abstract, or add optional `youtube:` only after content.config.ts allows it.
 
 ## Briefs
-- Assemble only from `content/` in-window (skip `backfill`); wires/levels OK with outlet attribution. Section order: Lead → Delta → Positioning (prose, themes only — no trades) → Top stories → Conversation → In Their Words (≥3 quotes or omit) → Podcasts & interviews (stance + fidelity; metadata-only = one line) → What to watch. Premarket ~9:00 / postmarket ~4:30 / weekend Sat ~8:30 ET; ship on time; omit empties.
+- Assemble only from `content/` in-window (skip `backfill`); wires/levels OK with outlet attribution. Section order: Lead (S&P tape line + skim bullets; no Delta) → Positioning (bold human labels, no theme-id jargon/backtick ids) → Top stories → Conversation (title links to `/discussions/<id>`) → In Their Words (≥3 quotes or omit) → Podcasts & interviews (title → `/longform/<id>`; stance + fidelity; optional YouTube if `source` is youtube; metadata-only = one line) → What to watch. Title ≤~70 chars; summary ≤~160 chars. Wire keywords hyperlinked to real URLs only (never invent). Premarket ~9:00 / postmarket ~4:30 / weekend Sat ~8:30 ET; ship on time; omit empties.
 
 ## News sources
 - Baseline wires: CNBC, Bloomberg, WSJ.

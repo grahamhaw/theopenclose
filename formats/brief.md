@@ -8,13 +8,19 @@ Pre-market, post-market, and weekend are one format. The window is a parameter.
 | `postmarket` | Since the morning brief | ~4:30pm ET |
 | `weekend` | Since Friday's close brief | Sat ~8:30am ET |
 
+## Audience & skim standard
+
+High-value, easy skim for a buy-side investor morning/evening. Prefer **bold lead-ins** and light bullets over text walls. Bold + bullets when helpful; don't overdo.
+
 ## Assembly
 
 Read every document in `content/` whose later of `date` and `updated` falls inside the window. Skip every document with `backfill: true`. Never wait for unfinished jobs — a long-form still running at ship time belongs in the next brief.
 
-**Judgments** (reads, what a document says something implies, conversation verdicts) come only from documents in `content/` in the window — discussions, longform, news, interviews. Do not re-derive or contradict a document's read without naming the change.
+**Judgments** (reads, positioning implications, conversation verdicts) come only from documents in `content/` in the window — discussions, longform, news, interviews. Do not re-derive or contradict a document's read without naming the change.
 
-**Wire / market-data exception.** Levels, breadth, futures, yields, commodities, and wire facts may appear in the lead, the delta, and top stories with outlet attribution (WSJ, Reuters, Barron's, AP, MarketWatch, Investopedia, etc.) even when there is no matching `news.md`. Do not invent numbers. Every figure must come from a cited wire or from market data on hand.
+**Wire / market-data exception.** Levels, breadth, futures, yields, commodities, and wire facts may appear in the lead and top stories with outlet attribution even when there is no matching `news.md`. Do not invent numbers. Every figure must come from a cited wire or from market data on hand.
+
+**Wire links.** Hyperlink a keyword in the sentence to the real webpage (e.g. [10-year](https://…)). Never bare `(Bloomberg)` paren stubs as the only attribution when a URL exists. If no real URL is on hand, attribute in plain text and omit the link — **never invent URLs**.
 
 Omit empty sections entirely (especially In Their Words). Deep dives link from Conversation / What to Watch; do not paste the dive into the brief.
 
@@ -35,65 +41,90 @@ sources: [2026-09-14-baker-evaluators, 2026-09-14-oddlots-brockman]
 
 `sources` lists every document id the brief drew on. The site uses it to link, and it is how you check later what a brief was built from.
 
+### Title & summary (sidebar thumbnail)
+
+- `title`: ≤ ~70 characters. Edition + date + one hook (e.g. `Premarket Sep 15: oil, 5% 10y, Fed`).
+- `summary`: ≤ ~160 characters. One tight sentence for the list thumbnail — no multi-clause dump.
+
+Keep these short. Long titles/summaries blow up the sidebar thumbnail.
+
 ## Edition-specific leads
 
-- **Premarket** — overnight / weekend wires plus the open question the cash session must answer. Connect to weekend discussions when those are in window.
+- **Premarket** — overnight wires that move the US open, plus the open question the cash session must answer. Connect to weekend discussions when those are in window. Skip Asia/Europe unless they move the US tape.
 - **Postmarket** — what the session actually did (path, breadth, concentration), what resolved versus what remains from the morning question, and the sell-side / tape split if present.
 - **Weekend** — wider ground, not longer by default. A quiet week is a short brief.
 
 ## Section order (required)
 
-Emit sections in this order. Skip any section that would be empty.
+Emit sections in this order. Skip any section that would be empty. **There is no Delta section** — put one S&P tape line in the Lead instead.
 
 ### 1. The lead
 
-News-first tape, then the conversation implication. Two to four paragraphs of prose. This is the only section written as continuous synthesis across documents and wires. Write it last, after the rest is assembled.
+Skimmable. No text walls.
 
-Open with what changed, not with what is true. End with the open question the window leaves. Close the lead with a one-line levels line (SPX / Nasdaq / 10y / etc.).
+1. Start with an **S&P tape line** (bold):
+   - Premarket: futures vs prior close (e.g. **S&P futures ~flat** — ES detail)
+   - Postmarket: session %
+   - Weekend: week performance
+2. Then 3–6 short bullets or bold-lead sentences covering the overnight/session story (rates, oil, key operator wires, Fed path). International markets only if notable.
+3. End with **Open question:** one line.
 
-### 2. The delta
+Write the lead last, after the rest is assembled. Hyperlink wire keywords to real URLs when known.
 
-Compact. Versus the prior brief when one exists; otherwise session moves only — say so explicitly. Include only what is decision-relevant: indices, the long end, a commodity where something is happening, names that moved on something in this window's documents or on attributed wires.
+### 2. Positioning
 
-### 3. What changed
+Cleaner directional prose routed to themes the window touched. Use human labels as lead-ins (e.g. **AI capex durability**), never theme-id jargon as headers (`ai-capex-durability`).
 
-Short directional **prose paragraphs** on what the window's documents establish that the last brief did not have. Name the documents. Where something happened that a document had named as the thing that would settle it, say so — that is the most useful sentence in the brief. A window that changed nothing emits no section.
+Shape: **Bold lead-in** (essence) then supporting context. Hyperlink keywords to archive pages (`/discussions/...`, `/news/...`, `/longform/...`) or wires. No backtick doc ids in the body.
 
-**Never** trades, leans, "own/rent," baskets, or sizing. Prefer prose over STRENGTHENS / WEAKENS labels; those may appear inline once, not as a table of jargon.
+Never trades, leans, "own/rent," baskets, or sizing. Themes not touched are omitted. Flag `breaks_if` proximity in plain language when it came closer.
 
-### 4. Top stories
+Example:
 
-Three to six. Each: headline, two or three sentences, outlet. Drawn from news documents in the window, plus attributed wires that mattered without earning their own document. Ordered by significance, never by time.
+> **AI capex durability — operators still defending the multi-year path.** Tan [reaffirmed](https://…) Broadcom’s FY27/28 AI semi targets… [discussion](/discussions/…).
 
-### 5. The conversation
+### 3. Top stories
 
-Each discussion in the window: the question, two to four sentences of state of play plus the carried read, and a link. No re-embedded posts — verbatim lives in the discussion document.
+Three to six. Each: bold headline, two or three short sentences, outlet with keyword hyperlink when a real URL exists. Drawn from news documents in the window, plus attributed wires that mattered without earning their own document. Ordered by significance, never by time. No backtick doc ids.
 
-### 6. In their words
+### 4. The conversation
+
+Each discussion in the window. The **title itself** is the markdown link to `/discussions/<id>` (site paths, not `../discussions/`). Short blurb under it — one or two sentences, carried read in plain language. No separate ugly id links.
+
+```markdown
+### [Can Anthropic finance the 1/5/10 GW path?](/discussions/2026-09-15-anthropic-broadcom-gw-financeability)
+One or two sentences. Carried read in plain language.
+```
+
+### 5. In their words
 
 Only if there are **≥3 load-bearing quotes** (a claim, a number, or a tell) from across the window. Each: quote, speaker, venue, timestamp, one line on why it matters. Fewer than three → omit the section entirely.
 
-### 7. Podcasts & interviews
+### 6. Podcasts & interviews
 
-One card per longform / interview doc in the window:
+One card per longform / interview doc in the window. Title links to `/longform/<id>`. Optional second link to YouTube if frontmatter `source` is a YouTube URL. Include stance + fidelity briefly.
 
-- Show / episode
-- Stance: `BULLISH` / `BEARISH` / `NEUTRAL` relative to consensus **in the material** — not a trade
-- Fidelity marker
-- Two to four sentence takeaway when fidelity supports it
+```markdown
+### [All-In — Jensen Huang (Doomer Hoax)](/longform/2026-09-14-allin-jensen-doomer-hoax)
+**BULLISH** · `asr` · One tight takeaway. [Watch](https://www.youtube.com/...) if URL known.
+```
+
+Stance: `BULLISH` / `BEARISH` / `NEUTRAL` relative to consensus **in the material** — not a trade.
 
 `metadata-only` and `secondhand` entries get **one line + marker**. Do not summarize them as though they were heard.
 
-### 8. What to watch
+### 7. What to watch
 
-Three to six. Pull observables from discussion docs' "What would settle it" sections. Calendar items (FOMC, earnings, etc.) are fine. Each: the thing, when, why it matters.
+Three to six. Pull observables from discussion docs' "What would settle it" sections. Calendar items (FOMC, earnings, etc.) are fine. Each: the thing, when, why it matters. Hyperlink to discussions/news when useful; no backtick doc ids.
 
 ## Rules
 
-- No trade recommendations. Directional prose only.
+- No trade recommendations. Directional theme prose only.
 - Never introduce a fact that is not in a source document, an attributed wire, or market data on hand. The brief is assembly.
 - Every claim traces to a document in `sources` or to a cited wire / market datum.
 - A section with nothing to put in it emits nothing — including In Their Words.
 - Never contradict a source document's read without naming the document and saying what changed.
+- Never invent URLs. Internal links use site paths: `/discussions/...`, `/longform/...`, `/news/...`.
+- No "The Delta" section. S&P line lives in the Lead.
 - The weekend edition covers more ground but is not longer by default.
 - Ship on time at 9:00am / 4:30pm ET.
