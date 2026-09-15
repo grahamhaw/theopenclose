@@ -1,1 +1,352 @@
-PLACEHOLDER
+[
+  {
+    "name": "Stoic Point Capital Management",
+    "handle": "@stoic_point",
+    "bio": "Any statements or commentary from Stoic Point are not an advertisement and do not constitute an offer of any securities or investment advisory services."
+  },
+  {
+    "name": "Simeon Research",
+    "handle": "@SimeonResearch_",
+    "bio": "Hunting Asymmetrical and Overlooked ideas | Writing for Simeon Capital & AAIG | High Turnover"
+  },
+  {
+    "name": "Autumn Capital",
+    "handle": "@AutumnCapital",
+    "bio": "Yes, I kept it. Investing Related Thoughts: autumncapital.substack.com"
+  },
+  {
+    "name": "Hunterbrook",
+    "handle": "@hntrbrkmedia",
+    "bio": "Accountability. News & Investigations. ideas@hntrbrk.com Disclosures: HNTRBRK.com"
+  },
+  {
+    "name": "zerohedge",
+    "handle": "@zerohedge",
+    "bio": ""
+  },
+  {
+    "name": "Matt Reustle",
+    "handle": "@ReustleMatt",
+    "bio": "\"I'd like to solve the puzzle\" Investments, Media, and Investment Media Former: Raven Capital, GS Research, Colossus/Business Breakdowns"
+  },
+  {
+    "name": "Podcast Alpha",
+    "handle": "@PodcastAlphaX",
+    "bio": "Signal. Not noise. Forensic breakdowns of the world's most influential podcasts. Substack - podcastalpha.substack.com DM to remove clips"
+  },
+  {
+    "name": "Fireside Alpha",
+    "handle": "@firesidealpha",
+    "bio": "Summary and synthesis of the best business, technology, and consumer conversations | @firesidetapes for historical archives"
+  },
+  {
+    "name": "The All-In Podcast",
+    "handle": "@theallinpod",
+    "bio": "@chamath, @jason, @davidsacks, and @friedberg cover all things economic, tech, political, social, and poker."
+  },
+  {
+    "name": "Michael Saylor",
+    "handle": "@saylor",
+    "bio": "Bitcoin is Hope.com | $BTC Hodler | @Strategy Founder & Chairman | bio michael.com | free education saylor.org | $MSTR $STRC"
+  },
+  {
+    "name": "Patrick OShaughnessy",
+    "handle": "@patrick_oshag",
+    "bio": "building @psumvc @colossusmag hosting @investlikebest"
+  },
+  {
+    "name": "Jack Altman",
+    "handle": "@jaltma",
+    "bio": "Partner @Benchmark. Previously founded Alt Cap and Lattice."
+  },
+  {
+    "name": "Eric Vishria",
+    "handle": "@ericvishria",
+    "bio": "GP @Benchmark Director @confluentinc @Cerebras @Contentful @Benchling @CommerceLayer @acuitymd @FireworksAI_HQ @quilterai @pomerium_io @greptile @sundayrobotics"
+  },
+  {
+    "name": "Orlando Bravo",
+    "handle": "@OrlandoBravoTB",
+    "bio": "Co-founder of @ThomaBravo and @BravoFamilyFdn. Opinions are my own."
+  },
+  {
+    "name": "Antonio Gracias",
+    "handle": "@AntonioGracias",
+    "bio": "Founder and Managing Partner, Valor Equity Partners"
+  },
+  {
+    "name": "Josh Wolfe",
+    "handle": "@wolfejosh",
+    "bio": "co-founder + partner @ Lux Capital | Trustee @SfiScience Santa Fe Inst | Founding Chair @CiPrep (Brooklyn) | Co-Founder of Carson, Quinn & Bodhi w/ @ltwolfe"
+  },
+  {
+    "name": "Daniel Sundheim",
+    "handle": "@dsundheim",
+    "bio": "founder d1 capital"
+  },
+  {
+    "name": "Eric Balchunas",
+    "handle": "@EricBalchunas",
+    "bio": "Senior ETF Analyst for @Bloomberg. Dad. Rutgers grad. Gen X-er. Author of \"The Institutional ETF Toolbox\" & \"The Bogle Effect.\" Co-host of Trillions & ETF IQ."
+  },
+  {
+    "name": "Nishant Kumar",
+    "handle": "@nishantkumar07",
+    "bio": "Chief Correspondent, Bloomberg. Writes on hedge funds. Talks to his plants. Retweets & likes r not endorsements. Tips to nish.scouts583@passinbox.com"
+  },
+  {
+    "name": "Sonali Basak",
+    "handle": "@sonalibasak",
+    "bio": "Chief Investment Strategist, iCapital. Former Bloomberg anchor/chief financial corspd. Views are my own. Not an offer or recommendation. bit.ly/4wFbf"
+  },
+  {
+    "name": "Carl Quintanilla",
+    "handle": "@carlquintanilla",
+    "bio": "26+ years @CNBC & @NBCNews / @WSJ alum / now posting at bsky.app/profile/carlquintanilla.bsky.social …"
+  },
+  {
+    "name": "Andrew Ross Sorkin",
+    "handle": "@andrewrsorkin",
+    "bio": "@NYTimes Columnist/Editor & @SquawkCNBC Co-Anchor. Author, “1929” + “Too Big To Fail”. Founder, @DealBook. CoCreator, BILLIONS @Showtime. Proud Dad."
+  },
+  {
+    "name": "Deirdre Bosa",
+    "handle": "@dee_bosa",
+    "bio": "Pronounced Dear-dra. Anchor & reporter @CNBC for 15 yrs. Now building something new. still a Leafs fan"
+  },
+  {
+    "name": "Sara Eisen",
+    "handle": "@SaraEisen",
+    "bio": "@CNBC @Squawkstreet 10am-noon"
+  },
+  {
+    "name": "John Coogan",
+    "handle": "@johncoogan",
+    "bio": "Host @TBPN"
+  },
+  {
+    "name": "TBPN",
+    "handle": "@tbpn",
+    "bio": "Technology’s daily show. Hosted by @johncoogan & @jordihays. Streaming live 11a–2p PT weekdays. Sign up for our free newsletter at TBPN.com."
+  },
+  {
+    "name": "Dwarkesh Patel",
+    "handle": "@dwarkesh_sp",
+    "bio": "Host of @dwarkeshpodcast youtube.com/DwarkeshPatel open.spotify.com/show/4JH4tybY1zX6e5hjCwU6gF … apple.co/3ujLQkZ"
+  },
+  {
+    "name": "No Priors",
+    "handle": "@NoPriorsPod",
+    "bio": "@saranormous and @eladgil host your podcast guide to the AI revolution. weekly interviews with the builders (on Apple, Spotify and YouTube)"
+  },
+  {
+    "name": "Elon Musk",
+    "handle": "@elonmusk",
+    "bio": "Terafab.AI"
+  },
+  {
+    "name": "martin_casado",
+    "handle": "@martin_casado",
+    "bio": "@ a16z"
+  },
+  {
+    "name": "Palmer Luckey",
+    "handle": "@PalmerLuckey",
+    "bio": "I am a technology enthusiast, writer, and modder. Founder of @ModRetro, @Oculus VR, and @Anduriltech. Keeping American superheroes safe with autonomous systems."
+  },
+  {
+    "name": "Sundar Pichai",
+    "handle": "@sundarpichai",
+    "bio": "CEO, Google and Alphabet"
+  },
+  {
+    "name": "OpenAI",
+    "handle": "@OpenAI",
+    "bio": "OpenAI’s mission is to ensure that artificial general intelligence benefits all of humanity. We’re hiring: openai.com/jobs"
+  },
+  {
+    "name": "Andrej Karpathy",
+    "handle": "@karpathy",
+    "bio": "deep learning"
+  },
+  {
+    "name": "Dario Amodei",
+    "handle": "@DarioAmodei",
+    "bio": "Anthropic CEO. darioamodei.com"
+  },
+  {
+    "name": "Jared Kubin",
+    "handle": "@JaredKubin",
+    "bio": "Founder Romans 8:11. No One is Coming. Dadmaxxing & Liftmaxxing. Who Dares Wins. Liquidation Nation Whatever it Takes."
+  },
+  {
+    "name": "Brett Caughran",
+    "handle": "@FundamentEdge",
+    "bio": "Completed my hedge fund tour of duty (Maverick, D.E. Shaw, Citadel, Schonfeld). Adjunct at ASU. Now building an exceptional analyst training firm. DMs open!"
+  },
+  {
+    "name": "Just Another Pod Guy",
+    "handle": "@TMTLongShort",
+    "bio": "Economic Blitzkrieg. Never said it was a good bet, just a complex bet. Decoupling Long/Short Tech Investor. Will say retarded shit often."
+  },
+  {
+    "name": "Garp&Chill",
+    "handle": "@GarpandChill",
+    "bio": "Quality Growth. Compounders. Serial Acquirers. Sharing stock picks and deep-dive threads. Global equities, any size. garpandchill.substack.com NFA."
+  },
+  {
+    "name": "Rich Falk-Wallace",
+    "handle": "@richfalkwallace",
+    "bio": "Arcana | Idio, crowding, risk, & performance"
+  },
+  {
+    "name": "AIP",
+    "handle": "@Anomaly_Invest",
+    "bio": "High-quality, research-backed financial analysis and practical lessons for intelligent investors. No clickbait, just rigorous, actionable insights."
+  },
+  {
+    "name": "Origo",
+    "handle": "@origoinvest",
+    "bio": "Original research on mispriced inflection points: catalysts, complexity, transformations"
+  },
+  {
+    "name": "Siyu Li",
+    "handle": "@siyul",
+    "bio": "private investor | ex-NYSE, Bridgewater, Bernstein. Write \"Under The Hood\" underhood.substack.com"
+  },
+  {
+    "name": "Bottleneck Capital",
+    "handle": "@Klaudnin3",
+    "bio": "L/S TMT Investor, tweets are not investment advice."
+  },
+  {
+    "name": "TheValueist",
+    "handle": "@TheValueist",
+    "bio": "Disc L/S | TMT+Energy. ISO convexity. Factor aware. Path independence matters. Results never lie. NFA. Student of mkts and cos. Creator: CRAVE Thesis of GAI."
+  },
+  {
+    "name": "Jeff Pu",
+    "handle": "@sssjeffpu",
+    "bio": "Tech Enthusiast. 20 years tech equity research + industry."
+  },
+  {
+    "name": "Eric Jhonsa",
+    "handle": "@EricJhonsa",
+    "bio": "PM for Dutch Asset. Previously: Independent L/S investor, tech columnist @thestreet @thestreetpro. Nothing here is investment advice. DMs open to talk stocks."
+  },
+  {
+    "name": "Broken Moats",
+    "handle": "@BrokenMoats",
+    "bio": "Research long / short. variant perception. @ Family Office current. Worked at two small cap focused hedge funds prior. Nothing is investment advice."
+  },
+  {
+    "name": "londoncap",
+    "handle": "@londoncap100",
+    "bio": "L/S equity - semis/hardware/software. DMs open for all things markets, golf, and skiing. Substack: londoncap100.substack.com/?r=1wfklv&utm_klv&utm_medium=ios …"
+  },
+  {
+    "name": "Paradis",
+    "handle": "@ParadisLabs",
+    "bio": "AI, tech & macro research. No investment advice."
+  },
+  {
+    "name": "Nicholas Mugalli",
+    "handle": "@RealNickMugalli",
+    "bio": "Institutional TMT research, made public | daily Pre market brief + closing brief. Economics | Data, AI, semis & macro alpha | policy play"
+  },
+  {
+    "name": "Robert Boswall",
+    "handle": "@RobertBoswall",
+    "bio": "recovering nuclear tragic, @SemiAnalysis_ and @Doloop_Energy"
+  },
+  {
+    "name": "Jukan",
+    "handle": "@jukan05",
+    "bio": ""
+  },
+  {
+    "name": "Jamin Ball",
+    "handle": "@jaminball",
+    "bio": "Partner at Altimeter Capital. Dad to 4 amazing kids. No investment advice, all views personal"
+  },
+  {
+    "name": "Omer Cheema",
+    "handle": "@Omercheema",
+    "bio": "Semicon expert. Ex AMD, Ex Samsung. Now at Renesas. PhD Paris Tech. MBA from INSEAD. Opinions my own. cheemaomer.substack.com"
+  },
+  {
+    "name": "Rittenhouse Research",
+    "handle": "@RHouseResearch",
+    "bio": "AI infrastructure, data centers, neoclouds, software, fintech."
+  },
+  {
+    "name": "tae kim",
+    "handle": "@firstadopter",
+    "bio": "\"Key Context\" Substack covering AI and chips. Reached #1 new bestseller first 24 hrs Subscribe taekim.substack.com \"Be so good they can't ignore you\""
+  },
+  {
+    "name": "Fabricated Knowledge",
+    "handle": "@fabknowledge",
+    "bio": "Simplifying the world of semiconductor investing in the age of AI. Part of the @semianalysis_ gang. all views are personal"
+  },
+  {
+    "name": "SemiAnalysis",
+    "handle": "@SemiAnalysis_",
+    "bio": ""
+  },
+  {
+    "name": "Rihard Jarc",
+    "handle": "@RihardJarc",
+    "bio": "Researching and investing in tech (AI, cloud, semiconductors, platforms). DMs open. Tweets are only opinions."
+  },
+  {
+    "name": "Gavin Baker",
+    "handle": "@GavinSBaker",
+    "bio": "Managing Partner & CIO, @atreidesmgmt. Husband, @l3eckyy. No investment advice, views my own. gavin-baker.medium.com"
+  },
+  {
+    "name": "SouthernValue",
+    "handle": "@SouthernValue95",
+    "bio": "Infinitely curious. “Spend each day trying to be a little wiser than you were when you woke up.” - Charlie Munger"
+  },
+  {
+    "name": "Nick Dorsey",
+    "handle": "@Midnight_Captl",
+    "bio": "@joule14 | AI & semi’s | girl dad | ex. Apple Global Sourcing"
+  },
+  {
+    "name": "Ethan Kho",
+    "handle": "@ethanrkho",
+    "bio": "Host of Odds on Open (presented by @onyxcapgroup)"
+  },
+  {
+    "name": "Jensen Huang",
+    "handle": "@JensenHuang",
+    "bio": "Founder and CEO of NVIDIA."
+  },
+  {
+    "name": "Evergreen Capital",
+    "handle": "@evergreencap3",
+    "bio": "Tech investor | Posting since March ’26 | Views my own, not advice"
+  },
+  {
+    "name": "Kate Rooney",
+    "handle": "@Kr00ney",
+    "bio": "@CNBC in San Francisco. Covering OpenAI, Anthropic, Amazon, Microsoft & all things AI Signal: @ kr00ney.24"
+  },
+  {
+    "name": "Bill Ackman",
+    "handle": "@BillAckman",
+    "bio": "CEO Pershing Square, Co-trustee @PershingSqFdn"
+  },
+  {
+    "name": "uncoveredalpha",
+    "handle": "@uncovered_alpha",
+    "bio": "Ex-sell side/buy side. Spent years writing research nobody read on stocks everybody owned. Now writing research people actually want on stocks nobody covers."
+  },
+  {
+    "name": "Ara Kharazian",
+    "handle": "@arakharazian",
+    "bio": "Lead Economist @tryramp. I write and publish data on AI, business spend, and the economy at ramp.com/data. cc: press@ramp.com. Prev economist @square"
+  }
+]
