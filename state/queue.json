@@ -1,5 +1,5 @@
 {
-  "_comment": "Long-form awaiting treatment. New podcast/YouTube episodes land here when published and stay until processed — do not drop for age while still unpublished as a document. The old 3-day expiry does not apply to podcasts Graham wants processed on publish.",
+  "_comment": "Long-form awaiting treatment. New podcast/YouTube episodes land here when published and stay until processed \u2014 do not drop for age while still unpublished as a document. The old 3-day expiry does not apply to podcasts Graham wants processed on publish.",
   "queue": [
     {
       "url": "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-agentic-inference",
@@ -33,21 +33,14 @@
       "url": "https://tedseides.libsyn.com/ai-in-the-investment-office-abby-barlow-laura-hill-",
       "title": "Capital Allocators: AI in the Investment Office",
       "surfaced_by": "rss:capital-allocators",
-      "why": "Direct AI-in-investing workflow — Graham priority theme.",
+      "why": "Direct AI-in-investing workflow \u2014 Graham priority theme.",
       "queued_at": "2026-09-15T07:35:00-04:00"
     },
     {
       "url": "https://pscrb.fm/rss/p/traffic.megaphone.fm/CPUAI7737498941.mp3",
-      "title": "Training Data: Box's Aaron Levie — reinventing in the AI age / enterprise diffusion",
+      "title": "Training Data: Box's Aaron Levie \u2014 reinventing in the AI age / enterprise diffusion",
       "surfaced_by": "rss:training-data",
       "why": "Enterprise agent/diffusion principal; bears on enterprise-agent-stall theme.",
-      "queued_at": "2026-09-15T07:35:00-04:00"
-    },
-    {
-      "url": "https://allinchamathjason.libsyn.com/elon-musk-gwynne-shotwell-on-ai-risks-and-p",
-      "title": "All-In: Elon Musk & Gwynne Shotwell on AI Risks and Peer Review, Starship, Terafab",
-      "surfaced_by": "rss:all-in",
-      "why": "Fresh overnight All-In cut after Jensen episode; filter politics, keep fab/AI peer-review claims.",
       "queued_at": "2026-09-15T07:35:00-04:00"
     },
     {
