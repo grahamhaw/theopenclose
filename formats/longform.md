@@ -20,7 +20,7 @@ One spec for all of them. Only the source metadata differs.
 - Quotes are permitted but marked `[asr]` after the attribution. They are not byte-faithful and must not be presented as though they were.
 - A figure that is load-bearing and unconfirmed is stated with the uncertainty visible: `~$50bn (asr — may be $15bn, unconfirmed)`.
 
-**`metadata-only`** is restricted to frontmatter plus abstract. No theses, no key math, no quotes.
+**`metadata-only`** is restricted to frontmatter plus abstract. No theses, no key math, no quotes, no positioning read.
 
 **`secondhand`** is restricted to frontmatter plus abstract, and the abstract must name who is reporting it. Never quote from a secondhand source — the words are someone else's paraphrase and quoting them launders a summary into a quotation.
 
@@ -45,7 +45,7 @@ published: 2026-09-13T16:00:00-04:00
 - `title`: ≤ ~90 characters. Show + guest/hook, skim-friendly (not a multi-clause dump).
 - `summary`: ≤ ~160 characters. One tight sentence for the list thumbnail.
 
-Brief cards link as `[title](/longform/<id>)`, with an optional second `[Watch](youtube)` when `source` is a YouTube URL.
+Briefs link via an in-sentence keyword to `/longform/<id>` (e.g. [Recap](/longform/<id>)), with an optional second `[Watch](youtube)` when `source` is a YouTube URL — not via `### [title](...)` headers or title-as-link-text.
 
 ## Sections
 
@@ -104,11 +104,25 @@ Four labeled blocks, separated by blank lines.
 
 **Priced in** — what consensus already holds and this merely confirms.
 
-**What's new** — the genuinely variant datapoints, and what they change about how the reader should see the world. If nothing here is variant, say what the source is instead — a piece of positioning, a methodology, a private-company story — rather than straining for a payoff.
+**What's new** — the genuinely variant datapoints, and what they change about how the reader should see the world. If nothing here is variant, say what the source is instead — a positioning read, a methodology, a private-company story — rather than straining for a payoff.
 
 **The bear case** — the strongest counter-reading of the source's own claims, stated fairly.
 
 **Discount** — source bias. Who is talking their book, what the arithmetic assumes away, what the speaker gains if the audience believes him.
+
+### Positioning read
+
+Route to `state/themes.json`. For each theme the material bears on: strengthens, weakens, or neutral, and one line on why.
+
+```
+ai-capex-durability — STRENGTHENS. Two sites contracted through FY27 at a
+scale that does not unwind on a single quarter of softer demand.
+
+hbm-supply-binds — WEAKENS. Second source qualified at volume in June,
+earlier than the theme assumed.
+```
+
+Never invent a theme. Themes the material does not bear on are not listed — "not addressed" entries are banned and silence is the default. Directional only. If the material bears on nothing in the file, emit nothing.
 
 ### Frameworks
 
