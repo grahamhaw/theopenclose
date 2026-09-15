@@ -53,49 +53,35 @@ backfill: false
 
 ## Top stories
 
-**10y tags ~5.02%; oil holds three-digit into Wednesday Fed**  
-10-year as high as 5.02% Tuesday, highest since 2007 (Bloomberg). Brent/WTI elevated on East-West pipeline outage and fresh Houthi strikes (Reuters); Goldman scenarios still cite Brent toward $120+ if Gulf outages persist. FedWatch ~92–93% for a 25bp hike Wednesday (CNBC / Reuters). CNBC notes oil–10y correlation at strongest since 2019.
+**10y ~5.02% into Fed — oil still three-digit.** Bloomberg print highest since 2007; Reuters oil on East-West/Houthi risk; Goldman scenarios still cite Brent toward $120+ if Gulf outages persist; FedWatch ~92–93% for a 25bp hike Wednesday (CNBC / Reuters); CNBC notes oil–10y correlation at strongest since 2019.
 
-**Empire State cools; prices paid still hot**  
-NY Fed Empire State business conditions index 7.6 in September vs 20.6 in August (WSJ expected ~15). Prices paid and prices received both rose five points — energy-inflation vs demand split for the session (WSJ / Dow Jones Newswires).
+**Empire State cools — prices paid still hot.** NY Fed Empire State business conditions index 7.6 in September vs 20.6 in August (WSJ expected ~15); prices paid and prices received both rose five points — energy-inflation vs demand split for the session (WSJ / Dow Jones Newswires).
 
-**Broadcom’s Tan: AI semi targets unchanged amid pacing debate**  
-On CNBC Mad Money, Hock Tan said Anthropic-led “pace the frontier” chatter has not changed Broadcom’s $115bn FY27 / $230bn FY28 AI semiconductor forecasts; Anthropic on track as largest custom customer in 2027–28. [CNBC](https://www.cnbc.com/2026/09/14/broadcom-ceo-on-anthropics-slowdown-push-ai-revenue-targets-havent-changed.html) · [news](/news/2026-09-15-broadcom-tan-ai-revenue-targets)
+**Broadcom’s Tan — AI semi targets unchanged amid pacing debate.** On CNBC Mad Money, Hock Tan said Anthropic-led “pace the frontier” chatter has not changed Broadcom’s $115bn FY27 / $230bn FY28 AI semiconductor forecasts; Anthropic on track as largest custom customer in 2027–28 ([CNBC](https://www.cnbc.com/2026/09/14/broadcom-ceo-on-anthropics-slowdown-push-ai-revenue-targets-havent-changed.html); [news](/news/2026-09-15-broadcom-tan-ai-revenue-targets)).
 
-**Anthropic Broadcom TPU path: 1 GW / 5 GW / +10 GW — pay-for-it unanswered**  
-Tanay Jaipuria: Ironwood 1 GW in 2026, TPU v8i 5 GW in 2027, line of sight to 10 more GW in 2028; Anthropic to top Google as Broadcom XPU customer next year. Visible reply: how do they pay if not generating cash. [discussion](/discussions/2026-09-15-anthropic-broadcom-gw-financeability)
+**Anthropic Broadcom TPU path — 1/5/10 GW, pay-for-it unanswered.** Tanay Jaipuria: Ironwood 1 GW in 2026, TPU v8i 5 GW in 2027, line of sight to 10 more GW in 2028; Anthropic to top Google as Broadcom XPU customer next year; visible reply: how do they pay if not generating cash ([discussion](/discussions/2026-09-15-anthropic-broadcom-gw-financeability)).
 
-**Samsung Taylor ~30% utilization; Tesla AI5 cited as pull-forward**  
-Korean media via [jukan05](https://x.com/jukan05/status/2099785420343242934): utilization ~20% → ~30%, earlier than November plan; Tesla AI5 across auto/robotaxi/robot/DC. Aju Press same week: pilot lines / test wafers, mass production early next year — treat 30% as directional. [news](/news/2026-09-15-samsung-taylor-fab-early-util)
+**Samsung Taylor ~30% util — Tesla AI5 cited as pull-forward.** Korean media via [jukan05](https://x.com/jukan05/status/2099785420343242934): utilization ~20% → ~30%, earlier than November plan; Tesla AI5 across auto/robotaxi/robot/DC; Aju Press same week: pilot lines / test wafers, mass production early next year — treat 30% as directional ([news](/news/2026-09-15-samsung-taylor-fab-early-util)).
 
-**Samsung dual-sources custom HBM base dies with TSMC**  
-ZDNet Korea / [jukan](https://x.com/jukan05/status/2099770851516428455): Samsung Foundry + TSMC “two-track” for cHBM base dies by customer request; Memory Division designs when TSMC fabs. [news](/news/2026-09-15-samsung-hbm-base-die-tsmc)
+**Samsung dual-sources custom HBM base dies with TSMC.** ZDNet Korea / [jukan](https://x.com/jukan05/status/2099770851516428455): Samsung Foundry + TSMC “two-track” for cHBM base dies by customer request; Memory Division designs when TSMC fabs ([news](/news/2026-09-15-samsung-hbm-base-die-tsmc)).
 
-**Wells — active data-center moratoriums +175% over three months**  
-[Carl Quintanilla](https://x.com/carlquintanilla/status/2099817478704550350) quotes Wells: national active DC moratoriums up 175% over three months, momentum expected to continue amid frontier-lab security concerns. Primary Wells note not opened. [news](/news/2026-09-15-wells-dc-moratoriums-up)
+**Wells — active DC moratoriums +175% over three months.** [Carl Quintanilla](https://x.com/carlquintanilla/status/2099817478704550350) quotes Wells: national active DC moratoriums up 175% over three months, momentum expected to continue amid frontier-lab security concerns; primary Wells note not opened ([news](/news/2026-09-15-wells-dc-moratoriums-up)).
 
 ## The conversation
 
-### [Can Anthropic finance a 1/5/10 GW Broadcom TPU path — and top Google as XPU customer?](/discussions/2026-09-15-anthropic-broadcom-gw-financeability)
-Tanay’s GW schedule matches Broadcom call language; thin replies challenge cash. Carried read: roadmap is load-bearing *if* secured supply holds; financeability unresolved.
+**Anthropic 1/5/10 GW path — financeability still open.** Tanay’s schedule matches Broadcom call language; thin replies challenge cash. Carried read: roadmap load-bearing if supply holds; pay-for-it unresolved ([discussion](/discussions/2026-09-15-anthropic-broadcom-gw-financeability)).
 
-### [Is a ~90% hike probability the right Wednesday call — or is the room still 50/50?](/discussions/2026-09-15-fed-hike-odds-juxtaposition)
-Balchunas 90% vs 38% juxtaposition; replies include 50/50 personal odds. Carried read: priced hike has the better of the pre-meeting tape; Wednesday settles the binary.
+**Fed hike odds — ~90% priced vs 50/50 room.** Balchunas 90% vs 38% juxtaposition; replies include 50/50 personal odds. Carried read: priced hike has the better of the pre-meeting tape; Wednesday settles the binary ([discussion](/discussions/2026-09-15-fed-hike-odds-juxtaposition)).
 
-### [Do Broadcom's FY27/FY28 AI revenue targets rebut Monday's "cycle end" tape?](/discussions/2026-09-15-broadcom-ai-revenue-vs-cycle-end)
-jpinsights weights Hock Tan’s ~$115B/~$230B path and Anthropic as largest custom silicon customer in 2027 over weekly end-of-cycle takes. Carried read: operator numbers win the mechanism fight overnight; delivery and CSP concentration remain open.
+**Broadcom FY27/FY28 AI targets — rebuttal to “cycle end” tape.** jpinsights weights Hock Tan’s ~$115B/~$230B path and Anthropic as largest custom silicon customer in 2027 over weekly end-of-cycle takes. Carried read: operator numbers win the mechanism fight overnight; delivery and CSP concentration remain open ([discussion](/discussions/2026-09-15-broadcom-ai-revenue-vs-cycle-end)).
 
-### [Is Samsung Taylor's early ramp real foundry recovery — or pilot optics?](/discussions/2026-09-15-samsung-taylor-tesla-ai5-ramp)
-~30% utilization / Tesla AI5 pull-forward vs Aju Press pilot framing. Carried read: direction early is credible; do not equate utilization prints with proven 2nm mass economics.
+**Samsung Taylor early ramp — real foundry recovery or pilot optics?** ~30% utilization / Tesla AI5 pull-forward vs Aju Press pilot framing. Carried read: direction early is credible; do not equate utilization prints with proven 2nm mass economics ([discussion](/discussions/2026-09-15-samsung-taylor-tesla-ai5-ramp)).
 
-### [Does Samsung dual-sourcing HBM base dies with TSMC ease the bind?](/discussions/2026-09-15-samsung-hbm-base-die-tsmc-dual-source)
-ZDNet Korea two-track; replies flag TSMC wafer allocation. Carried read: customer-chain access, not HBM unconstrained.
+**Samsung–TSMC HBM base-die dual-source — bind eased?** ZDNet Korea two-track; replies flag TSMC wafer allocation. Carried read: customer-chain access, not HBM unconstrained ([discussion](/discussions/2026-09-15-samsung-hbm-base-die-tsmc-dual-source)).
 
-### [If GPT-6 Astra is looped depth, does that bend HBM vs FLOP intensity?](/discussions/2026-09-15-astra-loop-transformers)
-SemiAnalysis “basically confirmed” loop transformers; replies split HBM-sparing vs sequential-compute-heavy. Carried read: named research claim is load-bearing; semiconductor implication unsettled until write-up or model card.
+**GPT-6 Astra looped depth — HBM vs FLOP intensity?** SemiAnalysis “basically confirmed” loop transformers; replies split HBM-sparing vs sequential-compute-heavy. Carried read: named research claim is load-bearing; semiconductor implication unsettled until write-up or model card ([discussion](/discussions/2026-09-15-astra-loop-transformers)).
 
-### [Why do three US labs take ~70% of OpenRouter spend but only ~27% of tokens?](/discussions/2026-09-14-openrouter-spend-vs-tokens)
-Monday evening chart; thin replies. Carried read: spend ≠ tokens — frontier APIs as high-ASP slice.
+**OpenRouter spend ≠ tokens — three labs ~70% spend / ~27% tokens.** Monday evening chart; thin replies. Carried read: spend ≠ tokens — frontier APIs as high-ASP slice ([discussion](/discussions/2026-09-14-openrouter-spend-vs-tokens)).
 
 ## In their words
 
@@ -119,27 +105,28 @@ Monday evening chart; thin replies. Carried read: spend ≠ tokens — frontier 
 
 ## Podcasts & interviews
 
-### [All-In — Jensen Huang (Doomer Hoax)](/longform/2026-09-14-allin-jensen-doomer-hoax)
-**BULLISH** · `asr` · Rejects extinction-probability framing; cites ~$400bn AI-native VC with ~80% on open models; NVIDIA posture “go up as far as needed, as low as possible.” [Watch](https://www.youtube.com/watch?v=S7CrlFLAmEA)
+**All-In — Jensen (Doomer Hoax) — BULLISH / asr.** Rejects extinction-probability framing; cites ~$400bn AI-native VC with ~80% on open models; NVIDIA posture “go up as far as needed, as low as possible.” [Recap](/longform/2026-09-14-allin-jensen-doomer-hoax) · [Watch](https://www.youtube.com/watch?v=S7CrlFLAmEA)
 
-### [All-In — Elon Musk & Gwynne Shotwell (Terafab / Starship)](/longform/2026-09-15-allin-elon-shotwell-terafab)
-**BULLISH** · `asr` · Shotwell: SpaceX as much AI as space by revenue, compute rental with no demand drop; Musk: Terafab as build-or-fail-to-scale, Starship catch ~50–60%. [Watch](https://www.youtube.com/watch?v=iwBOQeFPAwg)
+**All-In — Elon & Shotwell (Terafab / Starship) — BULLISH / asr.** Shotwell: SpaceX as much AI as space by revenue, compute rental with no demand drop; Musk: Terafab as build-or-fail-to-scale, Starship catch ~50–60%. [Recap](/longform/2026-09-15-allin-elon-shotwell-terafab) · [Watch](https://www.youtube.com/watch?v=iwBOQeFPAwg)
 
-### [All-In — Jensen Huang (Physical AI / Inference, Mar 2026)](/longform/2026-03-19-jensen-huang-allin-physical-ai-inference)
-**BULLISH** · `asr` · Archive in-window: agentic ~10,000x compute step, Vera Rubin factory $/token argument, Physical AI near-$10bn line. [Watch](https://www.youtube.com/watch?v=gwW8GKwHB3I)
+**All-In — Jensen (Physical AI / Inference, Mar 2026) — BULLISH / asr.** Archive in-window: agentic ~10,000x compute step, Vera Rubin factory $/token argument, Physical AI near-$10bn line. [Recap](/longform/2026-03-19-jensen-huang-allin-physical-ai-inference) · [Watch](https://www.youtube.com/watch?v=gwW8GKwHB3I)
 
-### [a16z Show — Gavin Baker (AI demand outrunning compute)](/longform/2026-08-31-baker-a16z-ai-demand-outrunning-compute)
-**BULLISH** · `asr` · Undersupply through 2028, sub-one-year compute paybacks, hybrid open-weight routers; token prices allowed to rise under shortage. [Watch](https://www.youtube.com/watch?v=FGC4ofTcg2k)
+**a16z Show — Gavin Baker (AI demand outrunning compute) — BULLISH / asr.** Undersupply through 2028, sub-one-year compute paybacks, hybrid open-weight routers; token prices allowed to rise under shortage. [Recap](/longform/2026-08-31-baker-a16z-ai-demand-outrunning-compute) · [Watch](https://www.youtube.com/watch?v=FGC4ofTcg2k)
 
-### [TBPN — The AI Slowdown Debate](/longform/2026-09-14-tbpn-ai-slowdown)
-**NEUTRAL** · `metadata-only` · Live + Diet cut; guests include Acquired’s Rosenthal/Gilbert. No transcript ingested.
+**TBPN — The AI Slowdown Debate — NEUTRAL / metadata-only.** Live + Diet cut; guests include Acquired’s Rosenthal/Gilbert. No transcript ingested. [Recap](/longform/2026-09-14-tbpn-ai-slowdown)
 
 ## What to watch
 
-1. **Fed decision Wednesday 2:00pm ET** — Statement, SEP/dots, Chair Warsh presser at 2:30. Markets ~92–93% priced for 25bp (CNBC / Reuters); path language matters more than the print against ~5% 10y and three-digit crude. ([discussion](/discussions/2026-09-15-fed-hike-odds-juxtaposition))
-2. **Cash open breadth and SOXX path** — Whether Monday’s concentration (chips/power) continues or mean-reverts while Mag7 dispersion holds; Empire State prices-paid heat already in.
-3. **Broadcom / Anthropic confirmation path** — ~$115B FY27 AI semi revenue, Anthropic as largest XPU customer, and any funding/revenue print that answers the pay-for-it objection. ([Tan news](/news/2026-09-15-broadcom-tan-ai-revenue-targets), [financeability](/discussions/2026-09-15-anthropic-broadcom-gw-financeability))
-4. **Samsung IR or Korean follow-ups** on Taylor utilization denominator and Tesla AI5 qualification. ([discussion](/discussions/2026-09-15-samsung-taylor-tesla-ai5-ramp))
-5. **Any Samsung/TSMC confirmation** of cHBM / NVHBM base-die dual sourcing in volume. ([discussion](/discussions/2026-09-15-samsung-hbm-base-die-tsmc-dual-source))
-6. **Astra / SemiAnalysis write-up** — measured tokens/$ or HBM/GB under looped vs dense baselines. ([discussion](/discussions/2026-09-15-astra-loop-transformers))
-7. **DC permitting / moratorium follow-through** — whether Wells +175% prints into hyperscaler site delays vs cancelled spend. ([news](/news/2026-09-15-wells-dc-moratoriums-up))
+**Fed decision Wednesday 2:00pm ET — path language over the print.** Statement, SEP/dots, Chair Warsh presser at 2:30; markets ~92–93% priced for 25bp (CNBC / Reuters); path language matters more than the print against ~5% 10y and three-digit crude ([discussion](/discussions/2026-09-15-fed-hike-odds-juxtaposition)).
+
+**Cash open breadth and SOXX path — concentration vs mean-revert.** Whether Monday’s concentration (chips/power) continues or mean-reverts while Mag7 dispersion holds; Empire State prices-paid heat already in.
+
+**Broadcom / Anthropic confirmation path — targets vs pay-for-it.** ~$115B FY27 AI semi revenue, Anthropic as largest XPU customer, and any funding/revenue print that answers the pay-for-it objection ([Tan news](/news/2026-09-15-broadcom-tan-ai-revenue-targets), [financeability](/discussions/2026-09-15-anthropic-broadcom-gw-financeability)).
+
+**Samsung Taylor follow-ups — utilization denominator and AI5 quals.** Samsung IR or Korean follow-ups on Taylor utilization denominator and Tesla AI5 qualification ([discussion](/discussions/2026-09-15-samsung-taylor-tesla-ai5-ramp)).
+
+**Samsung/TSMC cHBM confirmation — base-die dual-source in volume.** Any Samsung/TSMC confirmation of cHBM / NVHBM base-die dual sourcing in volume ([discussion](/discussions/2026-09-15-samsung-hbm-base-die-tsmc-dual-source)).
+
+**Astra / SemiAnalysis write-up — looped vs dense HBM/GB.** Measured tokens/$ or HBM/GB under looped vs dense baselines ([discussion](/discussions/2026-09-15-astra-loop-transformers)).
+
+**DC permitting / moratorium follow-through — delay vs cancelled spend.** Whether Wells +175% prints into hyperscaler site delays vs cancelled spend ([news](/news/2026-09-15-wells-dc-moratoriums-up)).
