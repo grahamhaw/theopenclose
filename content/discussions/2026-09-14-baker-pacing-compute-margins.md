@@ -2,18 +2,19 @@
 id: 2026-09-14-baker-pacing-compute-margins
 type: discussion
 date: 2026-09-14T14:20:00-04:00
+updated: 2026-09-16T07:12:00-04:00
 title: Does "pacing" mean more alignment compute and lower lab margins — not less spend?
 summary: >
   Gavin Baker argues Anthropic/OpenAI "pacing" is more compute on alignment,
   monitoring, and evals at the cost of slightly lower margins — not a capex cut.
   Roon frames pacing as asymmetric margin compression; xEBITDA argues safety
   spend can raise total semiconductor demand.
-people: [Gavin Baker, roon, Dan Druckenmiller]
+people: [Gavin Baker, roon, Dan Druckenmiller, Sarah Friar, Sachin Katti]
 entities: [Anthropic, OpenAI]
 source: https://x.com/GavinSBaker/status/2099563923783524618
 backfill: false
 fidelity: top-replies
-recurrence: new
+recurrence: recurring
 prior: []
 review_after: 2026-12-15
 resolved: false
@@ -102,3 +103,21 @@ https://x.com/xEBITDA/status/2099573610155589696
 Slightly more money is doing a lot of work in that sentence .. we're talking billions in incremental compute  
 7 likes · 0 RTs · 1 reply  
 https://x.com/EcoDogFanJM/status/2099571543588159651
+
+
+## Delta
+
+**2026-09-16 — OpenAI principal quotes land on Baker's mechanism.**
+Overnight [@GavinSBaker](https://x.com/GavinSBaker/status/2100179389975580968) posts CNBC-attributed Sarah Friar (OpenAI CFO): focused on "getting more compute to keep that flywheel going," and Sachin Katti (OpenAI VP of Compute Strategy): safety/alignment will require "even more compute." Baker: if you thought pacing was negative for AI infrastructure demand, "think again." He also calls Monday's infrastructure selloff almost "Deepseek"-level silliness. Visible pushback (@CZituo): pacing was about *when* spend lands, not the level — a CFO wanting more compute today does not settle the curve. CNBC Friar piece separately: she would listen to researchers on pacing and still make "strong ROI" investment decisions ([CNBC](https://www.cnbc.com/2026/09/15/open-ai-sarah-friar-safety.html)).
+
+> More on AI pacing: Sarah Friar CFO of OpenAI yesterday on CNBC: “from where I sit today there is so much opportunity to drive growth that I am still highly focused on getting more compute to keep that flywheel going.” … Sachin Katti … “we’ll need even more compute to make sure future models are more safe and aligned.” If you thought “pacing” was negative for AI infrastructure demand, think again.
+> — [Gavin Baker (@GavinSBaker)](https://x.com/GavinSBaker/status/2100179389975580968)
+
+> Kind of weird the market viewed this as negative infrastructure. This seems wildly bullish infrastructure but highly uncertain for short term to maybe medium term model layer margin structure.
+> — [Paul Enright (@pmje73)](https://x.com/pmje73/status/2100180172272001214)
+
+> Yes. Almost a “Deepseek” level of silliness on Monday. Almost.
+> — [Gavin Baker (@GavinSBaker)](https://x.com/GavinSBaker/status/2100181032284639431)
+
+> pacing was never an argument about the level, it's about when the spend lands. both quotes answer how much, which nobody was really arguing. the bear case is the shape of the curve, & a CFO saying she wants more compute today doesn't settle that either way.
+> — [Chen Zituo (@CZituo)](https://x.com/CZituo/status/2100181011829317647)
