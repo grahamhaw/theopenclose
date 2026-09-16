@@ -1,1 +1,54 @@
-PLACEHOLDER3
+{
+  "_comment": "Long-form awaiting treatment after the daily ~5am ET judgment sweep. Entries must clear the value bar (not every RSS item). Stay until processed or explicitly dropped as not worth it. Do not auto-append entire podcast feeds from capture/sweep. 2026-09-16 5am sweep: FULL treated All-In Satya + SemiAnalysis Ep.031; Satya removed from queue.",
+  "queue": [
+    {
+      "url": "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-agentic-inference",
+      "title": "Rubin NVL72 Agentic Inference: 67x better Performance per Dollar",
+      "surfaced_by": "@SemiAnalysis_",
+      "why": "Tier-1 newsletter with falsifiable 67x perf/$ and 2x annual profit per GW claims; overnight post.",
+      "queued_at": "2026-09-15T07:35:00-04:00"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=2cmlk-YlgRk",
+      "title": "SemiAnalysis Weekly Ep.030 / Astra loop transformers video clip",
+      "surfaced_by": "@SemiAnalysis_",
+      "why": "Overnight Astra loop-transformer claim is video-formatted in API; needs transcript before longform. Related 4-Hi HBM ep already has metadata stub.",
+      "queued_at": "2026-09-15T07:35:00-04:00"
+    },
+    {
+      "url": "https://omny.fm/shows/odd-lots/openai-president-greg-brockman-on-doing-business-",
+      "title": "Odd Lots: OpenAI President Greg Brockman on Doing Business in the Wake of Hugging Face",
+      "surfaced_by": "rss:odd-lots",
+      "why": "Principal (OpenAI president) on post-Hugging Face ops; market-moving safety week.",
+      "queued_at": "2026-09-15T07:35:00-04:00"
+    },
+    {
+      "url": "https://a16z.simplecast.com/episodes/greg-brockman-on-why-openai-says-were-enter",
+      "title": "a16z: Greg Brockman on Why OpenAI Says We're Entering the AGI Era",
+      "surfaced_by": "rss:a16z-show",
+      "why": "Same principal, alternate cut; prefer YouTube if available at treatment time.",
+      "queued_at": "2026-09-15T07:35:00-04:00"
+    },
+    {
+      "url": "https://tedseides.libsyn.com/ai-in-the-investment-office-abby-barlow-laura-hill-",
+      "title": "Capital Allocators: AI in the Investment Office",
+      "surfaced_by": "rss:capital-allocators",
+      "why": "Direct AI-in-investing workflow — Graham priority theme.",
+      "queued_at": "2026-09-15T07:35:00-04:00"
+    },
+    {
+      "url": "https://pscrb.fm/rss/p/traffic.megaphone.fm/CPUAI7737498941.mp3",
+      "title": "Training Data: Box's Aaron Levie — reinventing in the AI age / enterprise diffusion",
+      "surfaced_by": "rss:training-data",
+      "why": "Enterprise agent/diffusion principal; bears on enterprise-agent-stall theme.",
+      "queued_at": "2026-09-15T07:35:00-04:00"
+    },
+    {
+      "url": "https://podcasters.spotify.com/pod/show/excess-returns/episodes/Jim-Paulsen-on-t",
+      "title": "Excess Returns: Jim Paulsen on weakening economy, tech bear market risk",
+      "surfaced_by": "rss:excess-returns",
+      "why": "Macro/tech risk framing into the week; secondary but timely after Monday tape.",
+      "queued_at": "2026-09-15T07:35:00-04:00"
+    }
+  ]
+}
