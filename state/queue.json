@@ -1,5 +1,5 @@
 {
-  "_comment": "Long-form awaiting treatment after the daily ~5am ET judgment sweep. Entries must clear the value bar (not every RSS item). Stay until processed or explicitly dropped as not worth it. Do not auto-append entire podcast feeds from capture/sweep. 2026-09-16 5am sweep: FULL treated All-In Satya + SemiAnalysis Ep.031; Satya removed from queue.",
+  "_comment": "Long-form awaiting treatment after the daily ~5am ET judgment sweep. Entries must clear the value bar (not every RSS item). Stay until processed or explicitly dropped as not worth it. Do not auto-append entire podcast feeds from capture/sweep. 2026-09-16 7am sweep: appended SemiAnalysis DC moratoriums map + ILTB Moritz; no >3d drops.",
   "queue": [
     {
       "url": "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-agentic-inference",
@@ -12,7 +12,7 @@
       "url": "https://www.youtube.com/watch?v=2cmlk-YlgRk",
       "title": "SemiAnalysis Weekly Ep.030 / Astra loop transformers video clip",
       "surfaced_by": "@SemiAnalysis_",
-      "why": "Overnight Astra loop-transformer claim is video-formatted in API; needs transcript before longform. Related 4-Hi HBM ep already has metadata stub.",
+      "why": "Overnight Astra loop-transformer claim is video-framed in API; needs transcript before longform. Related 4-Hi HBM ep already has metadata stub.",
       "queued_at": "2026-09-15T07:35:00-04:00"
     },
     {
@@ -24,7 +24,7 @@
     },
     {
       "url": "https://a16z.simplecast.com/episodes/greg-brockman-on-why-openai-says-were-enter",
-      "title": "a16z: Greg Brockman on Why OpenAI Says We're Entering the AGI Era",
+      "title": "a16z: Greg Brockman on Why OpenAI Says We’re Entering the AGI Era",
       "surfaced_by": "rss:a16z-show",
       "why": "Same principal, alternate cut; prefer YouTube if available at treatment time.",
       "queued_at": "2026-09-15T07:35:00-04:00"
@@ -49,6 +49,20 @@
       "surfaced_by": "rss:excess-returns",
       "why": "Macro/tech risk framing into the week; secondary but timely after Monday tape.",
       "queued_at": "2026-09-15T07:35:00-04:00"
+    },
+    {
+      "url": "https://newsletter.semianalysis.com/p/everyone-says-datacenter-moratoriums",
+      "title": "Everyone Says Datacenter Moratoriums Are Killing the US Buildout. We Mapped All 300 of Them",
+      "surfaced_by": "@SemiAnalysis_",
+      "why": "Tier-1 map with falsifiable 1,525MW slip / 2.3GW nationwide vs moratorium count narrative; overnight post.",
+      "queued_at": "2026-09-16T07:25:00-04:00"
+    },
+    {
+      "url": "https://colossus.com/episode/the-outsider/",
+      "title": "Invest Like the Best: Michael Moritz — Lessons From 40 Years of Investing and Writing",
+      "surfaced_by": "rss:invest-like-the-best",
+      "why": "Fresh ILTB drop Wed AM; Patrick core roster — allocator craft, judgment selective vs AI-only.",
+      "queued_at": "2026-09-16T07:25:00-04:00"
     }
   ]
 }
