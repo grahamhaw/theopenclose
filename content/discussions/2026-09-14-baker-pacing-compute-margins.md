@@ -14,7 +14,7 @@ entities: [Anthropic, OpenAI]
 source: https://x.com/GavinSBaker/status/2099563923783524618
 backfill: false
 fidelity: top-replies
-recurrence: recurring
+recurrence: new
 prior: []
 review_after: 2026-12-15
 resolved: false
