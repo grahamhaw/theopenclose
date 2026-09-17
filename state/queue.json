@@ -1,5 +1,5 @@
 {
-  "_comment": "Long-form awaiting treatment after the daily ~5am ET judgment sweep. Entries must clear the value bar (not every RSS item). Stay until processed or explicitly dropped as not worth it. Do not auto-append entire podcast feeds from capture/sweep. 2026-09-16 7am sweep: appended SemiAnalysis DC moratoriums map + ILTB Moritz; no >3d drops.",
+  "_comment": "Long-form awaiting treatment after the daily ~5am ET judgment sweep. Entries must clear the value bar (not every RSS item). Stay until processed or explicitly dropped as not worth it. Do not auto-append entire podcast feeds from capture/sweep. 2026-09-17 5am: FULL All-In Gerstner + Latent Space AIUC; dropped Excess Returns Paulsen (stale post-Monday/Fed) + a16z Brockman (dup of Odd Lots Brockman).",
   "queue": [
     {
       "url": "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-agentic-inference",
@@ -23,13 +23,6 @@
       "queued_at": "2026-09-15T07:35:00-04:00"
     },
     {
-      "url": "https://a16z.simplecast.com/episodes/greg-brockman-on-why-openai-says-were-enter",
-      "title": "a16z: Greg Brockman on Why OpenAI Says We’re Entering the AGI Era",
-      "surfaced_by": "rss:a16z-show",
-      "why": "Same principal, alternate cut; prefer YouTube if available at treatment time.",
-      "queued_at": "2026-09-15T07:35:00-04:00"
-    },
-    {
       "url": "https://tedseides.libsyn.com/ai-in-the-investment-office-abby-barlow-laura-hill-",
       "title": "Capital Allocators: AI in the Investment Office",
       "surfaced_by": "rss:capital-allocators",
@@ -41,13 +34,6 @@
       "title": "Training Data: Box's Aaron Levie — reinventing in the AI age / enterprise diffusion",
       "surfaced_by": "rss:training-data",
       "why": "Enterprise agent/diffusion principal; bears on enterprise-agent-stall theme.",
-      "queued_at": "2026-09-15T07:35:00-04:00"
-    },
-    {
-      "url": "https://podcasters.spotify.com/pod/show/excess-returns/episodes/Jim-Paulsen-on-t",
-      "title": "Excess Returns: Jim Paulsen on weakening economy, tech bear market risk",
-      "surfaced_by": "rss:excess-returns",
-      "why": "Macro/tech risk framing into the week; secondary but timely after Monday tape.",
       "queued_at": "2026-09-15T07:35:00-04:00"
     },
     {
