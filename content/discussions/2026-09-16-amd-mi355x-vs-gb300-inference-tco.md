@@ -2,6 +2,7 @@
 id: 2026-09-16-amd-mi355x-vs-gb300-inference-tco
 type: discussion
 date: 2026-09-16T07:20:00-04:00
+updated: 2026-09-17T15:40:00-04:00
 title: Is AMD MI355X closing agentic-inference TCO vs GB300 — or only on some stacks?
 summary: >
   SemiAnalysis says MI355X is quickly closing perf/TCO vs GB300 in agentic
@@ -61,3 +62,7 @@ Knowable — next major cloud earnings Q&A — fall 2026–early 2027
 
 Whether UMBP/SGLang improvements appear with similar magnitude on GB300 stacks (software portability test)
 Knowable — follow-on SemiAnalysis notes — through Q4 2026
+
+## Delta
+
+No movement since 2026-09-16 — @SemiAnalysis_ reshared the same MI355X vs GB300 / SGLang–MoRI–UMBP vs HiCache thread in the PM window (new post IDs; same load-bearing claims).

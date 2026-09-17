@@ -1,5 +1,5 @@
 {
-  "_comment": "Long-form awaiting treatment after the daily ~5am ET judgment sweep. Entries must clear the value bar (not every RSS item). Stay until processed or explicitly dropped as not worth it. Do not auto-append entire podcast feeds from capture/sweep. 2026-09-17 7am: no new queue appends (Gerstner/Latent Space shipped 5am; SemiAnalysis DC moratoriums already queued + news; Rubin NVL72 7x already queued). Pruned none (nothing >3d).",
+  "_comment": "Long-form awaiting treatment after the daily ~5am ET judgment sweep. Entries must clear the value bar (not every RSS item). Stay until processed or explicitly dropped as not worth it. Do not auto-append entire podcast feeds from capture/sweep. 2026-09-17 1500 PM: no new queue appends (All-In Dina Powell Meta DC SKIP; Meta MTIA Bloomberg is Sep 15 recirculation; Jensen/Brookfield shipped as news). Pruned none (nothing >3d).",
   "queue": [
     {
       "url": "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-agentic-inference",
