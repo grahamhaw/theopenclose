@@ -2,6 +2,7 @@
 id: 2026-09-16-semianalysis-dc-moratoriums-mapped
 type: news
 date: 2026-09-16T07:18:00-04:00
+updated: 2026-09-17T07:30:00-04:00
 title: SemiAnalysis — 300+ DC moratoriums map to 1.5GW slip, not buildout death
 summary: >
   SemiAnalysis maps 300+ U.S. datacenter moratoriums: 20GW inside restricted
@@ -37,3 +38,7 @@ Separates headline moratorium *count* from megawatts that actually move. Complem
 ## Connects to
 
 **Wells moratorium count up 175%** — Count vs slip MW ([news](/news/2026-09-15-wells-dc-moratoriums-up)).
+
+## Delta
+
+**2026-09-17** — [@SemiAnalysis_](https://x.com/SemiAnalysis_/status/2100270127438499849) follow-on: SpaceX “is no longer subject to the Brownsville moratorium,” framed as an example of why mapped mechanisms matter more than moratorium *counts*; points back to the same newsletter already queued for longform.
