@@ -2,6 +2,7 @@
 id: 2026-09-16-sk-hynix-intel-us-memory-talks
 type: news
 date: 2026-09-16T07:15:00-04:00
+updated: 2026-09-18T07:26:00-04:00
 title: SK Hynix in talks with Intel on first U.S. memory manufacturing
 summary: >
   CNBC relays Reuters: exploratory talks for SK Hynix to make memory in the
@@ -39,3 +40,7 @@ A foundry/lease or cloud-inclusive JV would be a new U.S. memory supply path for
 ## Connects to
 
 **Samsung HBM base-die / TSMC dual-source** — Parallel supplier geography and packaging politics ([discussion](/discussions/2026-09-15-samsung-hbm-base-die-tsmc-dual-source)).
+
+## Delta
+
+**2026-09-18** — Reuters: Solidigm (Hynix NAND) weighing a separate U.S. NAND fab (upstate NY candidate), explicitly distinct from these Intel Ohio talks ([news](/news/2026-09-18-solidigm-us-nand-fab)).
