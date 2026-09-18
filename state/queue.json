@@ -1,41 +1,6 @@
 {
-  "_comment": "Long-form awaiting treatment after the daily ~5am ET judgment sweep. Entries must clear the value bar (not every RSS item). Stay until processed or explicitly dropped as not worth it. Do not auto-append entire podcast feeds from capture/sweep. 2026-09-18 ~5:20am ET: FULL Dwarkesh Noam Brown agent swarms (YT 6AgOfiZOWiY) shipped. SKIP All-In Nick Shirley (politics), All-In Dina Powell Meta DC (local/political framing; prior SKIP stands), a16z fal video control (narrow product), Odd Lots Fukuyama + rich-people tax (not theme), TBPN diet×3 (headline only), Sharp Tech preview (paywall), At Any Rate×3 / Unhedged Fed / Monetary Matters Wang (secondary rates already in brief lane). Queued Odds on Open Lihong Wang IMC semis quant + Goldman Exchanges Rich Friedman private markets/AI. Kept prior 7 (none >worth-drop; Ep.030 still distinct from shipped Ep.031). Queue 7→9.",
+  "_comment": "Long-form awaiting treatment after the daily ~5am ET judgment sweep. 2026-09-18 ~15:20 ET PM sweep: DROP 5\u00d7 queued_at 2026-09-15 stale (>3d, no PM conversation) \u2014 Vera Rubin NVL72, Ep.030 Astra clip, Odd Lots Brockman, Capital Allocators AI office, Training Data Levie. KEEP SemiAnalysis DC moratoriums map (Ep.032 video same day reinforces; no dupe queue), ILTB Moritz, Odds on Open Lihong Wang, Goldman Exchanges Rich Friedman. SKIP auto-queue Ep.032 (same map as queued newsletter), At Any Rate FX/commodities (secondary rates). Queue 9\u21924. No new longform queued this PM.",
   "queue": [
-    {
-      "url": "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-agentic-inference",
-      "title": "Rubin NVL72 Agentic Inference: 67x better Performance per Dollar",
-      "surfaced_by": "@SemiAnalysis_",
-      "why": "Tier-1 newsletter with falsifiable 67x perf/$ and 2x annual profit per GW claims; overnight post.",
-      "queued_at": "2026-09-15T07:35:00-04:00"
-    },
-    {
-      "url": "https://www.youtube.com/watch?v=2cmlk-YlgRk",
-      "title": "SemiAnalysis Weekly Ep.030 / Astra loop transformers video clip",
-      "surfaced_by": "@SemiAnalysis_",
-      "why": "Overnight Astra loop-transformer claim is video-framed in API; needs transcript before longform. Related 4-Hi HBM ep already has metadata stub.",
-      "queued_at": "2026-09-15T07:35:00-04:00"
-    },
-    {
-      "url": "https://omny.fm/shows/odd-lots/openai-president-greg-brockman-on-doing-business-",
-      "title": "Odd Lots: OpenAI President Greg Brockman on Doing Business in the Wake of Hugging Face",
-      "surfaced_by": "rss:odd-lots",
-      "why": "Principal (OpenAI president) on post-Hugging Face ops; market-moving safety week.",
-      "queued_at": "2026-09-15T07:35:00-04:00"
-    },
-    {
-      "url": "https://tedseides.libsyn.com/ai-in-the-investment-office-abby-barlow-laura-hill-",
-      "title": "Capital Allocators: AI in the Investment Office",
-      "surfaced_by": "rss:capital-allocators",
-      "why": "Direct AI-in-investing workflow — Graham priority theme.",
-      "queued_at": "2026-09-15T07:35:00-04:00"
-    },
-    {
-      "url": "https://pscrb.fm/rss/p/traffic.megaphone.fm/CPUAI7737498941.mp3",
-      "title": "Training Data: Box's Aaron Levie — reinventing in the AI age / enterprise diffusion",
-      "surfaced_by": "rss:training-data",
-      "why": "Enterprise agent/diffusion principal; bears on enterprise-agent-stall theme.",
-      "queued_at": "2026-09-15T07:35:00-04:00"
-    },
     {
       "url": "https://newsletter.semianalysis.com/p/everyone-says-datacenter-moratoriums",
       "title": "Everyone Says Datacenter Moratoriums Are Killing the US Buildout. We Mapped All 300 of Them",
@@ -45,23 +10,23 @@
     },
     {
       "url": "https://colossus.com/episode/the-outsider/",
-      "title": "Invest Like the Best: Michael Moritz — Lessons From 40 Years of Investing and Writing",
+      "title": "Invest Like the Best: Michael Moritz \u2014 Lessons From 40 Years of Investing and Writing",
       "surfaced_by": "rss:invest-like-the-best",
-      "why": "Fresh ILTB drop Wed AM; Patrick core roster — allocator craft, judgment selective vs AI-only.",
+      "why": "Fresh ILTB drop Wed AM; Patrick core roster \u2014 allocator craft, judgment selective vs AI-only.",
       "queued_at": "2026-09-16T07:25:00-04:00"
     },
     {
       "url": "https://podcasters.spotify.com/pod/show/odds-on-open/episodes/Ex-IMC-Semiconductors-Quant-AI-Is-Good-Enough-to-Beat-the-SP-500-e3ovt1e",
-      "title": "Odds on Open: Ex-IMC Semiconductors Quant — AI Is Good Enough to Beat the S&P 500 (Lihong Wang)",
+      "title": "Odds on Open: Ex-IMC Semiconductors Quant \u2014 AI Is Good Enough to Beat the S&P 500 (Lihong Wang)",
       "surfaced_by": "rss:odds-on-open",
-      "why": "Ex-IMC semis options MM on NVDA/AMD/AVGO flow + AI-beat-S&P claim; AI-in-investing + semis microstructure. No YT — ASR needed.",
+      "why": "Ex-IMC semis options MM on NVDA/AMD/AVGO flow + AI-beat-S&P claim; AI-in-investing + semis microstructure. No YT \u2014 ASR needed.",
       "queued_at": "2026-09-18T05:20:00-04:00"
     },
     {
       "url": "https://feeds.megaphone.fm/GLD9218176758",
       "title": "Goldman Exchanges: Rich Friedman on Private Markets and AI Investing",
       "surfaced_by": "rss:goldman-exchanges",
-      "why": "GSAM chairman — AI payoff later than market assumes; institutional private-markets + AI investing. Fresh Fri AM drop.",
+      "why": "GSAM chairman \u2014 AI payoff later than market assumes; institutional private-markets + AI investing. Fresh Fri AM drop.",
       "queued_at": "2026-09-18T05:20:00-04:00"
     }
   ]
