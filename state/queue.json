@@ -1,20 +1,6 @@
 {
-  "_comment": "Long-form awaiting treatment after the daily ~5am ET judgment sweep. 2026-09-19 ~05:05 ET podcast sweep (~36h): FULL×2 a16z Ghodsi Databricks pacing/ontology + No Priors Ermon Inception diffusion inference (YT ASR). QUEUE+ MiB Glen Kacher AI boom. KEEP SemiAnalysis DC map, ILTB Moritz, Odds Lihong Wang, Goldman Friedman. SKIP Ep.032 (dupe map), Gurley Feynman/COVID, Isaacman NASA, Shirley (prior), Eisman weekly wrap (thin), Odd Lots Olympics/wealth, Rosenberg bonds, Hard Fork exit AMA, Sourcery Bending Spoons, At Any Rate, Forward Guidance, Sharp Tech preview, Bid Rubenstein sports, TBPN diet. Queue 4→5.",
+  "_comment": "Long-form awaiting treatment. 2026-09-19 ~07:10 ET Sat weekend sweep: DROP×2 stale (>3d) SemiAnalysis DC moratoriums map + ILTB Moritz (queued 9/16). KEEP Odds Lihong Wang, Goldman Friedman, MiB Glen Kacher. No podcast RSS auto-queue (5am judgment already ran). Queue 5→3.",
   "queue": [
-    {
-      "url": "https://newsletter.semianalysis.com/p/everyone-says-datacenter-moratoriums",
-      "title": "Everyone Says Datacenter Moratoriums Are Killing the US Buildout. We Mapped All 300 of Them",
-      "surfaced_by": "@SemiAnalysis_",
-      "why": "Tier-1 map with falsifiable 1,525MW slip / 2.3GW nationwide vs moratorium count narrative; overnight post.",
-      "queued_at": "2026-09-16T07:25:00-04:00"
-    },
-    {
-      "url": "https://colossus.com/episode/the-outsider/",
-      "title": "Invest Like the Best: Michael Moritz — Lessons From 40 Years of Investing and Writing",
-      "surfaced_by": "rss:invest-like-the-best",
-      "why": "Fresh ILTB drop Wed AM; Patrick core roster — allocator craft, judgment selective vs AI-only.",
-      "queued_at": "2026-09-16T07:25:00-04:00"
-    },
     {
       "url": "https://podcasters.spotify.com/pod/show/odds-on-open/episodes/Ex-IMC-Semiconductors-Quant-AI-Is-Good-Enough-to-Beat-the-SP-500-e3ovt1e",
       "title": "Odds on Open: Ex-IMC Semiconductors Quant — AI Is Good Enough to Beat the S&P 500 (Lihong Wang)",
