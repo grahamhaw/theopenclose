@@ -1,5 +1,5 @@
 {
-  "_comment": "Long-form awaiting treatment. 2026-09-19 ~07:10 ET Sat weekend sweep: DROP×2 stale (>3d) SemiAnalysis DC moratoriums map + ILTB Moritz (queued 9/16). KEEP Odds Lihong Wang, Goldman Friedman, MiB Glen Kacher. No podcast RSS auto-queue (5am judgment already ran). Queue 5→3.",
+  "_comment": "Long-form awaiting treatment. 2026-09-20 ~05:00 ET Sun podcast judgment (~36h): FULL×1 MiB Glen Kacher AI boom (YT ASR via yt-dlp). SKIP Josh Elman consumer-AI stickiness; Monetary Matters Busch 30y; Odd Lots Olympics M&A. KEEP Odds Lihong Wang + Goldman Friedman. Queue 3→2.",
   "queue": [
     {
       "url": "https://podcasters.spotify.com/pod/show/odds-on-open/episodes/Ex-IMC-Semiconductors-Quant-AI-Is-Good-Enough-to-Beat-the-SP-500-e3ovt1e",
@@ -14,13 +14,6 @@
       "surfaced_by": "rss:goldman-exchanges",
       "why": "GSAM chairman — AI payoff later than market assumes; institutional private-markets + AI investing. Fresh Fri AM drop.",
       "queued_at": "2026-09-18T05:20:00-04:00"
-    },
-    {
-      "url": "https://www.youtube.com/watch?v=63I8Y7fvUsY",
-      "title": "Masters in Business: Glen Kacher — Investing for the AI Boom (Light Street)",
-      "surfaced_by": "rss:masters-in-business",
-      "why": "Light Street CIO / Tiger cub — AI boom positioning, data-center polarization, 5y AI outlook; selective MiB. Behind 2 FULLs this run.",
-      "queued_at": "2026-09-19T05:20:00-04:00"
     }
   ]
 }
