@@ -1,18 +1,11 @@
 {
-  "_comment": "Long-form awaiting treatment. 2026-09-20 ~05:00 ET Sun podcast judgment (~36h): FULL×1 MiB Glen Kacher AI boom (YT ASR via yt-dlp). SKIP Josh Elman consumer-AI stickiness; Monetary Matters Busch 30y; Odd Lots Olympics M&A. KEEP Odds Lihong Wang + Goldman Friedman. Queue 3→2.",
+  "_comment": "Long-form awaiting treatment. 2026-09-21 ~05:00 ET Mon podcast judgment (~36h): FULL×2 Odds Lihong Wang (YT ASR sdBhXlC3Vxs) + Excess Returns Jason Hsu AI gap (YT nnf-IyXuWE4). KEEP Goldman Friedman (YT now KrZatIdXaUU; capacity). SKIP Applovin Foroughi ads/ML; Sourcery Gerstner Trump Accounts; Odd Lots LA industrial + Bloomberg Money promo; CA Perold + replays; Founders Sam Walton; a16z hip-hop; OPM/MM commodities; SemiAnalysis Ep.032 already outside window / news-covered. Queue 2→1.",
   "queue": [
     {
-      "url": "https://podcasters.spotify.com/pod/show/odds-on-open/episodes/Ex-IMC-Semiconductors-Quant-AI-Is-Good-Enough-to-Beat-the-SP-500-e3ovt1e",
-      "title": "Odds on Open: Ex-IMC Semiconductors Quant — AI Is Good Enough to Beat the S&P 500 (Lihong Wang)",
-      "surfaced_by": "rss:odds-on-open",
-      "why": "Ex-IMC semis options MM on NVDA/AMD/AVGO flow + AI-beat-S&P claim; AI-in-investing + semis microstructure. No YT — ASR needed.",
-      "queued_at": "2026-09-18T05:20:00-04:00"
-    },
-    {
-      "url": "https://feeds.megaphone.fm/GLD9218176758",
+      "url": "https://www.youtube.com/watch?v=KrZatIdXaUU",
       "title": "Goldman Exchanges: Rich Friedman on Private Markets and AI Investing",
       "surfaced_by": "rss:goldman-exchanges",
-      "why": "GSAM chairman — AI payoff later than market assumes; institutional private-markets + AI investing. Fresh Fri AM drop.",
+      "why": "GSAM chairman — AI payoff later than market assumes; institutional private-markets + AI investing. YT now available (KrZatIdXaUU). Queued 2026-09-18; kept behind 2 FULLs this run — process next if still high-bar.",
       "queued_at": "2026-09-18T05:20:00-04:00"
     }
   ]
