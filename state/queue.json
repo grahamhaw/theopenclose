@@ -1,11 +1,11 @@
 {
-  "_comment": "Long-form awaiting treatment. 2026-09-22 ~07:20 ET Tue AM capture/sweep (gap since ~Sat 11am ET; Mon jobs failed): FULL docs 1 discussion (EMIB/CoWoS Malaysia HBM) + 3 news (Abbott TCEQ DC halt; SoftBank ~$11B OpenAI bonds; Alibaba Zhenwu V900/20GW). QUEUE unchanged 1→1 keep Latent Space Diogo Almeida/Jev (Midnight surfaced same ep — already queued 05:15). No new podcast queue appends (judgment gate; 5am sweep already ran). SKIP Muse consumer downloads, AMD $1T price action, Verda $189M thin.",
+  "_comment": "Long-form awaiting treatment. 2026-09-22 ~15:30 ET Tue PM capture/sweep (since midday ~12:00 ET): FULL docs 0 discussions + 1 news (Anthropic Opus 5.5 / OpenAI Sol+Luna price cuts). QUEUE unchanged 1\u21921 keep Latent Space Diogo Almeida/Jev. No podcast RSS since midday. SKIP Cadence ChipStack truncated tweet; citrini agentic short basket; Munster Grok pred; 2y auction/oil tape for brief.",
   "queue": [
     {
       "url": "https://www.youtube.com/watch?v=cFx9Z3ZXca0",
-      "title": "Latent Space: Jev / Diogo Almeida (TypeSafe) — System One models for Prod, not God",
+      "title": "Latent Space: Jev / Diogo Almeida (TypeSafe) \u2014 System One models for Prod, not God",
       "surfaced_by": "rss:latent-space",
-      "why": "InstructGPT coauthor; thesis that frontier API models wrong path for production; Jev launch. Enterprise-agent-stall adjacent. Queued behind 2 FULLs (Rao+Stengel) — process next if still high-bar.",
+      "why": "InstructGPT coauthor; thesis that frontier API models wrong path for production; Jev launch. Enterprise-agent-stall adjacent. Queued behind 2 FULLs (Rao+Stengel) \u2014 process next if still high-bar.",
       "queued_at": "2026-09-22T05:15:00-04:00"
     }
   ]
