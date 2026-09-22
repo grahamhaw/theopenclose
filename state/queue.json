@@ -1,12 +1,12 @@
 {
-  "_comment": "Long-form awaiting treatment. 2026-09-21 ~05:00 ET Mon podcast judgment (~36h): FULL×2 Odds Lihong Wang (YT ASR sdBhXlC3Vxs) + Excess Returns Jason Hsu AI gap (YT nnf-IyXuWE4). KEEP Goldman Friedman (YT now KrZatIdXaUU; capacity). SKIP Applovin Foroughi ads/ML; Sourcery Gerstner Trump Accounts; Odd Lots LA industrial + Bloomberg Money promo; CA Perold + replays; Founders Sam Walton; a16z hip-hop; OPM/MM commodities; SemiAnalysis Ep.032 already outside window / news-covered. Queue 2→1.",
+  "_comment": "Long-form awaiting treatment. 2026-09-22 ~05:15 ET Tue podcast judgment (~36–48h since 2026-09-20 17:00 ET): FULL×2 All-In Naveen Rao energy wall (YT ASR yAsrMA_ADPc) + ILTB Gabe Stengel/Rogo investing superintelligence (Whisper ASR; Colossus source, no YT yet). DROP Goldman Friedman stale>3d (queued 9/18; no YT captions; capacity filled by 2 new). QUEUE Latent Space Diogo Almeida/Jev TypeSafe System One prod models (YT cFx9Z3ZXca0). SKIP: TBPN diet + Vinod daily; Odd Lots LA industrial (repeat); a16z Sinofsky safety-language meta; Eisman/Noble stock-picking; Sourcery Eclipse Lior Susan physical industries; Eye on AI Ukraine drones; Animal Spirits Talk-Your-Book; CA Perold+replays; Founders Sam Walton; All-In Blake Scholl aviation/DC-adjacent; Applovin already skipped prior. Queue 1→1.",
   "queue": [
     {
-      "url": "https://www.youtube.com/watch?v=KrZatIdXaUU",
-      "title": "Goldman Exchanges: Rich Friedman on Private Markets and AI Investing",
-      "surfaced_by": "rss:goldman-exchanges",
-      "why": "GSAM chairman — AI payoff later than market assumes; institutional private-markets + AI investing. YT now available (KrZatIdXaUU). Queued 2026-09-18; kept behind 2 FULLs this run — process next if still high-bar.",
-      "queued_at": "2026-09-18T05:20:00-04:00"
+      "url": "https://www.youtube.com/watch?v=cFx9Z3ZXca0",
+      "title": "Latent Space: Jev / Diogo Almeida (TypeSafe) — System One models for Prod, not God",
+      "surfaced_by": "rss:latent-space",
+      "why": "InstructGPT coauthor; thesis that frontier API models wrong path for production; Jev launch. Enterprise-agent-stall adjacent. Queued behind 2 FULLs (Rao+Stengel) — process next if still high-bar.",
+      "queued_at": "2026-09-22T05:15:00-04:00"
     }
   ]
 }
