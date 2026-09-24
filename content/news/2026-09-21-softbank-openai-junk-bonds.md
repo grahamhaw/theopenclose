@@ -2,10 +2,11 @@
 id: 2026-09-21-softbank-openai-junk-bonds
 type: news
 date: 2026-09-22T07:22:00-04:00
+updated: 2026-09-24T07:28:00-04:00
 title: SoftBank launches ~$11B junk bonds for OpenAI tranche
 summary: >
-  Reuters term sheet: $10B USD + €1B notes to fund $10B OpenAI follow-on
-  due Oct 1, cancel a $10B bridge; price Sep 24, settle Sep 29, Fitch BB+.
+  CNBC: SoftBank issued $10B + €1B (~$11.1B) notes; proceeds for $10B
+  OpenAI third tranche (Oct 1). Shares +7%+ on Japan reopen. Was Sep 24 price date.
 people: []
 entities: [SoftBank, OpenAI]
 source: https://www.reuters.com/business/media-telecom/softbank-group-launches-over-10-billion-bonds-openai-investment-term-sheet-shows-2026-09-21/
@@ -39,3 +40,7 @@ Separate from SoftBank's Arm share-backed margin loan upsizing: this is cash for
 ## Connects to
 
 **SoftBank Arm margin loan to $25B** — Prior financing tool for AI bets ([news](/news/2026-09-18-softbank-arm-margin-loan-25b)).
+
+## Update — 2026-09-24
+
+**Issued, not just launched — CNBC.** SoftBank said it **issued** $10 billion of dollar senior notes and €1 billion (~$1.14 billion) of euro notes (~$11.1 billion combined). Proceeds fund the **$10 billion** payment for the **third and final tranche** of SoftBank’s **$30 billion** OpenAI follow-on (expected close **Oct 1**) and general corporate purposes, per [CNBC](https://www.cnbc.com/2026/09/24/softbank-shares-bond-issuance-openai.html) (Jenny Lee). SoftBank shares jumped **more than 7%** Thursday as Japanese markets reopened after a three-day holiday. CNBC adds the February $30 billion commitment would bring SoftBank’s cumulative OpenAI investment to **$64.6 billion** and an approximately **13%** stake upon completion. Coupon / price marks not in the CNBC piece opened here.
