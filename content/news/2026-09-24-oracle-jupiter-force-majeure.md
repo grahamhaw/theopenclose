@@ -2,6 +2,7 @@
 id: 2026-09-24-oracle-jupiter-force-majeure
 type: news
 date: 2026-09-24T15:05:00-04:00
+updated: 2026-09-25T07:16:00-04:00
 title: "Oracle force majeure on Project Jupiter NM DC"
 summary: >
   Bloomberg via CNBC/TechCrunch: Oracle sent Blue Owl force majeure on
@@ -34,6 +35,16 @@ published: 2026-09-24T08:48:00-04:00
 
 **Possible rent delay if FM agreed — up to three years after commencement — Bloomberg Law (person familiar).**
 
+## Update — 2026-09-25
+
+**WSJ** published a Friday piece framing Project Jupiter as showing “cracks” in Oracle’s AI data-center build-out, citing the force majeure notice, removal of a key partner, and local resistance ([WSJ](https://www.wsj.com/finance/investing/cracks-in-oracles-ai-data-center-build-out-appear-in-massive-new-mexico-project-effb51c2)). The publicly visible lede says Oracle made aggressive financial commitments with little wiggle room; full body was paywalled in this capture.
+
+**Hell-or-high-water lease claim** — @RealNickMugalli (citing a WSJ screenshot) says the New Mexico lease has “hell or high water” terms so it cannot be terminated and rent is owed whether or not the site has power ([post](https://x.com/RealNickMugalli/status/2103427031694221596)). Screenshot-sourced; treat as unverified until the underlying WSJ/contract language is read primary.
+
+**Barclays (via ZeroHedge)** — on the force majeure: “the hardware capex should also be delayed (~$30bn; typically spent 2–3 months ahead of the asset going live)” ([ZH post](https://x.com/zerohedge/status/2103338889771467120)). Analyst view, not a company disclosure.
+
+**Oracle Japan** — Japanese subsidiary printed record fiscal 1Q sales (+13% YoY to ¥74.86B) with cloud revenue +31.7%; shares +>7% Friday while U.S. ORCL fell on the FM news ([CNBC](https://www.cnbc.com/2026/09/25/oracle-japan-shares-earnings.html)). Separate legal entity; does not negate the Jupiter lease story.
+
 ## Why it matters
 
 Contractual risk-shifting on a flagship Stargate shell (Oracle / OpenAI / SoftBank) as power and permits slip — lease resilience and lender nerves matter even when the tenant and developer both say the schedule is unchanged.
@@ -47,3 +58,5 @@ Contractual risk-shifting on a flagship Stargate shell (Oracle / OpenAI / SoftBa
 **BlackRock/IFM Stack Asia talks** — Same Blue Owl / Stack DC ownership stack ([news](/news/2026-09-24-blackrock-ifm-stack-asia)).
 
 **CleanSpark Meta-tied DC junk bond** — Contrast: hyperscaler-backed HY still clearing vs Jupiter debt <90 ([news](/news/2026-09-18-meta-cleanspark-dc-junk-bond)).
+
+**Akamai–Anthropic $11.6B CPU cloud** — Same overnight window: large lab offtake clearing while Jupiter lease stress trades ([news](/news/2026-09-25-akamai-anthropic-11-6b)).
