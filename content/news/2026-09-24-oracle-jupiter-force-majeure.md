@@ -2,7 +2,7 @@
 id: 2026-09-24-oracle-jupiter-force-majeure
 type: news
 date: 2026-09-24T15:05:00-04:00
-updated: 2026-09-25T07:16:00-04:00
+updated: 2026-09-26T07:22:00-04:00
 title: "Oracle force majeure on Project Jupiter NM DC"
 summary: >
   Bloomberg via CNBC/TechCrunch: Oracle sent Blue Owl force majeure on
@@ -44,6 +44,13 @@ published: 2026-09-24T08:48:00-04:00
 **Barclays (via ZeroHedge)** — on the force majeure: “the hardware capex should also be delayed (~$30bn; typically spent 2–3 months ahead of the asset going live)” ([ZH post](https://x.com/zerohedge/status/2103338889771467120)). Analyst view, not a company disclosure.
 
 **Oracle Japan** — Japanese subsidiary printed record fiscal 1Q sales (+13% YoY to ¥74.86B) with cloud revenue +31.7%; shares +>7% Friday while U.S. ORCL fell on the FM news ([CNBC](https://www.cnbc.com/2026/09/25/oracle-japan-shares-earnings.html)). Separate legal entity; does not negate the Jupiter lease story.
+
+
+## Update — 2026-09-26
+
+**Bernstein (relayed Sat AM by @glocalinvestor)** — Force majeure framed as **not structural**: Project Jupiter a 4-building OpenAI-primary campus; Bloom Energy fuel cells on natural gas; Energy Transfer gas pipeline slipped **Aug-26 → Feb-27** on regulatory hurdles, blocking Bloom energization; Jupiter not expected to serve customers until **Q4'28**; management already said minimal/no FY27 revenue impact; Bernstein reads the notice as keeping walk-away / renegotiation options open vs demand destruction. Bloom master agreement cited at **up to 2.8GW** across Oracle sites with **1.2GW** currently contracted. Sell-side view via X, not a Bernstein PDF in capture ([post](https://x.com/glocalinvestor/status/2103757465707794773)).
+
+**ORCL CDS** — @zerohedge: Barclays Sep 24 called the FM “neutral from a credit perspective” / no meaningful spread move expected; **Sep 25 ORCL CDS +10 to a record 237bps** (chart in-post). Credit-market print vs prior analyst “neutral” ([post](https://x.com/zerohedge/status/2103686323718492404)).
 
 ## Why it matters
 
